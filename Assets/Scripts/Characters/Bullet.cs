@@ -1,0 +1,19 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UIElements;
+
+public class Bullet : MonoBehaviour
+{
+    [SerializeField] private ParticleSystem deathParticlesPrefab;
+
+    private void OnDestroy()
+    {
+        if(deathParticlesPrefab)
+        {
+            Instantiate(deathParticlesPrefab, 
+                        transform.position, 
+                         transform.rotation);
+        }
+    }
+}
