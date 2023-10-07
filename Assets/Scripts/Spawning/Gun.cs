@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 { 
-    // We need to spawn and shoot a bullet haha.
+    // We need to spawn and shoot a bullet.
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform spawnPoint;
 
