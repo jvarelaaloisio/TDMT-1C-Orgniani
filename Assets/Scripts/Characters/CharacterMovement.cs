@@ -10,12 +10,9 @@ public class CharacterMovement : MonoBehaviour
     public Vector2 _direction;
     public Vector2 _lastDirection;
 
-
     public Vector2 currentPosition;
 
     [SerializeField] private Gun gun;
-
-    public Vector2 GetLastDirection() { return _lastDirection; }
 
     private void Start()
     {

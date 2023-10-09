@@ -122,11 +122,13 @@ MonoBehaviour:
   animator: {fileID: 8705046440472346466}
   _characterMovement: {fileID: 3693272513374255347}
   _attack: {fileID: 1665034760442065722}
-  _hurtAndDeath: {fileID: 6099257096883031374}
+  _hurtAndDead: {fileID: 6099257096883031374}
   animatorParameterDirX: dir_x
   animatorParameterDirY: dir_y
   animatorParameterIsMoving: is_moving
   animatorParameterAttack: attack
+  animatorParameterHurt: hurt
+  animatorParameterIsDead: is_dead
 --- !u!1 &6814966608332953572
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,7 +201,10 @@ MonoBehaviour:
   maxHP: 100
   HP: 3
   shouldDestroyOnDeath: 0
-  animator: {fileID: 8705046440472346466}
+  hurtCooldown: 1
+  canHurt: 1
+  _isHurt: 0
+  _isDead: 0
 --- !u!114 &1665034760442065722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,8 +221,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 134002570887227319}
   shootCooldown: 1
   canShoot: 1
-  animationCooldown: 0.1
-  _isShooting: 0
+  _isShooting: 1
 --- !u!114 &672349787724419784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,7 +338,7 @@ Transform:
   m_GameObject: {fileID: 7573061940936196888}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.442, y: 0.306, z: 0}
+  m_LocalPosition: {x: -0.68, y: 0.23, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

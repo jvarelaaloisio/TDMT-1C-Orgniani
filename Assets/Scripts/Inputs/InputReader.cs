@@ -35,7 +35,7 @@ public class InputReader : MonoBehaviour
                 return;
             }
 
-            gun.Shoot(characterMovement.GetLastDirection());
+            gun.Shoot(characterMovement._lastDirection);
         }
     }
 }

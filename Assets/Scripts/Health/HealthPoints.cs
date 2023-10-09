@@ -10,31 +10,49 @@ public class HealthPoints : MonoBehaviour
 
     [SerializeField] bool shouldDestroyOnDeath;
 
-    [SerializeField] Animator animator;
+    [SerializeField] private float hurtCooldown = 1f;
+    private float currentTime = 0;
+    public bool canHurt = true;
 
-    public void TakeDamage (int value)
+    public bool _isHurt = false;
+    public bool _isDead = false;
+
+    private void Update()
     {
-        HP -= value;
-
-        if(animator != null)
+        if (!canHurt)
         {
-            animator.SetTrigger("hurt");
+            currentTime += Time.deltaTime;
+
+            if (currentTime >= hurtCooldown)
+            {
+                canHurt = true;
+                currentTime = 0;
+            }
+
+            _isHurt = false;
         }
+    }
+
+    public void TakeDamage(int value)
+    {
+        if (!canHurt) return;
+
+        HP -= value;
+        _isHurt = true;
 
         if (HP <= 0)
         {
             Die();
         }
+
+        canHurt = false;
     }
 
     private void Die()
     {
         Debug.LogError($"{name}: Character died!");
 
-        if (animator != null)
-        {
-            animator.SetBool("is_dead", true);
-        }
+        _isDead = true;
 
         if (shouldDestroyOnDeath)
         {
@@ -48,10 +66,11 @@ public class HealthPoints : MonoBehaviour
             GetComponent<Collider2D>().enabled = false;
             GetComponent<CharacterMovement>().enabled = false;
 
-            if(GetComponent<CommonEnemy>() != null) GetComponent<CommonEnemy>().enabled = false;
+            if (GetComponent<CommonEnemy>() != null) GetComponent<CommonEnemy>().enabled = false;
 
             GetComponent<Gun>().enabled = false;
-            this.enabled = false;
+
+            //this.enabled = false;
 
             //Destroy(gameObject, 1f); //HACE QUE SE DESTRUYAN DESPUÉS DE UN RATO
         }

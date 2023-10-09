@@ -71,7 +71,10 @@ MonoBehaviour:
   maxHP: 100
   HP: 3
   shouldDestroyOnDeath: 0
-  animator: {fileID: 7960843257160631558}
+  hurtCooldown: 1
+  canHurt: 1
+  _isHurt: 0
+  _isDead: 0
 --- !u!114 &900381799350481143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,7 +104,6 @@ MonoBehaviour:
   spawnPoint: {fileID: 0}
   shootCooldown: 1
   canShoot: 1
-  animationCooldown: 0.1
   _isShooting: 0
 --- !u!114 &1399274091689977421
 MonoBehaviour:
@@ -301,8 +303,10 @@ MonoBehaviour:
   animator: {fileID: 7960843257160631558}
   _characterMovement: {fileID: 8884600967923930237}
   _attack: {fileID: 0}
-  _hurtAndDeath: {fileID: 5088241470233011989}
+  _hurtAndDead: {fileID: 5088241470233011989}
   animatorParameterDirX: dir_x
   animatorParameterDirY: dir_y
   animatorParameterIsMoving: is_moving
   animatorParameterAttack: attack
+  animatorParameterHurt: hurt
+  animatorParameterIsDead: is_dead

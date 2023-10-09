@@ -153,3 +153,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterMovement: {fileID: 0}
   gun: {fileID: 0}
+  playerHP: {fileID: 0}
