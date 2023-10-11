@@ -8,7 +8,7 @@ public class CharacterSound : MonoBehaviour
     [SerializeField] private AudioSource hurtSoundEffect;
     [SerializeField] private AudioSource deadSoundEffect;
 
-    [SerializeField] private Gun _attack;
+    [SerializeField] private CharacterShooting _attack;
     [SerializeField] private HealthPoints _hurtAndDeath;
 
     private void Update()

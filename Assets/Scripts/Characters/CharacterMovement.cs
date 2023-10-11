@@ -12,7 +12,7 @@ public class CharacterMovement : MonoBehaviour
 
     public Vector2 currentPosition;
 
-    [SerializeField] private Gun gun;
+    [SerializeField] private CharacterShooting gun;
 
     private void Start()
     {

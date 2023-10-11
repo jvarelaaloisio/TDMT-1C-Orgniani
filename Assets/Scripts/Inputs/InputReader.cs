@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class InputReader : MonoBehaviour
 {
     [SerializeField] private CharacterMovement characterMovement;
-    [SerializeField] private Gun gun;
+    [SerializeField] private CharacterShooting gun;
 
     [SerializeField] private HealthPoints playerHP;
 

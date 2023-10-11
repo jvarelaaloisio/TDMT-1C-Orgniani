@@ -107,7 +107,7 @@ MonoBehaviour:
   _direction: {x: 0, y: 0}
   _lastDirection: {x: 0, y: 0}
   currentPosition: {x: 0, y: 0}
-  gun: {fileID: 1665034760442065722, guid: 5e39a0780aae28f4395715e3bcfb3019, type: 3}
+  gun: {fileID: 7058244634649062594, guid: 5e39a0780aae28f4395715e3bcfb3019, type: 3}
 --- !u!114 &8072164450916358482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,7 +148,11 @@ MonoBehaviour:
   maxHP: 100
   HP: 1
   shouldDestroyOnDeath: 1
-  animator: {fileID: 0}
+  isEnemy: 0
+  hurtCooldown: 1
+  canHurt: 1
+  _isHurt: 0
+  _isDead: 0
 --- !u!114 &245209939309430626
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -73,7 +73,7 @@ public class HealthPoints : MonoBehaviour
 
             if (GetComponent<CommonEnemy>() != null) GetComponent<CommonEnemy>().enabled = false;
 
-            GetComponent<Gun>().enabled = false;
+            GetComponent<CharacterShooting>().enabled = false;
 
             //this.enabled = false;
 

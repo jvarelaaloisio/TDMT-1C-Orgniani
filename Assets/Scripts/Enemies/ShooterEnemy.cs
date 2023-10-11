@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShooterEnemy : MonoBehaviour
 {
-    [SerializeField] private Gun attack;
+    [SerializeField] private CharacterShooting attack;
     [SerializeField] private HealthPoints enemyHP;
     [SerializeField] private CharacterMovement target;
     [SerializeField] private HealthPoints targetHP;

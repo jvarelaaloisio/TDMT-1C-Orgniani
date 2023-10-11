@@ -81,7 +81,7 @@ MonoBehaviour:
   shootSoundEffect: {fileID: 5374128683179825908}
   hurtSoundEffect: {fileID: 6121932875212910552}
   deadSoundEffect: {fileID: 8709477984159505769}
-  _attack: {fileID: 1792660465361392223}
+  _attack: {fileID: 8137019513120073274}
   _hurtAndDeath: {fileID: 6149567213819325555}
 --- !u!82 &5374128683179825908
 AudioSource:
@@ -189,7 +189,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 09f4a9abe958fdc4a9ac308cbe54b850, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e3c7fabae8b2c0244b1737806418d675, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.2
   m_Pitch: 1
@@ -285,9 +285,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c3198f7223cc33d4c81811e7c08b18dd, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f340cf99b3187574f88d8623baee9df7, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -492,7 +492,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 2738091651036596964}
   _characterMovement: {fileID: 1116090878914013790}
-  _attack: {fileID: 1792660465361392223}
+  _attack: {fileID: 8137019513120073274}
   _hurtAndDead: {fileID: 6149567213819325555}
   animatorParameterDirX: dir_x
   animatorParameterDirY: dir_y
@@ -510,7 +510,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7142570476853464730}
   - component: {fileID: 1116090878914013790}
-  - component: {fileID: 1792660465361392223}
+  - component: {fileID: 8137019513120073274}
   - component: {fileID: 6149567213819325555}
   - component: {fileID: 6555825157712399147}
   - component: {fileID: 8023332327521035857}
@@ -556,8 +556,8 @@ MonoBehaviour:
   _direction: {x: 0, y: 0}
   _lastDirection: {x: 0, y: 0}
   currentPosition: {x: 0, y: 0}
-  gun: {fileID: 1792660465361392223}
---- !u!114 &1792660465361392223
+  gun: {fileID: 8137019513120073274}
+--- !u!114 &8137019513120073274
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -566,7 +566,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9093090905388126332}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d918eb47ff47144c8c4d9e649d97d12, type: 3}
+  m_Script: {fileID: 11500000, guid: 5cf69e53edd99ea44b3f40fdcbd16522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 390093497661218515, guid: d170409028dbd7d4ab663e03b3b18156, type: 3}
@@ -587,9 +587,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3dda84158df34942b063713c288d878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 5
-  HP: 5
+  maxHP: 3
+  HP: 3
   shouldDestroyOnDeath: 0
+  isEnemy: 0
   hurtCooldown: 1
   canHurt: 1
   _isHurt: 0

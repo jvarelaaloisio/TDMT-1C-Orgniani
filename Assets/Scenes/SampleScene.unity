@@ -508,9 +508,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: cc0cc27b1ac19e64eb4fb54a703b99cb, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 83ca8b4314d5f324faf8a00809091fce, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1921,17 +1921,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7209178835658482508, guid: 44a1f8282be3f79429721e3bd6110d88, type: 3}
   m_PrefabInstance: {fileID: 8172877282137876455}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &869748213 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5635520596940700675, guid: b223e08b901ce4a45a3369fb607c7644, type: 3}
-  m_PrefabInstance: {fileID: 334789308572899832}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d918eb47ff47144c8c4d9e649d97d12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1033073772 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1116090878914013790, guid: 44a1f8282be3f79429721e3bd6110d88, type: 3}
@@ -8279,17 +8268,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!114 &1702048369 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1792660465361392223, guid: 44a1f8282be3f79429721e3bd6110d88, type: 3}
-  m_PrefabInstance: {fileID: 8172877282137876455}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d918eb47ff47144c8c4d9e649d97d12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1702048373 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6149567213819325555, guid: 44a1f8282be3f79429721e3bd6110d88, type: 3}
@@ -8299,6 +8277,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f3dda84158df34942b063713c288d878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1702048380 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8137019513120073274, guid: 44a1f8282be3f79429721e3bd6110d88, type: 3}
+  m_PrefabInstance: {fileID: 8172877282137876455}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cf69e53edd99ea44b3f40fdcbd16522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1971848270
@@ -8455,18 +8444,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5088241470233011989, guid: b223e08b901ce4a45a3369fb607c7644, type: 3}
-      propertyPath: maxHP
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5635520596940700675, guid: b223e08b901ce4a45a3369fb607c7644, type: 3}
+    - target: {fileID: 5688766348603592924, guid: b223e08b901ce4a45a3369fb607c7644, type: 3}
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 800732834}
-    - target: {fileID: 8531780954282296190, guid: b223e08b901ce4a45a3369fb607c7644, type: 3}
-      propertyPath: _attack
-      value: 
-      objectReference: {fileID: 869748213}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8488,10 +8469,6 @@ PrefabInstance:
       propertyPath: targetHP
       value: 
       objectReference: {fileID: 1702048373}
-    - target: {fileID: 1665034760442065722, guid: 5e39a0780aae28f4395715e3bcfb3019, type: 3}
-      propertyPath: shootCooldown
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4252169121309996631, guid: 5e39a0780aae28f4395715e3bcfb3019, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.12
@@ -8532,10 +8509,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6099257096883031374, guid: 5e39a0780aae28f4395715e3bcfb3019, type: 3}
-      propertyPath: maxHP
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 6814966608332953572, guid: 5e39a0780aae28f4395715e3bcfb3019, type: 3}
       propertyPath: m_Name
       value: EnemyPlant
@@ -8553,10 +8526,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1792660465361392223, guid: 44a1f8282be3f79429721e3bd6110d88, type: 3}
-      propertyPath: animationCooldown
-      value: 0
+    - target: {fileID: 5374128683179825908, guid: 44a1f8282be3f79429721e3bd6110d88, type: 3}
+      propertyPath: m_Volume
+      value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 5374128683179825908, guid: 44a1f8282be3f79429721e3bd6110d88, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6cb634c979f67bb459f7b9c502e39511, type: 3}
     - target: {fileID: 7142570476853464730, guid: 44a1f8282be3f79429721e3bd6110d88, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -8596,6 +8573,14 @@ PrefabInstance:
     - target: {fileID: 7142570476853464730, guid: 44a1f8282be3f79429721e3bd6110d88, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137019513120073274, guid: 44a1f8282be3f79429721e3bd6110d88, type: 3}
+      propertyPath: _isShooting
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137019513120073274, guid: 44a1f8282be3f79429721e3bd6110d88, type: 3}
+      propertyPath: animationCooldown
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 9093090905388126332, guid: 44a1f8282be3f79429721e3bd6110d88, type: 3}
       propertyPath: m_Name
@@ -8661,7 +8646,7 @@ PrefabInstance:
     - target: {fileID: 8037174926634703362, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
       propertyPath: gun
       value: 
-      objectReference: {fileID: 1702048369}
+      objectReference: {fileID: 1702048380}
     - target: {fileID: 8037174926634703362, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
       propertyPath: playerHP
       value: 

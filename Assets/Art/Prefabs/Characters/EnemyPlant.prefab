@@ -121,7 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 8705046440472346466}
   _characterMovement: {fileID: 3693272513374255347}
-  _attack: {fileID: 1665034760442065722}
+  _attack: {fileID: 7058244634649062594}
   _hurtAndDead: {fileID: 6099257096883031374}
   animatorParameterDirX: dir_x
   animatorParameterDirY: dir_y
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 4252169121309996631}
   - component: {fileID: 3693272513374255347}
   - component: {fileID: 6099257096883031374}
-  - component: {fileID: 1665034760442065722}
+  - component: {fileID: 7058244634649062594}
   - component: {fileID: 672349787724419784}
   - component: {fileID: 2728723146716378809}
   - component: {fileID: 3480363291545098720}
@@ -186,7 +186,7 @@ MonoBehaviour:
   _direction: {x: 0, y: 0}
   _lastDirection: {x: 1, y: 0}
   currentPosition: {x: 0, y: 0}
-  gun: {fileID: 1665034760442065722}
+  gun: {fileID: 7058244634649062594}
 --- !u!114 &6099257096883031374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,14 +199,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3dda84158df34942b063713c288d878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 3
-  HP: 3
+  maxHP: 6
+  HP: 6
   shouldDestroyOnDeath: 0
+  isEnemy: 1
   hurtCooldown: 1
   canHurt: 1
   _isHurt: 0
   _isDead: 0
---- !u!114 &1665034760442065722
+--- !u!114 &7058244634649062594
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -215,7 +216,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6814966608332953572}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d918eb47ff47144c8c4d9e649d97d12, type: 3}
+  m_Script: {fileID: 11500000, guid: 5cf69e53edd99ea44b3f40fdcbd16522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 1911037431937360727, guid: a10202c853f450a4eb9310b0a11d58ff, type: 3}
@@ -223,7 +224,7 @@ MonoBehaviour:
   shootCooldown: 2
   canShoot: 1
   animationCooldown: 0.1
-  _isShooting: 1
+  _isShooting: 0
 --- !u!114 &672349787724419784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,7 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39bf41363b5828c44b615444edf31ef1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: {fileID: 1665034760442065722}
+  attack: {fileID: 7058244634649062594}
   enemyHP: {fileID: 6099257096883031374}
   target: {fileID: 0}
   targetHP: {fileID: 0}
@@ -365,8 +366,8 @@ MonoBehaviour:
   shootSoundEffect: {fileID: 7300226819194254363}
   hurtSoundEffect: {fileID: 1038788922998940332}
   deadSoundEffect: {fileID: 1606841387037516228}
-  _attack: {fileID: 0}
-  _hurtAndDeath: {fileID: 0}
+  _attack: {fileID: 7058244634649062594}
+  _hurtAndDeath: {fileID: 6099257096883031374}
 --- !u!82 &7300226819194254363
 AudioSource:
   m_ObjectHideFlags: 0
@@ -377,7 +378,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 434968ba424ec3f41a40764e35631b89, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d91d90654a97c1f46b6acb947a67aae3, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.2
   m_Pitch: 1

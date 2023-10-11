@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8884600967923930237}
   - component: {fileID: 5088241470233011989}
   - component: {fileID: 900381799350481143}
-  - component: {fileID: 5635520596940700675}
+  - component: {fileID: 5688766348603592924}
   - component: {fileID: 1399274091689977421}
   - component: {fileID: 1109612411721284439}
   - component: {fileID: 5575898514461483271}
@@ -56,7 +56,7 @@ MonoBehaviour:
   _direction: {x: 0, y: 0}
   _lastDirection: {x: 0, y: 0}
   currentPosition: {x: 0, y: 0}
-  gun: {fileID: 5635520596940700675}
+  gun: {fileID: 5688766348603592924}
 --- !u!114 &5088241470233011989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,9 +69,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3dda84158df34942b063713c288d878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 3
-  HP: 3
+  maxHP: 6
+  HP: 6
   shouldDestroyOnDeath: 0
+  isEnemy: 1
   hurtCooldown: 1
   canHurt: 1
   _isHurt: 0
@@ -89,7 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
---- !u!114 &5635520596940700675
+--- !u!114 &5688766348603592924
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,7 +99,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1592490965652801410}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d918eb47ff47144c8c4d9e649d97d12, type: 3}
+  m_Script: {fileID: 11500000, guid: 5cf69e53edd99ea44b3f40fdcbd16522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 390093497661218515, guid: d170409028dbd7d4ab663e03b3b18156, type: 3}
@@ -304,7 +305,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 7960843257160631558}
   _characterMovement: {fileID: 8884600967923930237}
-  _attack: {fileID: 5635520596940700675}
+  _attack: {fileID: 5688766348603592924}
   _hurtAndDead: {fileID: 5088241470233011989}
   animatorParameterDirX: dir_x
   animatorParameterDirY: dir_y
@@ -362,7 +363,7 @@ MonoBehaviour:
   shootSoundEffect: {fileID: 3934300247545673659}
   hurtSoundEffect: {fileID: 7604056126939263898}
   deadSoundEffect: {fileID: 1672330017600270136}
-  _attack: {fileID: 5635520596940700675}
+  _attack: {fileID: 5688766348603592924}
   _hurtAndDeath: {fileID: 5088241470233011989}
 --- !u!82 &3934300247545673659
 AudioSource:
