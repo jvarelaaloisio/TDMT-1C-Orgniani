@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Hazard : MonoBehaviour
 {
-    [SerializeField] private int damage = 10;
+    [SerializeField] private int damage = 1;
 
     private void OnTriggerEnter2D(Collider2D col)
     {
@@ -12,7 +12,6 @@ public class Hazard : MonoBehaviour
         GameObject playerGameObject = col.gameObject;
 
         //GetComponent busca entre los componentes y me devuelv el primero del tipo que le pedi
-
         HealthPoints playerHP = playerGameObject.GetComponent<HealthPoints>();
 
         if (playerHP != null) //es lo mismo que if(playerHP)

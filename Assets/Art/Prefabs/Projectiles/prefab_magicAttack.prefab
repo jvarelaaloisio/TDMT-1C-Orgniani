@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcc1600cf666e1143925a9dd3e6fdef9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 2
 --- !u!114 &8017764663128053043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,7 +170,11 @@ MonoBehaviour:
   maxHP: 100
   HP: 1
   shouldDestroyOnDeath: 1
-  animator: {fileID: 8347785847253296221}
+  hurtCooldown: 1
+  canHurt: 1
+  _isHurt: 0
+  _isDead: 0
+  isEnemy: 0
 --- !u!114 &6925107718335719438
 MonoBehaviour:
   m_ObjectHideFlags: 0

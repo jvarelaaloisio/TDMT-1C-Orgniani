@@ -9,6 +9,7 @@ public class HealthPoints : MonoBehaviour
     [SerializeField] public int HP = 100;
 
     [SerializeField] bool shouldDestroyOnDeath;
+    [SerializeField] bool isEnemy;
 
     [SerializeField] private float hurtCooldown = 1f;
     private float currentTime = 0;
@@ -31,11 +32,15 @@ public class HealthPoints : MonoBehaviour
 
             _isHurt = false;
         }
+
+        _isDead = false;
     }
 
     public void TakeDamage(int value)
     {
         if (!canHurt) return;
+
+        if (isEnemy && value == 1) return;
 
         HP -= value;
         _isHurt = true;
@@ -74,5 +79,6 @@ public class HealthPoints : MonoBehaviour
 
             //Destroy(gameObject, 1f); //HACE QUE SE DESTRUYAN DESPUÉS DE UN RATO
         }
+
     }
 }
