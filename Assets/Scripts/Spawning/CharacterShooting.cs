@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -27,11 +28,6 @@ public class CharacterShooting : MonoBehaviour
                 canShoot = true;
                 currentTime = 0;
             }
-
-            if (currentTime >= animationCooldown)
-            {
-                _isShooting = false;
-            }
         }
     }
 
@@ -39,16 +35,32 @@ public class CharacterShooting : MonoBehaviour
     {
         if (!canShoot) return;
 
-        if (bulletPrefab == null) return;
+        if (!bulletPrefab)
+        {
+            Debug.LogError($"{name}: bulletPrefab is null");
+        }
+
+        if (!spawnPoint)
+        {
+            Debug.LogError($"{name}: spawnPoint is null");
+        }
+
+        StartCoroutine(ShootSequence(bulletDirection));
+    }
+
+    private IEnumerator ShootSequence(Vector2 bulletDirection)
+    {
+        canShoot = false;
 
         _isShooting = true;
+
+        yield return new WaitForSeconds(animationCooldown);
 
         var bullet = Instantiate(bulletPrefab, spawnPoint.position, spawnPoint.rotation);
         var bulletMovement = bullet.GetComponent<CharacterMovement>();
 
         bulletMovement.SetDirection(bulletDirection.normalized);
-        canShoot = false;
 
+        _isShooting = false;
     }
-
 }
