@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+public delegate void VoidDelegateType();
 public class CharacterShooting : MonoBehaviour
-{ 
+{
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform spawnPoint;
 
@@ -13,11 +14,10 @@ public class CharacterShooting : MonoBehaviour
     private float currentTime = 0;
     public bool canShoot = true;
 
-    [SerializeField] private float animationCooldown = 0.1f;
-    public bool _isShooting = false;
-
     [SerializeField] private float shootDelay = 1f;
 
+    public VoidDelegateType onShoot;
+    
     [ContextMenu(itemName: "Shoot")]
 
     private void Update()
@@ -29,11 +29,6 @@ public class CharacterShooting : MonoBehaviour
             {
                 canShoot = true;
                 currentTime = 0;
-            }
-
-            if (currentTime >= animationCooldown)
-            {
-                _isShooting = false;
             }
         }
     }
@@ -59,7 +54,10 @@ public class CharacterShooting : MonoBehaviour
     {
         canShoot = false;
 
-        _isShooting = true;
+        if (onShoot != null)
+        {
+            onShoot();
+        }
 
         yield return new WaitForSeconds(shootDelay);
 
