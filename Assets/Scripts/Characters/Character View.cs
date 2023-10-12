@@ -28,18 +28,20 @@ public class CharacterView : MonoBehaviour
     private void OnEnable()
     {
         _attack.onShoot += HandleShoot;
+        _hurtAndDead.onHurt += HandleHurt;
+        _hurtAndDead.onDead += HandleDead;
     }
 
     private void OnDisable()
     {
         _attack.onShoot -= HandleShoot;
+        _hurtAndDead.onHurt -= HandleHurt;
+        _hurtAndDead.onDead -= HandleDead;
     }
 
     private void Update()
     {
         Vector2 direction = _characterMovement._direction;
-        bool isHurt = _hurtAndDead._isHurt;
-        bool isDead = _hurtAndDead._isDead;
 
         float dirX = direction.x;
         float dirY = direction.y;
@@ -52,22 +54,20 @@ public class CharacterView : MonoBehaviour
             animator.SetFloat(animatorParameterDirX, dirX);
             animator.SetFloat(animatorParameterDirY, dirY);
         }
-
-        if (isHurt)
-        {
-            animator.SetTrigger(animatorParameterHurt);
-        }
-
-        if (isDead)
-        {
-            animator.SetBool(animatorParameterIsDead, isDead);
-        }
-
-
     }
 
     private void HandleShoot()
     {
         animator.SetTrigger(animatorParameterAttack);
+    }
+
+    private void HandleHurt()
+    {
+        animator.SetTrigger(animatorParameterHurt);
+    }
+
+    private void HandleDead()
+    {
+        animator.SetBool(animatorParameterIsDead, true);
     }
 }

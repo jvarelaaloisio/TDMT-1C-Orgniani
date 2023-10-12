@@ -9,16 +9,20 @@ public class CharacterSound : MonoBehaviour
     [SerializeField] private AudioSource deadSoundEffect;
 
     [SerializeField] private CharacterShooting _attack;
-    [SerializeField] private HealthPoints _hurtAndDeath;
+    [SerializeField] private HealthPoints _hurtAndDead;
 
     private void OnEnable()
     {
         _attack.onShoot += HandleShoot;
+        _hurtAndDead.onHurt += HandleHurt;
+        _hurtAndDead.onDead += HandleDead;
     }
 
     private void OnDisable()
     {
         _attack.onShoot -= HandleShoot;
+        _hurtAndDead.onHurt -= HandleHurt;
+        _hurtAndDead.onDead -= HandleDead;
     }
 
     private void Update()
@@ -26,26 +30,22 @@ public class CharacterSound : MonoBehaviour
         if (_attack == null)
             Debug.LogError($"{name}: Gun in CharacterSound is null");
 
-        if (_hurtAndDeath == null)
+        if (_hurtAndDead == null)
             Debug.LogError($"{name}: HealthPoints in CharacterSound is null");
-
-        bool isHurt = _hurtAndDeath._isHurt;
-        bool isDead = _hurtAndDeath._isDead;
-
-        if (isHurt)
-        {
-            hurtSoundEffect.Play();
-        }
-
-        if (isDead)
-        {
-            deadSoundEffect.Play();
-        }
-
     }
 
     private void HandleShoot()
     {
         shootSoundEffect.Play();
+    }
+
+    private void HandleHurt()
+    {
+        hurtSoundEffect.Play();
+    }
+
+    private void HandleDead()
+    {
+        deadSoundEffect.Play();
     }
 }

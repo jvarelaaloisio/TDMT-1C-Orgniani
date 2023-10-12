@@ -15,8 +15,10 @@ public class HealthPoints : MonoBehaviour
     private float currentTime = 0;
     public bool canHurt = true;
 
-    public bool _isHurt = false;
-    public bool _isDead = false;
+    public VoidDelegateType onHurt;
+    public VoidDelegateType onDead;
+    //public bool _isHurt = false;
+    //public bool _isDead = false;
 
     private void Update()
     {
@@ -29,11 +31,7 @@ public class HealthPoints : MonoBehaviour
                 canHurt = true;
                 currentTime = 0;
             }
-
-            _isHurt = false;
         }
-
-        _isDead = false;
     }
 
     public void TakeDamage(int value)
@@ -43,7 +41,11 @@ public class HealthPoints : MonoBehaviour
         if (isEnemy && value == 1) return;
 
         HP -= value;
-        _isHurt = true;
+
+        if (onHurt != null)
+        {
+            onHurt();
+        }
 
         if (HP <= 0)
         {
@@ -57,7 +59,10 @@ public class HealthPoints : MonoBehaviour
     {
         Debug.LogError($"{name}: Character died!");
 
-        _isDead = true;
+        if (onDead != null)
+        {
+            onDead();
+        }
 
         if (shouldDestroyOnDeath)
         {
