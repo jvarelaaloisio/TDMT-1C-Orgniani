@@ -11,6 +11,16 @@ public class CharacterSound : MonoBehaviour
     [SerializeField] private CharacterShooting _attack;
     [SerializeField] private HealthPoints _hurtAndDeath;
 
+    private void OnEnable()
+    {
+        _attack.onShoot += HandleShoot;
+    }
+
+    private void OnDisable()
+    {
+        _attack.onShoot -= HandleShoot;
+    }
+
     private void Update()
     {
         if (_attack == null)
@@ -19,14 +29,8 @@ public class CharacterSound : MonoBehaviour
         if (_hurtAndDeath == null)
             Debug.LogError($"{name}: HealthPoints in CharacterSound is null");
 
-        bool isShooting = _attack._isShooting;
         bool isHurt = _hurtAndDeath._isHurt;
         bool isDead = _hurtAndDeath._isDead;
-
-        if (isShooting)
-        {
-            shootSoundEffect.Play();
-        }
 
         if (isHurt)
         {
@@ -38,5 +42,10 @@ public class CharacterSound : MonoBehaviour
             deadSoundEffect.Play();
         }
 
+    }
+
+    private void HandleShoot()
+    {
+        shootSoundEffect.Play();
     }
 }

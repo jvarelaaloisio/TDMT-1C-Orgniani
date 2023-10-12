@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,10 +25,19 @@ public class CharacterView : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
+    private void OnEnable()
+    {
+        _attack.onShoot += HandleShoot;
+    }
+
+    private void OnDisable()
+    {
+        _attack.onShoot -= HandleShoot;
+    }
+
     private void Update()
     {
         Vector2 direction = _characterMovement._direction;
-        bool isShooting = _attack._isShooting;
         bool isHurt = _hurtAndDead._isHurt;
         bool isDead = _hurtAndDead._isDead;
 
@@ -43,11 +53,6 @@ public class CharacterView : MonoBehaviour
             animator.SetFloat(animatorParameterDirY, dirY);
         }
 
-        if (isShooting)
-        {
-            animator.SetTrigger(animatorParameterAttack);
-        }
-
         if (isHurt)
         {
             animator.SetTrigger(animatorParameterHurt);
@@ -59,5 +64,10 @@ public class CharacterView : MonoBehaviour
         }
 
 
+    }
+
+    private void HandleShoot()
+    {
+        animator.SetTrigger(animatorParameterAttack);
     }
 }
