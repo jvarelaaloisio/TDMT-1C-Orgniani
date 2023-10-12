@@ -8513,6 +8513,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyPlant
       objectReference: {fileID: 0}
+    - target: {fileID: 7058244634649062594, guid: 5e39a0780aae28f4395715e3bcfb3019, type: 3}
+      propertyPath: animationCooldown
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

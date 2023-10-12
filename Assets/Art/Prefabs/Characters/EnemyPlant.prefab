@@ -166,8 +166,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5866926404302062413}
-  - {fileID: 134002570887227319}
   - {fileID: 4012554709871225883}
+  - {fileID: 134002570887227319}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3693272513374255347
@@ -225,6 +225,7 @@ MonoBehaviour:
   canShoot: 1
   animationCooldown: 0.1
   _isShooting: 0
+  shootDelay: 1
 --- !u!114 &672349787724419784
 MonoBehaviour:
   m_ObjectHideFlags: 0

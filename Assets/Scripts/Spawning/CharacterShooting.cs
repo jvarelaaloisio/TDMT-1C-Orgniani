@@ -16,6 +16,8 @@ public class CharacterShooting : MonoBehaviour
     [SerializeField] private float animationCooldown = 0.1f;
     public bool _isShooting = false;
 
+    [SerializeField] private float shootDelay = 1f;
+
     [ContextMenu(itemName: "Shoot")]
 
     private void Update()
@@ -27,6 +29,11 @@ public class CharacterShooting : MonoBehaviour
             {
                 canShoot = true;
                 currentTime = 0;
+            }
+
+            if (currentTime >= animationCooldown)
+            {
+                _isShooting = false;
             }
         }
     }
@@ -54,13 +61,11 @@ public class CharacterShooting : MonoBehaviour
 
         _isShooting = true;
 
-        yield return new WaitForSeconds(animationCooldown);
+        yield return new WaitForSeconds(shootDelay);
 
         var bullet = Instantiate(bulletPrefab, spawnPoint.position, spawnPoint.rotation);
         var bulletMovement = bullet.GetComponent<CharacterMovement>();
 
         bulletMovement.SetDirection(bulletDirection.normalized);
-
-        _isShooting = false;
     }
 }
