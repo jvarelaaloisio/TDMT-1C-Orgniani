@@ -150,9 +150,6 @@ MonoBehaviour:
   shouldDestroyOnDeath: 1
   isEnemy: 0
   hurtCooldown: 1
-  canHurt: 1
-  _isHurt: 0
-  _isDead: 0
 --- !u!114 &245209939309430626
 MonoBehaviour:
   m_ObjectHideFlags: 0

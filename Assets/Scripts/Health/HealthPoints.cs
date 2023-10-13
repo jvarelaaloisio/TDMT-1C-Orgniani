@@ -8,17 +8,15 @@ public class HealthPoints : MonoBehaviour
     [SerializeField] public int maxHP = 100;
     [SerializeField] public int HP = 100;
 
-    [SerializeField] bool shouldDestroyOnDeath;
-    [SerializeField] bool isEnemy;
+    [SerializeField] private bool shouldDestroyOnDeath;
+    [SerializeField] private bool isEnemy;
 
     [SerializeField] private float hurtCooldown = 1f;
     private float currentTime = 0;
-    public bool canHurt = true;
+    private bool canHurt = true;
 
     public VoidDelegateType onHurt;
     public VoidDelegateType onDead;
-    //public bool _isHurt = false;
-    //public bool _isDead = false;
 
     private void Update()
     {
@@ -75,14 +73,9 @@ public class HealthPoints : MonoBehaviour
         {
             GetComponent<Collider2D>().enabled = false;
             GetComponent<CharacterMovement>().enabled = false;
-
-            if (GetComponent<CommonEnemy>() != null) GetComponent<CommonEnemy>().enabled = false;
-
             GetComponent<CharacterShooting>().enabled = false;
 
-            //this.enabled = false;
-
-            //Destroy(gameObject, 1f); //HACE QUE SE DESTRUYAN DESPUÉS DE UN RATO
+            if (GetComponent<CommonEnemy>() != null) GetComponent<CommonEnemy>().enabled = false;
         }
 
     }

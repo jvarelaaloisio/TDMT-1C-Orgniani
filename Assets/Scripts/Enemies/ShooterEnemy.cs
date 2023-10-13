@@ -6,6 +6,7 @@ public class ShooterEnemy : MonoBehaviour
 {
     [SerializeField] private CharacterShooting attack;
     [SerializeField] private HealthPoints enemyHP;
+
     [SerializeField] private CharacterMovement target;
     [SerializeField] private HealthPoints targetHP;
 
@@ -15,7 +16,7 @@ public class ShooterEnemy : MonoBehaviour
         {
             if (attack == null)
             {
-                Debug.LogError($"{name}: Gun is null! </3");
+                Debug.LogError($"{name}: CharacterShooting is null!");
                 return;
             }
 
