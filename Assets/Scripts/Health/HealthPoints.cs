@@ -76,6 +76,11 @@ public class HealthPoints : MonoBehaviour
             GetComponent<CharacterShooting>().enabled = false;
 
             if (GetComponent<CommonEnemy>() != null) GetComponent<CommonEnemy>().enabled = false;
+
+            if(isEnemy)
+            {
+                Destroy(gameObject, 2f);
+            }
         }
 
     }
