@@ -77,9 +77,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingLayerID: -1794255543
+  m_SortingLayer: 2
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 636d9423561dbc64b9338d5deb954477, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -107,7 +107,7 @@ MonoBehaviour:
   _direction: {x: 0, y: 0}
   _lastDirection: {x: 0, y: 0}
   currentPosition: {x: 0, y: 0}
-  gun: {fileID: 7058244634649062594, guid: 5e39a0780aae28f4395715e3bcfb3019, type: 3}
+  characterShooting: {fileID: 7058244634649062594, guid: 5e39a0780aae28f4395715e3bcfb3019, type: 3}
 --- !u!114 &8072164450916358482
 MonoBehaviour:
   m_ObjectHideFlags: 0

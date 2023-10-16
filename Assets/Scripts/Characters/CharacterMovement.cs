@@ -12,7 +12,7 @@ public class CharacterMovement : MonoBehaviour
 
     public Vector2 currentPosition;
 
-    [SerializeField] private CharacterShooting gun;
+    [SerializeField] private CharacterShooting characterShooting;
 
     private void Start()
     {
@@ -20,10 +20,10 @@ public class CharacterMovement : MonoBehaviour
     }
     private void Update()
     {
-        if(gun == null)
-            Debug.LogError($"{name}: Gun in CHARACTER MOVEMENT is NULL");
+        if(characterShooting == null)
+            Debug.LogError($"{name}: CharacterShooting in CharacterMovement is NULL");
 
-        if (gun.canShoot)
+        if (characterShooting.canShoot)
         {
             transform.position = transform.position + speed * Time.deltaTime * new Vector3(_direction.x, _direction.y);
             currentPosition = transform.position;
