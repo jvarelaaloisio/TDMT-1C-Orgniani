@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5b7e32f3bfce1a34f8a22447078a7b1a
+guid: 6a5ee099ee85fc343b50be4b6448ca6d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,43 +123,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: flooring_0
+      name: Hit_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 48
-        height: 48
+        width: 40
+        height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f9d8bb6a35101145bb51f8829bf0753
-      internalID: -392478267
+      spriteID: 7320b095f3b30ee4abacbec6995264ba
+      internalID: -929296545
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: flooring_1
+      name: Hit_1
       rect:
         serializedVersion: 2
-        x: 48
-        y: 16
-        width: 32
-        height: 32
+        x: 40
+        y: 0
+        width: 40
+        height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a084036f2a4b89544b74fe6cec7de915
-      internalID: -1011325494
+      spriteID: 743a4b7b6ea327b4f82f81655a604947
+      internalID: 1733342843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit_2
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78685efd527b6834c95e1917c8309fa6
+      internalID: 1782176318
       vertices: []
       indices: 
       edges: []
@@ -175,8 +196,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      flooring_0: -392478267
-      flooring_1: -1011325494
+      Hit_0: -929296545
+      Hit_1: 1733342843
+      Hit_2: 1782176318
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5b7e32f3bfce1a34f8a22447078a7b1a
+guid: a2311d33523ec9546aef5a8635ed743a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,43 +123,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: flooring_0
+      name: Attack_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 48
-        height: 48
+        width: 40
+        height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f9d8bb6a35101145bb51f8829bf0753
-      internalID: -392478267
+      spriteID: 7888e676973f6104fa0bca695465d24c
+      internalID: 1561131220
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: flooring_1
+      name: Attack_1
       rect:
         serializedVersion: 2
-        x: 48
-        y: 16
-        width: 32
-        height: 32
+        x: 40
+        y: 0
+        width: 40
+        height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a084036f2a4b89544b74fe6cec7de915
-      internalID: -1011325494
+      spriteID: 8fcbf03cb1f8dd149b3b11bc062962a3
+      internalID: 927486054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack_2
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bcdbb42f69806e4ea631c8df4171527
+      internalID: 23561095
       vertices: []
       indices: 
       edges: []
@@ -175,8 +196,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      flooring_0: -392478267
-      flooring_1: -1011325494
+      Attack_0: 1561131220
+      Attack_1: 927486054
+      Attack_2: 23561095
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

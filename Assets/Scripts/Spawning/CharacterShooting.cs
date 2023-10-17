@@ -10,7 +10,7 @@ public class CharacterShooting : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform spawnPoint;
 
-    [SerializeField] private float shootCooldown = 1f;
+    public float shootCooldown = 1f;
     private float currentTime = 0;
     public bool canShoot = true;
 
