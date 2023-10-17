@@ -8,6 +8,8 @@ public class InputReader : MonoBehaviour
     [SerializeField] private CharacterMovement characterMovement;
     [SerializeField] private CharacterShooting gun;
 
+    [SerializeField] private GameOverScreen gameOverScreen;
+
     [SerializeField] private HealthPoints playerHP;
 
     public void SetMovementValue(InputAction.CallbackContext inputContext)
@@ -21,6 +23,11 @@ public class InputReader : MonoBehaviour
             characterMovement.SetDirection(inputValue);
 
             Debug.Log($"{gameObject.name}: Event risen. Value: {inputValue}");
+        }
+
+        else
+        {
+            gameOverScreen.Setup();
         }
     }
 
