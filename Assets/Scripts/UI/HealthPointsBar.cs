@@ -23,7 +23,6 @@ public class HealthPointsBar : MonoBehaviour
 
     private void Update()
     {
-        //bar.fillAmount = 1.0f * healthPoints.HP / healthPoints.maxHP;
         int heartFill = playerHP.HP;
 
         foreach(Image i in hearts)

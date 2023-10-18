@@ -28,6 +28,7 @@ public class CharacterMovement : MonoBehaviour
             transform.position = transform.position + speed * Time.deltaTime * new Vector3(_direction.x, _direction.y);
             currentPosition = transform.position;
         }
+
     }
 
     public void SetDirection(Vector2 direction)

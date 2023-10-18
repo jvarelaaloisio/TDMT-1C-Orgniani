@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class InputReader : MonoBehaviour
 {
     [SerializeField] private CharacterMovement characterMovement;
-    [SerializeField] private CharacterShooting gun;
+    [SerializeField] private CharacterShooting characterShooting;
 
     [SerializeField] private GameOverScreen gameOverScreen;
 
@@ -36,13 +36,13 @@ public class InputReader : MonoBehaviour
         if (inputContext.started && playerHP.HP > 0)
         {
             //NULL CHECK
-            if (gun == null)
+            if (characterShooting == null)
             {
-                Debug.LogError($"{name}: Gun is null! </3");
+                Debug.LogError($"{name}: CharacterShooting is null! </3");
                 return;
             }
 
-            gun.Shoot(characterMovement._lastDirection);
+            characterShooting.Shoot(characterMovement._lastDirection);
         }
     }
 }
