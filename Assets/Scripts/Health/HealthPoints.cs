@@ -82,6 +82,5 @@ public class HealthPoints : MonoBehaviour
                 Destroy(gameObject, 2f);
             }
         }
-
     }
 }

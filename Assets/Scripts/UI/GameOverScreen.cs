@@ -18,6 +18,6 @@ public class GameOverScreen : MonoBehaviour
 
     public void BackToMenuButton()
     {
-
+        SceneManager.LoadScene(0);
     }
 }

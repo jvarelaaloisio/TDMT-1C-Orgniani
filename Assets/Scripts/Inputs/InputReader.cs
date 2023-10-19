@@ -24,11 +24,6 @@ public class InputReader : MonoBehaviour
 
             Debug.Log($"{gameObject.name}: Event risen. Value: {inputValue}");
         }
-
-        else
-        {
-            gameOverScreen.Setup();
-        }
     }
 
     public void Shoot(InputAction.CallbackContext inputContext)

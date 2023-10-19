@@ -104,6 +104,8 @@ MonoBehaviour:
   shootCooldown: 1
   canShoot: 1
   shootDelay: 1
+  bulletDelay: 0.3
+  bulletAmount: 1
 --- !u!114 &1399274091689977421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,7 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterMovement: {fileID: 8884600967923930237}
   target: {fileID: 0}
-  startFollowingDistance: 4
+  startFollowingDistance: 10
 --- !u!50 &1109612411721284439
 Rigidbody2D:
   serializedVersion: 4

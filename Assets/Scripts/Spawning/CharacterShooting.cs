@@ -16,6 +16,9 @@ public class CharacterShooting : MonoBehaviour
 
     [SerializeField] private float shootDelay = 1f;
 
+    [SerializeField] private float bulletDelay = 0.3f;
+    [SerializeField] private int bulletAmount = 1;
+
     public VoidDelegateType onShoot;
     
     [ContextMenu(itemName: "Shoot")]
@@ -51,6 +54,25 @@ public class CharacterShooting : MonoBehaviour
         StartCoroutine(ShootSequence(bulletDirection));
     }
 
+    public void BossShoot(Vector2 bulletDirection, Vector2 bulletDirection2, Vector2 bulletDirection3)
+    {
+        if (!canShoot) return;
+
+        if (!bulletPrefab)
+        {
+            Debug.LogError($"{name}: bulletPrefab is null");
+        }
+
+        if (!spawnPoint)
+        {
+            Debug.LogError($"{name}: spawnPoint is null");
+        }
+
+        StartCoroutine(ShootSequence(bulletDirection));
+        StartCoroutine(ShootSequence(bulletDirection2));
+        StartCoroutine(ShootSequence(bulletDirection3));
+    }
+
     private IEnumerator ShootSequence(Vector2 bulletDirection)
     {
         canShoot = false;
@@ -62,9 +84,14 @@ public class CharacterShooting : MonoBehaviour
 
         yield return new WaitForSeconds(shootDelay);
 
-        var bullet = Instantiate(bulletPrefab, spawnPoint.position, spawnPoint.rotation);
-        var bulletMovement = bullet.GetComponent<CharacterMovement>();
+        for (int i = 0; i < bulletAmount; i++)
+        {
+            var bullet = Instantiate(bulletPrefab, spawnPoint.position, spawnPoint.rotation);
+            var bulletMovement = bullet.GetComponent<CharacterMovement>();
 
-        bulletMovement.SetDirection(bulletDirection.normalized);
+            bulletMovement.SetDirection(bulletDirection.normalized);
+
+            yield return new WaitForSeconds(bulletDelay);
+        }
     }
 }
