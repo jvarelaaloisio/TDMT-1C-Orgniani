@@ -186,7 +186,7 @@ MonoBehaviour:
   _direction: {x: 0, y: 0}
   _lastDirection: {x: 1, y: 0}
   currentPosition: {x: 0, y: 0}
-  gun: {fileID: 7058244634649062594}
+  characterShooting: {fileID: 0}
 --- !u!114 &6099257096883031374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,12 +201,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 6
   HP: 6
-  shouldDestroyOnDeath: 0
+  shouldDestroyOnDeath: 1
   isEnemy: 1
   hurtCooldown: 1
-  canHurt: 1
-  _isHurt: 0
-  _isDead: 0
 --- !u!114 &7058244634649062594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,9 +220,9 @@ MonoBehaviour:
   spawnPoint: {fileID: 134002570887227319}
   shootCooldown: 2
   canShoot: 1
-  animationCooldown: 0.1
-  _isShooting: 0
   shootDelay: 1
+  bulletDelay: 0.3
+  bulletAmount: 1
 --- !u!114 &672349787724419784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,6 +239,7 @@ MonoBehaviour:
   enemyHP: {fileID: 6099257096883031374}
   target: {fileID: 0}
   targetHP: {fileID: 0}
+  startShootingDistance: 4
 --- !u!114 &2728723146716378809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,7 +366,7 @@ MonoBehaviour:
   hurtSoundEffect: {fileID: 1038788922998940332}
   deadSoundEffect: {fileID: 1606841387037516228}
   _attack: {fileID: 7058244634649062594}
-  _hurtAndDeath: {fileID: 6099257096883031374}
+  _hurtAndDead: {fileID: 0}
 --- !u!82 &7300226819194254363
 AudioSource:
   m_ObjectHideFlags: 0

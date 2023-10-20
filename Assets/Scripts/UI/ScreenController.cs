@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class ScreenController : MonoBehaviour
 {
-    [SerializeField] HealthPoints characterHP;
+    [SerializeField] private HealthPoints characterHP;
     [SerializeField] private GameOverScreen screen;
+    [SerializeField] private AudioSource gameMusic;
 
     private void Update()
     {
         if (characterHP.HP <= 0)
         {
             screen.Setup();
+            gameMusic.Stop();
         }
     }
 }
