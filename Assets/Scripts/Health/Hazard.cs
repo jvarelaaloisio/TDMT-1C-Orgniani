@@ -15,8 +15,5 @@ public class Hazard : MonoBehaviour
 
         if (playerHP)
             playerHP.TakeDamage(damage);
-
-        else
-            Debug.LogError($"{name}: Character HP is null");
     }
 }

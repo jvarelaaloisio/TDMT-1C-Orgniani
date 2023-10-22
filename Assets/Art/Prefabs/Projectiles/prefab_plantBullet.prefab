@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 1578823739728347490}
   - component: {fileID: -8798103180021265488}
   - component: {fileID: 8072164450916358482}
-  - component: {fileID: -2447627438937191304}
   - component: {fileID: 9014875052311099373}
+  - component: {fileID: -2447627438937191304}
   - component: {fileID: 245209939309430626}
   - component: {fileID: -2004984052537711313}
   - component: {fileID: 2472340704482738711}
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1794255543
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 636d9423561dbc64b9338d5deb954477, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -104,10 +104,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  _direction: {x: 0, y: 0}
-  _lastDirection: {x: 0, y: 0}
+  direction: {x: 0, y: 0}
+  lastDirection: {x: 0, y: 0}
   currentPosition: {x: 0, y: 0}
-  characterShooting: {fileID: 7058244634649062594, guid: 5e39a0780aae28f4395715e3bcfb3019, type: 3}
+  attack: {fileID: 7058244634649062594, guid: 5e39a0780aae28f4395715e3bcfb3019, type: 3}
 --- !u!114 &8072164450916358482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,19 +120,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd54d7589b329684b82ea0ac932f310f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-2447627438937191304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1911037431937360727}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcc1600cf666e1143925a9dd3e6fdef9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
 --- !u!114 &9014875052311099373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,6 +137,20 @@ MonoBehaviour:
   shouldDestroyOnDeath: 1
   isEnemy: 0
   hurtCooldown: 1
+  deactivateDelay: 2
+--- !u!114 &-2447627438937191304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911037431937360727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc1600cf666e1143925a9dd3e6fdef9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!114 &245209939309430626
 MonoBehaviour:
   m_ObjectHideFlags: 0

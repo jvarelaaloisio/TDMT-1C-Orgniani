@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class HealthPointsBar : MonoBehaviour
 {
-    //[SerializeField] private Image bar;
-
     [SerializeField] private HealthPoints playerHP;
 
     [SerializeField] private GameObject heart;

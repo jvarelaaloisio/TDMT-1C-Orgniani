@@ -8,9 +8,9 @@ using UnityEngine;
 public class CharacterView : MonoBehaviour
 {
     [SerializeField] private Animator animator;
-    [SerializeField] private CharacterMovement _characterMovement;
-    [SerializeField] private CharacterShooting _attack;
-    [SerializeField] private HealthPoints _hurtAndDead;
+    [SerializeField] private CharacterMovement characterMovement;
+    [SerializeField] private CharacterShooting attack;
+    [SerializeField] private HealthPoints hurtAndDead;
 
     [SerializeField] private string animatorParameterDirX = "dir_x";
     [SerializeField] private string animatorParameterDirY = "dir_y";
@@ -27,21 +27,21 @@ public class CharacterView : MonoBehaviour
 
     private void OnEnable()
     {
-        _attack.onShoot += HandleShoot;
-        _hurtAndDead.onHurt += HandleHurt;
-        _hurtAndDead.onDead += HandleDead;
+        attack.onShoot += HandleShoot;
+        hurtAndDead.onHurt += HandleHurt;
+        hurtAndDead.onDead += HandleDead;
     }
 
     private void OnDisable()
     {
-        _attack.onShoot -= HandleShoot;
-        _hurtAndDead.onHurt -= HandleHurt;
-        _hurtAndDead.onDead -= HandleDead;
+        attack.onShoot -= HandleShoot;
+        hurtAndDead.onHurt -= HandleHurt;
+        hurtAndDead.onDead -= HandleDead;
     }
 
     private void Update()
     {
-        Vector2 direction = _characterMovement._direction;
+        Vector2 direction = characterMovement.direction;
 
         float dirX = direction.x;
         float dirY = direction.y;

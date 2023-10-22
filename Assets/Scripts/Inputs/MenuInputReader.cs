@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -7,6 +8,7 @@ using UnityEngine.UI;
 public class MenuInputReader : MonoBehaviour
 {
     [SerializeField] GameObject creditsScreen;
+    [SerializeField] Button button;
 
     public void StartButton()
     {

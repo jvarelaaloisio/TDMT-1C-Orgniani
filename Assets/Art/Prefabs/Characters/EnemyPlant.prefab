@@ -120,9 +120,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 8705046440472346466}
-  _characterMovement: {fileID: 3693272513374255347}
-  _attack: {fileID: 7058244634649062594}
-  _hurtAndDead: {fileID: 6099257096883031374}
+  characterMovement: {fileID: 3693272513374255347}
+  attack: {fileID: 7058244634649062594}
+  hurtAndDead: {fileID: 6099257096883031374}
   animatorParameterDirX: dir_x
   animatorParameterDirY: dir_y
   animatorParameterIsMoving: is_moving
@@ -139,10 +139,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4252169121309996631}
   - component: {fileID: 3693272513374255347}
-  - component: {fileID: 6099257096883031374}
   - component: {fileID: 7058244634649062594}
-  - component: {fileID: 672349787724419784}
+  - component: {fileID: 6099257096883031374}
   - component: {fileID: 2728723146716378809}
+  - component: {fileID: 672349787724419784}
   - component: {fileID: 3480363291545098720}
   - component: {fileID: 7937071500039485528}
   m_Layer: 7
@@ -183,28 +183,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  _direction: {x: 0, y: 0}
-  _lastDirection: {x: 1, y: 0}
+  direction: {x: 0, y: 0}
+  lastDirection: {x: 0, y: 0}
   currentPosition: {x: 0, y: 0}
-  characterShooting: {fileID: 0}
---- !u!114 &6099257096883031374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6814966608332953572}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3dda84158df34942b063713c288d878, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHP: 6
-  HP: 6
-  shouldDestroyOnDeath: 0
-  isEnemy: 1
-  hurtCooldown: 0.5
-  deactivateDelay: 0
+  attack: {fileID: 7058244634649062594}
 --- !u!114 &7058244634649062594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,6 +206,37 @@ MonoBehaviour:
   shootDelay: 1
   bulletDelay: 0.3
   bulletAmount: 1
+--- !u!114 &6099257096883031374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6814966608332953572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3dda84158df34942b063713c288d878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 6
+  HP: 6
+  shouldDestroyOnDeath: 0
+  isEnemy: 1
+  hurtCooldown: 0.5
+  deactivateDelay: 0
+--- !u!114 &2728723146716378809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6814966608332953572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc1600cf666e1143925a9dd3e6fdef9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!114 &672349787724419784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,22 +251,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attack: {fileID: 7058244634649062594}
   enemyHP: {fileID: 6099257096883031374}
-  target: {fileID: 0}
+  targetPosition: {fileID: 0}
   targetHP: {fileID: 0}
   startShootingDistance: 4
---- !u!114 &2728723146716378809
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6814966608332953572}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcc1600cf666e1143925a9dd3e6fdef9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
 --- !u!50 &3480363291545098720
 Rigidbody2D:
   serializedVersion: 4
@@ -366,8 +366,8 @@ MonoBehaviour:
   shootSoundEffect: {fileID: 7300226819194254363}
   hurtSoundEffect: {fileID: 1038788922998940332}
   deadSoundEffect: {fileID: 1606841387037516228}
-  _attack: {fileID: 7058244634649062594}
-  _hurtAndDead: {fileID: 0}
+  attack: {fileID: 7058244634649062594}
+  hurtAndDead: {fileID: 6099257096883031374}
 --- !u!82 &7300226819194254363
 AudioSource:
   m_ObjectHideFlags: 0

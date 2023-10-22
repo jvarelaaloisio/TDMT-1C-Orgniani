@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7209178835658482508}
   m_Layer: 0
-  m_Name: GunPoint
+  m_Name: ShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,8 +81,8 @@ MonoBehaviour:
   shootSoundEffect: {fileID: 5374128683179825908}
   hurtSoundEffect: {fileID: 6121932875212910552}
   deadSoundEffect: {fileID: 8709477984159505769}
-  _attack: {fileID: 8137019513120073274}
-  _hurtAndDead: {fileID: 6149567213819325555}
+  attack: {fileID: 8137019513120073274}
+  hurtAndDead: {fileID: 6149567213819325555}
 --- !u!82 &5374128683179825908
 AudioSource:
   m_ObjectHideFlags: 0
@@ -491,9 +491,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 2738091651036596964}
-  _characterMovement: {fileID: 1116090878914013790}
-  _attack: {fileID: 8137019513120073274}
-  _hurtAndDead: {fileID: 6149567213819325555}
+  characterMovement: {fileID: 1116090878914013790}
+  attack: {fileID: 8137019513120073274}
+  hurtAndDead: {fileID: 6149567213819325555}
   animatorParameterDirX: dir_x
   animatorParameterDirY: dir_y
   animatorParameterIsMoving: is_moving
@@ -553,10 +553,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  _direction: {x: 0, y: 0}
-  _lastDirection: {x: 0, y: 0}
+  direction: {x: 0, y: 0}
+  lastDirection: {x: 0, y: 0}
   currentPosition: {x: 0, y: 0}
-  characterShooting: {fileID: 0}
+  attack: {fileID: 8137019513120073274}
 --- !u!114 &8137019513120073274
 MonoBehaviour:
   m_ObjectHideFlags: 0

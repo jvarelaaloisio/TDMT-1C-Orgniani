@@ -7,7 +7,7 @@ public class BossEnemy : MonoBehaviour
     [SerializeField] private CharacterShooting attack;
     [SerializeField] private HealthPoints enemyHP;
 
-    [SerializeField] private CharacterMovement target;
+    [SerializeField] private CharacterMovement targetPosition;
     [SerializeField] private HealthPoints targetHP;
 
     [SerializeField] private List<GameObject> frogs;
@@ -30,16 +30,16 @@ public class BossEnemy : MonoBehaviour
             return;
         }
 
-        if (target == null)
+        if (targetPosition == null)
             Debug.LogError($"{name}: Target is null!");
 
         else
         {
             Vector2 currentPosition = transform.position;
 
-            Vector2 nextPosition = target.currentPosition;
-            Vector2 nextPosition2 = target.currentPosition - new Vector2(3, 0);
-            Vector2 nextPosition3 = target.currentPosition + new Vector2(3, 0);
+            Vector2 nextPosition = targetPosition.currentPosition;
+            Vector2 nextPosition2 = targetPosition.currentPosition - new Vector2(3, 0);
+            Vector2 nextPosition3 = targetPosition.currentPosition + new Vector2(3, 0);
 
             Vector2 directionToNextPos = nextPosition - currentPosition;
             Vector2 directionToNextPos2 = nextPosition2 - currentPosition;

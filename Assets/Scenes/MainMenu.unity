@@ -331,6 +331,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   creditsScreen: {fileID: 863369394}
+  button: {fileID: 0}
 --- !u!1 &1650839819
 GameObject:
   m_ObjectHideFlags: 0
