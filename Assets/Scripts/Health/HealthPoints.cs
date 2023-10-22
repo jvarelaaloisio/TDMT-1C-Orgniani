@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics;
 
 public class HealthPoints : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class HealthPoints : MonoBehaviour
     [SerializeField] private float hurtCooldown = 1f;
     private float currentTime = 0;
     private bool canHurt = true;
+
+    [SerializeField] private float deactivateDelay = 2f;
 
     public VoidDelegateType onHurt;
     public VoidDelegateType onDead;
@@ -64,8 +67,6 @@ public class HealthPoints : MonoBehaviour
 
         if (shouldDestroyOnDeath)
         {
-            //Destroy(gameObject.GetComponent<CapsuleCollider2D>());
-            //Destroy(gameObject, 0.5f); HACE QUE SE DESTRUYAN DESPUÉS DE UN RATO
             Destroy(gameObject);
         }
 
@@ -79,8 +80,15 @@ public class HealthPoints : MonoBehaviour
 
             if(isEnemy)
             {
-                Destroy(gameObject, 2f);
+                StartCoroutine(Deactivate());
             }
         }
+    }
+
+    private IEnumerator Deactivate()
+    {
+        yield return new WaitForSeconds(deactivateDelay);
+
+        gameObject.SetActive(false);
     }
 }

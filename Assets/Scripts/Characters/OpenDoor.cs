@@ -8,7 +8,7 @@ public class OpenDoor : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private List<GameObject> enemies;
 
-    [SerializeField] private AudioSource openSoundEffect;
+    [SerializeField] private AudioSource winLevelSoundEffect;
 
     private int currentSpriteIndex;
     private bool isOpen= false;
@@ -18,7 +18,7 @@ public class OpenDoor : MonoBehaviour
         if (sprites.Count < 1)
         {
             Debug.LogError($"{name}: No sprites were found." +
-                $"\n Disabling component"); // \n SIGNIFICA ENTER
+                $"\n Disabling component");
             enabled = false;
         }
     }
@@ -44,7 +44,7 @@ public class OpenDoor : MonoBehaviour
 
             GetComponent<Collider2D>().enabled = false;
 
-            openSoundEffect.Play();
+            winLevelSoundEffect.Play();
         }
     }
 
@@ -52,10 +52,8 @@ public class OpenDoor : MonoBehaviour
     {
         foreach (GameObject enemy in enemies)
         {
-            if (enemy == null)
-            {
+            if (enemy.GetComponent<Collider2D>().enabled == false)
                 enemies.Remove(enemy);
-            }
         }
     }
 }

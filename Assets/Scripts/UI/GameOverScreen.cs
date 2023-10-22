@@ -7,8 +7,6 @@ using UnityEngine.SceneManagement;
 public class GameOverScreen : MonoBehaviour
 {
     [SerializeField] PauseScreen pauseScreen;
-    [SerializeField] GameObject crossSound;
-    private bool isMute = false;
 
     public void Setup()
     {
@@ -28,22 +26,5 @@ public class GameOverScreen : MonoBehaviour
     public void PauseButton()
     {
         pauseScreen.PauseGame();
-    }
-
-    public void MuteButton()
-    {
-        if (!isMute)
-        {
-            AudioListener.volume = 0f;
-            isMute = true;
-            crossSound.SetActive(true);
-        }
-
-        else
-        {
-            AudioListener.volume = 1f;
-            isMute = false;
-            crossSound.SetActive(false);
-        }
     }
 }

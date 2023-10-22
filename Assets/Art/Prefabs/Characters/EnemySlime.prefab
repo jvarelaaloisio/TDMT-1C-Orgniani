@@ -73,7 +73,8 @@ MonoBehaviour:
   HP: 6
   shouldDestroyOnDeath: 0
   isEnemy: 1
-  hurtCooldown: 1
+  hurtCooldown: 0.5
+  deactivateDelay: 2
 --- !u!114 &900381799350481143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,6 +105,8 @@ MonoBehaviour:
   shootCooldown: 1
   canShoot: 1
   shootDelay: 1
+  bulletDelay: 0.3
+  bulletAmount: 1
 --- !u!114 &1399274091689977421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,9 +256,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingLayerID: 1203637841
+  m_SortingLayer: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 2102737906, guid: d30ff5f1a0f06ed4fb33fd359dc15ae4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

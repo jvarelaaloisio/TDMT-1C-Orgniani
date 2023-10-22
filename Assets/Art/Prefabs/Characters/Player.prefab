@@ -444,8 +444,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1518464631
-  m_SortingLayer: 3
-  m_SortingOrder: 10
+  m_SortingLayer: 5
+  m_SortingOrder: 0
   m_Sprite: {fileID: 863358701, guid: 8ee44b8cde0958c42928e037b393fd1c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -574,6 +574,8 @@ MonoBehaviour:
   shootCooldown: 0.5
   canShoot: 1
   shootDelay: 1
+  bulletDelay: 0.3
+  bulletAmount: 1
 --- !u!114 &6149567213819325555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -591,6 +593,7 @@ MonoBehaviour:
   shouldDestroyOnDeath: 0
   isEnemy: 0
   hurtCooldown: 1
+  deactivateDelay: 2
 --- !u!114 &6555825157712399147
 MonoBehaviour:
   m_ObjectHideFlags: 0

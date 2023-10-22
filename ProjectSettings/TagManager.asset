@@ -47,6 +47,12 @@ TagManager:
   - name: Enemy
     uniqueID: 1203637841
     locked: 0
+  - name: Wall
+    uniqueID: 1293955515
+    locked: 0
+  - name: Boss
+    uniqueID: 4001539017
+    locked: 0
   - name: Bullet
     uniqueID: 2500711753
     locked: 0

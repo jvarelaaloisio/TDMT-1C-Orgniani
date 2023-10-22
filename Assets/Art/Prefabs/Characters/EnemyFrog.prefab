@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68733490d7c816c4c84ab9838ad5201d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 2
   _direction: {x: 0, y: 0}
   _lastDirection: {x: 0, y: 0}
   currentPosition: {x: 0, y: 0}
@@ -71,9 +71,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 2
   HP: 2
-  shouldDestroyOnDeath: 1
+  shouldDestroyOnDeath: 0
   isEnemy: 1
-  hurtCooldown: 1
+  hurtCooldown: 0.5
+  deactivateDelay: 0
 --- !u!114 &900381799350481143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,9 +256,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingLayerID: 1203637841
+  m_SortingLayer: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 280009591, guid: bcf827977c6cea844a8bec5a625fb477, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

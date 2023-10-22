@@ -10,15 +10,19 @@ public class BossEnemy : MonoBehaviour
     [SerializeField] private CharacterMovement target;
     [SerializeField] private HealthPoints targetHP;
 
+    [SerializeField] private List<GameObject> frogs;
+
+    [SerializeField] private float spawnDelay = 1f;
+
     private void Update()
     {
         if (enemyHP.HP > 0 && targetHP.HP > 0)
         {
-            Shoot();
+            ShootAndSpawn();
         }
     }
     
-    private void Shoot()
+    private void ShootAndSpawn()
     {
         if (attack == null)
         {
@@ -32,6 +36,7 @@ public class BossEnemy : MonoBehaviour
         else
         {
             Vector2 currentPosition = transform.position;
+
             Vector2 nextPosition = target.currentPosition;
             Vector2 nextPosition2 = target.currentPosition - new Vector2(3, 0);
             Vector2 nextPosition3 = target.currentPosition + new Vector2(3, 0);
@@ -41,6 +46,18 @@ public class BossEnemy : MonoBehaviour
             Vector2 directionToNextPos3 = nextPosition3 - currentPosition;
 
             attack.BossShoot(directionToNextPos, directionToNextPos2, directionToNextPos3);
+            StartCoroutine(SpawnFrogs());
+        }
+    }
+
+    private IEnumerator SpawnFrogs()
+    {
+        foreach (GameObject frog in frogs)
+        {
+            if (frog.GetComponent<Collider2D>().enabled == true)
+                frog.SetActive(true);
+
+            yield return new WaitForSeconds(spawnDelay);
         }
     }
 }
