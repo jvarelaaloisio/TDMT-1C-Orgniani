@@ -10,6 +10,12 @@ public class MenuInputReader : MonoBehaviour
     [SerializeField] GameObject creditsScreen;
     [SerializeField] Button button;
 
+    private void Start()
+    {
+        if (Time.timeScale == 0f)
+            Time.timeScale = 1f;
+    }
+
     public void StartButton()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
