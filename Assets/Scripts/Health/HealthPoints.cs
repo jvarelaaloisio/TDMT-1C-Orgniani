@@ -58,8 +58,6 @@ public class HealthPoints : MonoBehaviour
 
     private void Die()
     {
-        Debug.LogError($"{name}: Character died!");
-
         if (onDead != null)
         {
             onDead();

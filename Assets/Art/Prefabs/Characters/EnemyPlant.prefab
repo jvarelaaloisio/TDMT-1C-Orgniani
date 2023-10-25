@@ -223,7 +223,7 @@ MonoBehaviour:
   shouldDestroyOnDeath: 0
   isEnemy: 1
   hurtCooldown: 0.5
-  deactivateDelay: 0
+  deactivateDelay: 1
 --- !u!114 &2728723146716378809
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Subsystems;
 
 public class OpenDoor : MonoBehaviour
 {
+    // trying this
     [SerializeField] private List<Sprite> sprites;
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private List<GameObject> enemies;
@@ -29,8 +31,6 @@ public class OpenDoor : MonoBehaviour
 
         if (enemies.Count == 0)
         {
-            Debug.LogError($"{name}: List of enemies is empty.");
-
             currentSpriteIndex++;
 
             if (currentSpriteIndex >= sprites.Count)
@@ -50,10 +50,10 @@ public class OpenDoor : MonoBehaviour
 
     private void KillCounter()
     {
-        foreach (GameObject enemy in enemies)
+        for(int i = enemies.Count - 1; i >= 0; i--)
         {
-            if (enemy.GetComponent<Collider2D>().enabled == false)
-                enemies.Remove(enemy);
+            if (enemies[i].GetComponent<Collider2D>().enabled == false)
+                enemies.Remove(enemies[i]);
         }
     }
 }
