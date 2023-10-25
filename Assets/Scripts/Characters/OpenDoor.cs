@@ -12,7 +12,6 @@ public class OpenDoor : MonoBehaviour
     [SerializeField] private AudioSource winLevelSoundEffect;
 
     private int currentSpriteIndex;
-    private bool isOpen= false;
 
     private void OnEnable()
     {
@@ -35,7 +34,6 @@ public class OpenDoor : MonoBehaviour
             if (currentSpriteIndex >= sprites.Count)
             {
                 enabled = false;
-                isOpen = true;
                 return;
             }
 
@@ -49,7 +47,7 @@ public class OpenDoor : MonoBehaviour
 
     private void KillCounter()
     {
-        for(int i = enemies.Count - 1; i >= 0; i--)
+        for (int i = enemies.Count - 1; i >= 0; i--)
         {
             if (enemies[i].GetComponent<Collider2D>().enabled == false)
                 enemies.Remove(enemies[i]);
