@@ -5,7 +5,6 @@ using UnityEngine.Subsystems;
 
 public class OpenDoor : MonoBehaviour
 {
-    // trying this
     [SerializeField] private List<Sprite> sprites;
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private List<GameObject> enemies;
