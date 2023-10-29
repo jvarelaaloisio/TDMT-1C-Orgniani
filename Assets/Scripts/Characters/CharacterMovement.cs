@@ -7,35 +7,36 @@ using UnityEngine.InputSystem;
 public class CharacterMovement : MonoBehaviour
 {
     [SerializeField] private float speed = 1f;
-    public Vector2 _direction;
-    public Vector2 _lastDirection;
+    public Vector2 direction;
+    public Vector2 lastDirection;
 
     public Vector2 currentPosition;
 
-    [SerializeField] private CharacterShooting gun;
+    [SerializeField] private CharacterShooting attack;
 
     private void Start()
     {
-        _lastDirection.Set(-1, 0);
+        lastDirection.Set(-1, 0);
     }
     private void Update()
     {
-        if(gun == null)
-            Debug.LogError($"{name}: Gun in CHARACTER MOVEMENT is NULL");
+        if(attack == null)
+            Debug.LogError($"{name}: CharacterShooting in CharacterMovement is null.");
 
-        if (gun.canShoot)
+        if (attack.canShoot)
         {
-            transform.position = transform.position + speed * Time.deltaTime * new Vector3(_direction.x, _direction.y);
+            transform.position = transform.position + speed * Time.deltaTime * new Vector3(direction.x, direction.y);
             currentPosition = transform.position;
         }
+
     }
 
     public void SetDirection(Vector2 direction)
     {
-        _direction = direction;
+        this.direction = direction;
         if(direction != Vector2.zero)
         {
-            _lastDirection = direction;
+            lastDirection = direction;
         }
     }
 }

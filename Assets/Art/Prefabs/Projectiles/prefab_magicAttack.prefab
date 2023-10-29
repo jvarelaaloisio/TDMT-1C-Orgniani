@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 8347785847253296221}
   - component: {fileID: -9190018690878707065}
   - component: {fileID: 5253664091780946089}
-  - component: {fileID: 1534075025628577084}
   - component: {fileID: 8017764663128053043}
+  - component: {fileID: 1534075025628577084}
   - component: {fileID: 6925107718335719438}
   - component: {fileID: 6933460926866143704}
   - component: {fileID: 8549910246011275037}
@@ -78,9 +78,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 8
+  m_SortingLayerID: -1794255543
+  m_SortingLayer: 4
+  m_SortingOrder: 0
   m_Sprite: {fileID: 405841791, guid: 14f4318d5ee5e5a42bd6a18154a381d2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -126,10 +126,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  _direction: {x: 0, y: 0}
-  _lastDirection: {x: 0, y: 0}
+  direction: {x: 0, y: 0}
+  lastDirection: {x: 0, y: 0}
   currentPosition: {x: 0, y: 0}
-  gun: {fileID: 8137019513120073274, guid: 44a1f8282be3f79429721e3bd6110d88, type: 3}
+  attack: {fileID: 8137019513120073274, guid: 44a1f8282be3f79429721e3bd6110d88, type: 3}
 --- !u!114 &5253664091780946089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,19 +142,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd54d7589b329684b82ea0ac932f310f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1534075025628577084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 390093497661218515}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcc1600cf666e1143925a9dd3e6fdef9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 2
 --- !u!114 &8017764663128053043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,9 +159,20 @@ MonoBehaviour:
   shouldDestroyOnDeath: 1
   isEnemy: 0
   hurtCooldown: 1
-  canHurt: 1
-  _isHurt: 0
-  _isDead: 0
+  deactivateDelay: 2
+--- !u!114 &1534075025628577084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390093497661218515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc1600cf666e1143925a9dd3e6fdef9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
 --- !u!114 &6925107718335719438
 MonoBehaviour:
   m_ObjectHideFlags: 0

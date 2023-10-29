@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2594990760858113784}
   - component: {fileID: 8884600967923930237}
+  - component: {fileID: 5688766348603592924}
   - component: {fileID: 5088241470233011989}
   - component: {fileID: 900381799350481143}
-  - component: {fileID: 5688766348603592924}
   - component: {fileID: 1399274091689977421}
   - component: {fileID: 1109612411721284439}
   - component: {fileID: 5575898514461483271}
@@ -52,44 +52,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68733490d7c816c4c84ab9838ad5201d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  _direction: {x: 0, y: 0}
-  _lastDirection: {x: 0, y: 0}
+  speed: 2
+  direction: {x: 0, y: 0}
+  lastDirection: {x: 0, y: 0}
   currentPosition: {x: 0, y: 0}
-  gun: {fileID: 5688766348603592924}
---- !u!114 &5088241470233011989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1592490965652801410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3dda84158df34942b063713c288d878, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHP: 6
-  HP: 6
-  shouldDestroyOnDeath: 0
-  isEnemy: 1
-  hurtCooldown: 1
-  canHurt: 1
-  _isHurt: 0
-  _isDead: 0
---- !u!114 &900381799350481143
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1592490965652801410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcc1600cf666e1143925a9dd3e6fdef9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
+  attack: {fileID: 5688766348603592924}
 --- !u!114 &5688766348603592924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,8 +73,40 @@ MonoBehaviour:
   spawnPoint: {fileID: 0}
   shootCooldown: 1
   canShoot: 1
-  animationCooldown: 0.1
-  _isShooting: 0
+  shootDelay: 1
+  bulletDelay: 0.3
+  bulletAmount: 1
+--- !u!114 &5088241470233011989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592490965652801410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3dda84158df34942b063713c288d878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 6
+  HP: 6
+  shouldDestroyOnDeath: 0
+  isEnemy: 1
+  hurtCooldown: 0.5
+  deactivateDelay: 2
+--- !u!114 &900381799350481143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592490965652801410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc1600cf666e1143925a9dd3e6fdef9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!114 &1399274091689977421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,7 +120,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterMovement: {fileID: 8884600967923930237}
-  target: {fileID: 0}
+  targetPosition: {fileID: 0}
+  startFollowingDistance: 10
 --- !u!50 &1109612411721284439
 Rigidbody2D:
   serializedVersion: 4
@@ -256,9 +256,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingLayerID: 1203637841
+  m_SortingLayer: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 2102737906, guid: d30ff5f1a0f06ed4fb33fd359dc15ae4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -304,9 +304,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 7960843257160631558}
-  _characterMovement: {fileID: 8884600967923930237}
-  _attack: {fileID: 5688766348603592924}
-  _hurtAndDead: {fileID: 5088241470233011989}
+  characterMovement: {fileID: 8884600967923930237}
+  attack: {fileID: 5688766348603592924}
+  hurtAndDead: {fileID: 5088241470233011989}
   animatorParameterDirX: dir_x
   animatorParameterDirY: dir_y
   animatorParameterIsMoving: is_moving
@@ -363,8 +363,8 @@ MonoBehaviour:
   shootSoundEffect: {fileID: 3934300247545673659}
   hurtSoundEffect: {fileID: 7604056126939263898}
   deadSoundEffect: {fileID: 1672330017600270136}
-  _attack: {fileID: 5688766348603592924}
-  _hurtAndDeath: {fileID: 5088241470233011989}
+  attack: {fileID: 5688766348603592924}
+  hurtAndDead: {fileID: 5088241470233011989}
 --- !u!82 &3934300247545673659
 AudioSource:
   m_ObjectHideFlags: 0

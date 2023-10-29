@@ -2,21 +2,24 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics;
 
 public class HealthPoints : MonoBehaviour
 {
     [SerializeField] public int maxHP = 100;
     [SerializeField] public int HP = 100;
 
-    [SerializeField] bool shouldDestroyOnDeath;
-    [SerializeField] bool isEnemy;
+    [SerializeField] private bool shouldDestroyOnDeath;
+    [SerializeField] private bool isEnemy;
 
     [SerializeField] private float hurtCooldown = 1f;
     private float currentTime = 0;
-    public bool canHurt = true;
+    private bool canHurt = true;
 
-    public bool _isHurt = false;
-    public bool _isDead = false;
+    [SerializeField] private float deactivateDelay = 2f;
+
+    public VoidDelegateType onHurt;
+    public VoidDelegateType onDead;
 
     private void Update()
     {
@@ -29,11 +32,7 @@ public class HealthPoints : MonoBehaviour
                 canHurt = true;
                 currentTime = 0;
             }
-
-            _isHurt = false;
         }
-
-        _isDead = false;
     }
 
     public void TakeDamage(int value)
@@ -43,7 +42,11 @@ public class HealthPoints : MonoBehaviour
         if (isEnemy && value == 1) return;
 
         HP -= value;
-        _isHurt = true;
+
+        if (onHurt != null)
+        {
+            onHurt();
+        }
 
         if (HP <= 0)
         {
@@ -55,14 +58,13 @@ public class HealthPoints : MonoBehaviour
 
     private void Die()
     {
-        Debug.LogError($"{name}: Character died!");
-
-        _isDead = true;
+        if (onDead != null)
+        {
+            onDead();
+        }
 
         if (shouldDestroyOnDeath)
         {
-            //Destroy(gameObject.GetComponent<CapsuleCollider2D>());
-            //Destroy(gameObject, 0.5f); HACE QUE SE DESTRUYAN DESPUÉS DE UN RATO
             Destroy(gameObject);
         }
 
@@ -70,15 +72,21 @@ public class HealthPoints : MonoBehaviour
         {
             GetComponent<Collider2D>().enabled = false;
             GetComponent<CharacterMovement>().enabled = false;
+            GetComponent<CharacterShooting>().enabled = false;
 
             if (GetComponent<CommonEnemy>() != null) GetComponent<CommonEnemy>().enabled = false;
 
-            GetComponent<CharacterShooting>().enabled = false;
-
-            //this.enabled = false;
-
-            //Destroy(gameObject, 1f); //HACE QUE SE DESTRUYAN DESPUÉS DE UN RATO
+            if(isEnemy)
+            {
+                StartCoroutine(Deactivate());
+            }
         }
+    }
 
+    private IEnumerator Deactivate()
+    {
+        yield return new WaitForSeconds(deactivateDelay);
+
+        gameObject.SetActive(false);
     }
 }

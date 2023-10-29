@@ -8,9 +8,9 @@ using UnityEngine;
 public class CharacterView : MonoBehaviour
 {
     [SerializeField] private Animator animator;
-    [SerializeField] private CharacterMovement _characterMovement;
-    [SerializeField] private CharacterShooting _attack;
-    [SerializeField] private HealthPoints _hurtAndDead;
+    [SerializeField] private CharacterMovement characterMovement;
+    [SerializeField] private CharacterShooting attack;
+    [SerializeField] private HealthPoints hurtAndDead;
 
     [SerializeField] private string animatorParameterDirX = "dir_x";
     [SerializeField] private string animatorParameterDirY = "dir_y";
@@ -27,19 +27,21 @@ public class CharacterView : MonoBehaviour
 
     private void OnEnable()
     {
-        _attack.onShoot += HandleShoot;
+        attack.onShoot += HandleShoot;
+        hurtAndDead.onHurt += HandleHurt;
+        hurtAndDead.onDead += HandleDead;
     }
 
     private void OnDisable()
     {
-        _attack.onShoot -= HandleShoot;
+        attack.onShoot -= HandleShoot;
+        hurtAndDead.onHurt -= HandleHurt;
+        hurtAndDead.onDead -= HandleDead;
     }
 
     private void Update()
     {
-        Vector2 direction = _characterMovement._direction;
-        bool isHurt = _hurtAndDead._isHurt;
-        bool isDead = _hurtAndDead._isDead;
+        Vector2 direction = characterMovement.direction;
 
         float dirX = direction.x;
         float dirY = direction.y;
@@ -52,22 +54,20 @@ public class CharacterView : MonoBehaviour
             animator.SetFloat(animatorParameterDirX, dirX);
             animator.SetFloat(animatorParameterDirY, dirY);
         }
-
-        if (isHurt)
-        {
-            animator.SetTrigger(animatorParameterHurt);
-        }
-
-        if (isDead)
-        {
-            animator.SetBool(animatorParameterIsDead, isDead);
-        }
-
-
     }
 
     private void HandleShoot()
     {
         animator.SetTrigger(animatorParameterAttack);
+    }
+
+    private void HandleHurt()
+    {
+        animator.SetTrigger(animatorParameterHurt);
+    }
+
+    private void HandleDead()
+    {
+        animator.SetBool(animatorParameterIsDead, true);
     }
 }

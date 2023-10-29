@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class InputReader : MonoBehaviour
 {
     [SerializeField] private CharacterMovement characterMovement;
-    [SerializeField] private CharacterShooting gun;
+    [SerializeField] private CharacterShooting attack;
 
     [SerializeField] private HealthPoints playerHP;
 
@@ -19,8 +19,6 @@ public class InputReader : MonoBehaviour
         {
             Vector2 inputValue = inputContext.ReadValue<Vector2>();
             characterMovement.SetDirection(inputValue);
-
-            Debug.Log($"{gameObject.name}: Event risen. Value: {inputValue}");
         }
     }
 
@@ -28,14 +26,13 @@ public class InputReader : MonoBehaviour
     {
         if (inputContext.started && playerHP.HP > 0)
         {
-            //NULL CHECK
-            if (gun == null)
+            if (attack == null)
             {
-                Debug.LogError($"{name}: Gun is null! </3");
+                Debug.LogError($"{name}: CharacterShooting is null!");
                 return;
             }
 
-            gun.Shoot(characterMovement._lastDirection);
+            attack.Shoot(characterMovement.lastDirection);
         }
     }
 }

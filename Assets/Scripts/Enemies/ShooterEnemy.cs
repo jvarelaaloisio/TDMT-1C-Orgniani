@@ -6,30 +6,39 @@ public class ShooterEnemy : MonoBehaviour
 {
     [SerializeField] private CharacterShooting attack;
     [SerializeField] private HealthPoints enemyHP;
-    [SerializeField] private CharacterMovement target;
+
+    [SerializeField] private CharacterMovement targetPosition;
     [SerializeField] private HealthPoints targetHP;
+
+    private float distance;
+    [SerializeField] private float startShootingDistance = 4f;
 
     private void Update()
     {
+        distance = Vector2.Distance(transform.position, targetPosition.transform.position);
+
         if (enemyHP.HP > 0 && targetHP.HP > 0)
         {
             if (attack == null)
             {
-                Debug.LogError($"{name}: Gun is null! </3");
+                Debug.LogError($"{name}: CharacterShooting is null!");
                 return;
             }
 
-            if (target == null)
+            if (targetPosition == null)
                 Debug.LogError($"{name}: Target is null!");
 
             else
             {
                 Vector2 currentPosition = transform.position;
-                Vector2 nextPosition = target.currentPosition;
+                Vector2 nextPosition = targetPosition.currentPosition;
 
                 Vector2 directionToNextPos = nextPosition - currentPosition;
 
-                attack.Shoot(directionToNextPos);
+                if (distance < startShootingDistance)
+                {
+                    attack.Shoot(directionToNextPos);
+                }
             }
         }
     }

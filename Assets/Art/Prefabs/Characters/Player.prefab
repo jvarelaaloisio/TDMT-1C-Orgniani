@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7209178835658482508}
   m_Layer: 0
-  m_Name: GunPoint
+  m_Name: ShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,8 +81,8 @@ MonoBehaviour:
   shootSoundEffect: {fileID: 5374128683179825908}
   hurtSoundEffect: {fileID: 6121932875212910552}
   deadSoundEffect: {fileID: 8709477984159505769}
-  _attack: {fileID: 8137019513120073274}
-  _hurtAndDeath: {fileID: 6149567213819325555}
+  attack: {fileID: 8137019513120073274}
+  hurtAndDead: {fileID: 6149567213819325555}
 --- !u!82 &5374128683179825908
 AudioSource:
   m_ObjectHideFlags: 0
@@ -93,7 +93,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 434968ba424ec3f41a40764e35631b89, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6cb634c979f67bb459f7b9c502e39511, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.2
   m_Pitch: 1
@@ -285,7 +285,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f340cf99b3187574f88d8623baee9df7, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7100a3c112acd8e45a6b5836639d1d67, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -444,8 +444,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1518464631
-  m_SortingLayer: 1
-  m_SortingOrder: 10
+  m_SortingLayer: 5
+  m_SortingOrder: 0
   m_Sprite: {fileID: 863358701, guid: 8ee44b8cde0958c42928e037b393fd1c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -491,9 +491,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 2738091651036596964}
-  _characterMovement: {fileID: 1116090878914013790}
-  _attack: {fileID: 8137019513120073274}
-  _hurtAndDead: {fileID: 6149567213819325555}
+  characterMovement: {fileID: 1116090878914013790}
+  attack: {fileID: 8137019513120073274}
+  hurtAndDead: {fileID: 6149567213819325555}
   animatorParameterDirX: dir_x
   animatorParameterDirY: dir_y
   animatorParameterIsMoving: is_moving
@@ -553,10 +553,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  _direction: {x: 0, y: 0}
-  _lastDirection: {x: 0, y: 0}
+  direction: {x: 0, y: 0}
+  lastDirection: {x: 0, y: 0}
   currentPosition: {x: 0, y: 0}
-  gun: {fileID: 8137019513120073274}
+  attack: {fileID: 8137019513120073274}
 --- !u!114 &8137019513120073274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -573,9 +573,9 @@ MonoBehaviour:
   spawnPoint: {fileID: 7209178835658482508}
   shootCooldown: 0.5
   canShoot: 1
-  animationCooldown: 0
-  _isShooting: 0
   shootDelay: 1
+  bulletDelay: 0.3
+  bulletAmount: 1
 --- !u!114 &6149567213819325555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -593,9 +593,7 @@ MonoBehaviour:
   shouldDestroyOnDeath: 0
   isEnemy: 0
   hurtCooldown: 1
-  canHurt: 1
-  _isHurt: 0
-  _isDead: 0
+  deactivateDelay: 2
 --- !u!114 &6555825157712399147
 MonoBehaviour:
   m_ObjectHideFlags: 0

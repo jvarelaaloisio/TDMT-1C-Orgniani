@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class HealthPointsBar : MonoBehaviour
 {
-    //[SerializeField] private Image bar;
-
     [SerializeField] private HealthPoints playerHP;
 
     [SerializeField] private GameObject heart;
@@ -23,7 +21,6 @@ public class HealthPointsBar : MonoBehaviour
 
     private void Update()
     {
-        //bar.fillAmount = 1.0f * healthPoints.HP / healthPoints.maxHP;
         int heartFill = playerHP.HP;
 
         foreach(Image i in hearts)

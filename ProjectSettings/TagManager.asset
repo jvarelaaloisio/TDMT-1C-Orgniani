@@ -38,9 +38,33 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 2021029121
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Enemy
+    uniqueID: 1203637841
+    locked: 0
+  - name: Wall
+    uniqueID: 1293955515
+    locked: 0
+  - name: Boss
+    uniqueID: 4001539017
+    locked: 0
+  - name: Bullet
+    uniqueID: 2500711753
+    locked: 0
   - name: Player
     uniqueID: 2776502665
+    locked: 0
+  - name: Door
+    uniqueID: 2977404191
+    locked: 0
+  - name: UI
+    uniqueID: 2073707861
+    locked: 0
+  - name: GameOver
+    uniqueID: 3760221679
     locked: 0
