@@ -11,6 +11,7 @@ public class Hazard : MonoBehaviour
     {
         GameObject playerGameObject = col.gameObject;
 
+        //TODO: TP2 - Optimization - TryGetComponent
         HealthPoints playerHP = playerGameObject.GetComponent<HealthPoints>();
 
         if (playerHP)

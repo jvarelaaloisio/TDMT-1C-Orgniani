@@ -28,6 +28,7 @@ public class CommonEnemy : MonoBehaviour
 
             if(distance < startFollowingDistance)
             {
+                //TODO: TP2 - Unclear logic
                 startFollowingDistance = 1000f;
                 characterMovement.SetDirection(directionToNextPos);
             }

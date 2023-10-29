@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameOverScreen : MonoBehaviour
 {
+    //TODO: TP2 - Syntax - Consistency in access modifiers (private/protected/public/etc)
     [SerializeField] PauseScreen pauseScreen;
 
     public void Setup()

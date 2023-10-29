@@ -70,10 +70,12 @@ public class HealthPoints : MonoBehaviour
 
         else
         {
+            //TODO: TP2 - Fix - This should be handled by other scripts, like the enemy scripts, by subscribing to the onDead event.
             GetComponent<Collider2D>().enabled = false;
             GetComponent<CharacterMovement>().enabled = false;
             GetComponent<CharacterShooting>().enabled = false;
 
+            //TODO: TP2 - Optimization - TryGetComponent
             if (GetComponent<CommonEnemy>() != null) GetComponent<CommonEnemy>().enabled = false;
 
             if(isEnemy)

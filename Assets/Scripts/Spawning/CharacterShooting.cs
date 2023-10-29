@@ -25,6 +25,7 @@ public class CharacterShooting : MonoBehaviour
 
     private void Update()
     {
+        //TODO: TP2 - Could be a coroutine/Invoke
         if (!canShoot)
         {
             currentTime += Time.deltaTime;
@@ -54,6 +55,7 @@ public class CharacterShooting : MonoBehaviour
         StartCoroutine(ShootSequence(bulletDirection));
     }
 
+    //TODO: TP2 - Fix - Should be handled by the boss
     public void BossShoot(Vector2 bulletDirection, Vector2 bulletDirection2, Vector2 bulletDirection3)
     {
         if (!canShoot) return;
