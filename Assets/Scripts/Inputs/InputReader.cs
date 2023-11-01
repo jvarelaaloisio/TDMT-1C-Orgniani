@@ -15,6 +15,7 @@ public class InputReader : MonoBehaviour
         if (!characterMovement)
             return;
 
+        //TODO: TP2 - Fix - Enabling movement based on HP should be handled by the character, not the input class
         if (playerHP.HP > 0)
         {
             Vector2 inputValue = inputContext.ReadValue<Vector2>();

@@ -9,6 +9,7 @@ public class MuteButtonController : MonoBehaviour
 
     private void Update()
     {
+        //TODO: TP2 - Optimization - Should be event based
         CheckIfMute();
     }
 

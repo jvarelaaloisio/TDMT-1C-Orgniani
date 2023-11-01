@@ -25,8 +25,10 @@ public class OpenDoor : MonoBehaviour
 
     private void Update()
     {
+        //TODO: TP2 - Optimization - Should be event based
         KillCounter();
 
+        //TODO: TP2 - Optimization - Should be event based
         if (enemies.Count == 0)
         {
             currentSpriteIndex++;
@@ -39,6 +41,7 @@ public class OpenDoor : MonoBehaviour
 
             spriteRenderer.sprite = sprites[currentSpriteIndex];
 
+            //TODO: TP2 - Fix - Possible null reference
             GetComponent<Collider2D>().enabled = false;
 
             winLevelSoundEffect.Play();
@@ -49,6 +52,7 @@ public class OpenDoor : MonoBehaviour
     {
         for (int i = enemies.Count - 1; i >= 0; i--)
         {
+            //TODO: TP2 - Optimization - Cache values/refs
             if (enemies[i].GetComponent<Collider2D>().enabled == false)
                 enemies.Remove(enemies[i]);
         }

@@ -16,6 +16,7 @@ public class BossEnemy : MonoBehaviour
 
     private void Update()
     {
+        //TODO: TP2 - Optimization - Should be event based
         if (enemyHP.HP > 0 && targetHP.HP > 0)
         {
             ShootAndSpawn();
@@ -54,6 +55,7 @@ public class BossEnemy : MonoBehaviour
     {
         foreach (GameObject frog in frogs)
         {
+            //TODO: TP2 - Optimization - Cache values/refs
             if (frog.GetComponent<Collider2D>().enabled == true)
                 frog.SetActive(true);
 

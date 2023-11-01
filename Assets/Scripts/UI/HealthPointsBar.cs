@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//TODO: TP2 - Fix - Unify with BossHealthBar
 public class HealthPointsBar : MonoBehaviour
 {
     [SerializeField] private HealthPoints playerHP;

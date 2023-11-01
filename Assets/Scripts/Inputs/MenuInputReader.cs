@@ -12,6 +12,7 @@ public class MenuInputReader : MonoBehaviour
 
     private void Start()
     {
+        //TODO: TP2 - Fix - Careful with float equal comparisons, they can lead to decimal errors
         if (Time.timeScale == 0f)
             Time.timeScale = 1f;
     }
