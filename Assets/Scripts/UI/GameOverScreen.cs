@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameOverScreen : MonoBehaviour
 {
     //TODO: TP2 - Syntax - Consistency in access modifiers (private/protected/public/etc)
-    [SerializeField] PauseScreen pauseScreen;
+    [SerializeField] private PauseScreen pauseScreen;
 
     public void Setup()
     {
@@ -17,6 +17,7 @@ public class GameOverScreen : MonoBehaviour
     public void RestartButton()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //SceneManager.LoadScene(gameObject.scene.name);
     }
 
     public void BackToMenuButton()

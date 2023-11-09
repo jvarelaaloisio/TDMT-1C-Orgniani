@@ -6,7 +6,7 @@ using UnityEngine.UI;
 //TODO: TP2 - Fix - Unify with BossHealthBar
 public class HealthPointsBar : MonoBehaviour
 {
-    [SerializeField] private HealthPoints playerHP;
+    [SerializeField] private HealthController playerHP;
 
     [SerializeField] private GameObject heart;
     [SerializeField] private List<Image> hearts;

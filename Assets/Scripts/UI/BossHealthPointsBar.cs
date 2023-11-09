@@ -8,7 +8,7 @@ public class BossHealthPointsBar : MonoBehaviour
 {
     //TODO: TP2 - Fix - Use Image with type "Sliced" and set the fill amount to bossHP.HP/bossHP.MaxHP
     [SerializeField] private Slider slider;
-    [SerializeField] private HealthPoints bossHP;
+    [SerializeField] private HealthController bossHP;
 
 
     private void Start()

@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 public delegate void VoidDelegateType();
+
 public class CharacterShooting : MonoBehaviour
 {
     [SerializeField] private GameObject bulletPrefab;

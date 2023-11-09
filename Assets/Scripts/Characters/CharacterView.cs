@@ -11,7 +11,7 @@ public class CharacterView : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private CharacterMovement characterMovement;
     [SerializeField] private CharacterShooting attack;
-    [SerializeField] private HealthPoints hurtAndDead;
+    [SerializeField] private HealthController hurtAndDead;
 
     [SerializeField] private string animatorParameterDirX = "dir_x";
     [SerializeField] private string animatorParameterDirY = "dir_y";

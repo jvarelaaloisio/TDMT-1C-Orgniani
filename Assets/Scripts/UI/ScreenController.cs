@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ScreenController : MonoBehaviour
 {
-    [SerializeField] private HealthPoints characterHP;
+    [SerializeField] private HealthController characterHP;
     [SerializeField] private GameOverScreen screen;
     [SerializeField] private AudioSource gameMusic;
 

@@ -1,13 +1,13 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics;
 
-public class HealthPoints : MonoBehaviour
+public class HealthController : MonoBehaviour
 {
+    [SerializeField] public HealthModel model;
     [SerializeField] public int maxHP = 100;
     [SerializeField] public int HP = 100;
+
+    [SerializeField] public DamageHandler damageHandler;
 
     [SerializeField] private bool shouldDestroyOnDeath;
     [SerializeField] private bool isEnemy;
@@ -20,6 +20,29 @@ public class HealthPoints : MonoBehaviour
 
     public VoidDelegateType onHurt;
     public VoidDelegateType onDead;
+
+    //private void Awake()
+    //{
+    //    SetHpToMaxHp();
+    //}
+
+    [ContextMenu("Reset HP to maxHP")]
+    private void SetHpToMaxHp()
+    {
+        HP = model.maxHP;
+    }
+
+    //GETTERS
+    public int getHP()
+    {
+        return HP;
+    }
+
+    //SETTERS
+    public void SetHP(int value)
+    {
+        HP = value;
+    }
 
     private void Update()
     {
@@ -35,15 +58,24 @@ public class HealthPoints : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int value)
+    public void TakeDamage(int damage)
     {
         if (!canHurt) return;
 
-        if (isEnemy && value == 1) return;
+        if (isEnemy && damage == 1) return;
+        
+        //CHANGE THIS
+        if(damageHandler != null)
+        {
+            HP = damageHandler.HandleDamage(HP, damage);
+        }
+        else
+        {
+            HP -= damage;
+        }
 
-        HP -= value;
 
-        if (onHurt != null)
+        if(onHurt != null)
         {
             onHurt();
         }

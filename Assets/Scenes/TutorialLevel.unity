@@ -399,6 +399,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_ActionId
+      value: b38dc3b2-cf7b-4a2e-86f7-78ea39f227bb
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_ActionName
+      value: Player/InvincibleCheat[/Keyboard/f10]
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1221244516}
+    - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReplaceDamageHandler
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DamageHandlerReplacer, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5107337121082771934, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
       propertyPath: m_Name
       value: InputReader
@@ -430,7 +470,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5107337121082771934, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1221244516}
   m_SourcePrefab: {fileID: 100100000, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
 --- !u!1 &677987267
 GameObject:
@@ -2914,6 +2957,18 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 6cb634c979f67bb459f7b9c502e39511, type: 3}
+    - target: {fileID: 6149567213819325555, guid: 44a1f8282be3f79429721e3bd6110d88, type: 3}
+      propertyPath: model
+      value: 
+      objectReference: {fileID: 11400000, guid: f6a07646aec933e4386972e1b760a2a1, type: 2}
+    - target: {fileID: 6149567213819325555, guid: 44a1f8282be3f79429721e3bd6110d88, type: 3}
+      propertyPath: HPmodel
+      value: 
+      objectReference: {fileID: 11400000, guid: f6a07646aec933e4386972e1b760a2a1, type: 2}
+    - target: {fileID: 6149567213819325555, guid: 44a1f8282be3f79429721e3bd6110d88, type: 3}
+      propertyPath: damageHandler
+      value: 
+      objectReference: {fileID: 11400000, guid: 195a724c96dfeb34ebd2e9ba89477c23, type: 2}
     - target: {fileID: 7142570476853464730, guid: 44a1f8282be3f79429721e3bd6110d88, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2978,6 +3033,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68733490d7c816c4c84ab9838ad5201d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1221244512 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5107337121082771934, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
+  m_PrefabInstance: {fileID: 592622129}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1221244516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221244512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f7e283b241e70c4db113e0176e9425d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  replacement: {fileID: 11400000, guid: 76f457fd113a53244af5d641e24af1ad, type: 2}
+  playerHP: {fileID: 1248193629}
 --- !u!114 &1248193629 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6149567213819325555, guid: 44a1f8282be3f79429721e3bd6110d88, type: 3}
@@ -4937,6 +5011,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 475617860}
+    - target: {fileID: 2483693087189417119, guid: cd9c095bbabcd3a43b6c36d70e937274, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -38.799988
+      objectReference: {fileID: 0}
     - target: {fileID: 2517981068654814946, guid: cd9c095bbabcd3a43b6c36d70e937274, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -5032,6 +5110,10 @@ PrefabInstance:
     - target: {fileID: 6111969762379237381, guid: cd9c095bbabcd3a43b6c36d70e937274, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6342194781280630961, guid: cd9c095bbabcd3a43b6c36d70e937274, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -120.399994
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

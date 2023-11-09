@@ -5,10 +5,10 @@ using UnityEngine;
 public class BossEnemy : MonoBehaviour
 {
     [SerializeField] private CharacterShooting attack;
-    [SerializeField] private HealthPoints enemyHP;
+    [SerializeField] private HealthController enemyHP;
 
     [SerializeField] private CharacterMovement targetPosition;
-    [SerializeField] private HealthPoints targetHP;
+    [SerializeField] private HealthController targetHP;
 
     [SerializeField] private List<GameObject> frogs;
 

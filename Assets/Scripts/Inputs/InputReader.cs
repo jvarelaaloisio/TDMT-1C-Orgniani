@@ -8,7 +8,7 @@ public class InputReader : MonoBehaviour
     [SerializeField] private CharacterMovement characterMovement;
     [SerializeField] private CharacterShooting attack;
 
-    [SerializeField] private HealthPoints playerHP;
+    [SerializeField] private HealthController playerHP;
 
     public void SetMovementValue(InputAction.CallbackContext inputContext)
     {

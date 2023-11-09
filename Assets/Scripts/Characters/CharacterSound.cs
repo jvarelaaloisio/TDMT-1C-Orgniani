@@ -9,7 +9,7 @@ public class CharacterSound : MonoBehaviour
     [SerializeField] private AudioSource deadSoundEffect;
 
     [SerializeField] private CharacterShooting attack;
-    [SerializeField] private HealthPoints hurtAndDead;
+    [SerializeField] private HealthController hurtAndDead;
 
     private void OnEnable()
     {
