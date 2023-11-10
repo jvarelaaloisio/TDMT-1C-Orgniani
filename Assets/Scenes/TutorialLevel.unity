@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &185081699 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8037174926634703362, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
+  m_PrefabInstance: {fileID: 592622129}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d03cfb60e04d8824b9547f1b76b7c408, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &224789827 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2540910472825589439, guid: e869362d17f941a4ca6b5cf81fec9353, type: 3}
@@ -401,42 +412,78 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
       propertyPath: m_ActionEvents.Array.size
-      value: 14
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
-      propertyPath: m_ActionEvents.Array.data[13].m_ActionId
-      value: b38dc3b2-cf7b-4a2e-86f7-78ea39f227bb
+      propertyPath: m_ActionEvents.Array.data[14].m_ActionId
+      value: 31dc5bd5-cf6a-4f11-8260-1b508f60f0ec
       objectReference: {fileID: 0}
     - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
-      propertyPath: m_ActionEvents.Array.data[13].m_ActionName
-      value: Player/InvincibleCheat[/Keyboard/f10]
+      propertyPath: m_ActionEvents.Array.data[15].m_ActionId
+      value: be6cd2bc-0d42-4d68-bb64-a8f63d32c927
       objectReference: {fileID: 0}
     - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
-      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.size
+      propertyPath: m_ActionEvents.Array.data[14].m_ActionName
+      value: Player/SpeedMultiplierCheat[/Keyboard/f11]
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_ActionName
+      value: Player/DamageAllEnemiesCheat[/Keyboard/f12]
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
-      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
-      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1221244516}
+      objectReference: {fileID: 11400000, guid: a9d60b4eec30e8d4fbd044fe9d44ec98, type: 2}
     - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
-      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 185081699}
+    - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
-      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ReplaceDamageHandler
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
-      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: DamageHandlerReplacer, Assembly-CSharp
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReplaceSpeedHandler
       objectReference: {fileID: 0}
     - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
-      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DamageAllEnemiesCheat
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SpeedHandlerReplacer, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: InputReader, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5107337121082771934, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
@@ -444,36 +491,25 @@ PrefabInstance:
       value: InputReader
       objectReference: {fileID: 0}
     - target: {fileID: 8037174926634703362, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
-      propertyPath: gun
-      value: 
-      objectReference: {fileID: 1248193630}
-    - target: {fileID: 8037174926634703362, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
       propertyPath: attack
       value: 
       objectReference: {fileID: 1248193630}
+    - target: {fileID: 8037174926634703362, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
+      propertyPath: enemies
+      value: 
+      objectReference: {fileID: 1213773012981767558}
     - target: {fileID: 8037174926634703362, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
       propertyPath: playerHP
       value: 
       objectReference: {fileID: 1248193629}
     - target: {fileID: 8037174926634703362, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
-      propertyPath: gameOverScreen
-      value: 
-      objectReference: {fileID: 1082149243}
-    - target: {fileID: 8037174926634703362, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
       propertyPath: characterMovement
       value: 
       objectReference: {fileID: 1194874125}
-    - target: {fileID: 8037174926634703362, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
-      propertyPath: characterShooting
-      value: 
-      objectReference: {fileID: 1248193630}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5107337121082771934, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1221244516}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
 --- !u!1 &677987267
 GameObject:
@@ -2946,6 +2982,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1248193630}
     - target: {fileID: 1116090878914013790, guid: 44a1f8282be3f79429721e3bd6110d88, type: 3}
+      propertyPath: speedHandler
+      value: 
+      objectReference: {fileID: 11400000, guid: 92e1d87dc3e391f42b25f3993637b34d, type: 2}
+    - target: {fileID: 1116090878914013790, guid: 44a1f8282be3f79429721e3bd6110d88, type: 3}
       propertyPath: characterShooting
       value: 
       objectReference: {fileID: 1248193630}
@@ -2965,6 +3005,10 @@ PrefabInstance:
       propertyPath: HPmodel
       value: 
       objectReference: {fileID: 11400000, guid: f6a07646aec933e4386972e1b760a2a1, type: 2}
+    - target: {fileID: 6149567213819325555, guid: 44a1f8282be3f79429721e3bd6110d88, type: 3}
+      propertyPath: isEnemy
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6149567213819325555, guid: 44a1f8282be3f79429721e3bd6110d88, type: 3}
       propertyPath: damageHandler
       value: 
@@ -3017,6 +3061,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 9093090905388126332, guid: 44a1f8282be3f79429721e3bd6110d88, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3033,25 +3081,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68733490d7c816c4c84ab9838ad5201d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1221244512 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5107337121082771934, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
-  m_PrefabInstance: {fileID: 592622129}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1221244516
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1221244512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f7e283b241e70c4db113e0176e9425d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  replacement: {fileID: 11400000, guid: 76f457fd113a53244af5d641e24af1ad, type: 2}
-  playerHP: {fileID: 1248193629}
 --- !u!114 &1248193629 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6149567213819325555, guid: 44a1f8282be3f79429721e3bd6110d88, type: 3}
@@ -4987,6 +5016,17 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 8573846903335249911, guid: df485dc7b3296ee478a12bff9073cbfa, type: 3}
   m_PrefabInstance: {fileID: 1213773012981767554}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1213773012981767558 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4261863338654285251, guid: df485dc7b3296ee478a12bff9073cbfa, type: 3}
+  m_PrefabInstance: {fileID: 1213773012981767554}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69c5bb99a80ade44d833e50314506576, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1939530443996473293
 PrefabInstance:
   m_ObjectHideFlags: 0

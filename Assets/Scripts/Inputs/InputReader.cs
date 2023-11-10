@@ -10,6 +10,8 @@ public class InputReader : MonoBehaviour
 
     [SerializeField] private HealthController playerHP;
 
+    [SerializeField] private OpenDoor enemies;
+
     public void SetMovementValue(InputAction.CallbackContext inputContext)
     {
         if (!characterMovement)
@@ -35,5 +37,16 @@ public class InputReader : MonoBehaviour
 
             attack.Shoot(characterMovement.lastDirection);
         }
+    }
+
+    public void DamageAllEnemiesCheat(InputAction.CallbackContext inputContext)
+    {
+        if(enemies == null)
+        {
+            Debug.LogError($"{name}: EnemiesManager is null!");
+            return;
+        }
+
+        enemies.DamageAllEnemies();
     }
 }

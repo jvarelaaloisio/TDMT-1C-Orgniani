@@ -6,7 +6,8 @@ using UnityEngine.InputSystem;
 
 public class CharacterMovement : MonoBehaviour
 {
-    [SerializeField] private float speed = 1f;
+    [SerializeField] private float speed = 4f;
+    [SerializeField] private float maxSpeed = 8f;
     public Vector2 direction;
     public Vector2 lastDirection;
 
@@ -14,13 +15,33 @@ public class CharacterMovement : MonoBehaviour
 
     [SerializeField] private CharacterShooting attack;
 
+    [SerializeField] private SpeedHandler speedHandler;
+
+    public SpeedHandler SpeedHandler
+    {
+        //getter
+        get
+        {
+            return speedHandler;
+        }
+
+        //setter
+        set
+        {
+            speedHandler = value;
+        }
+    }
+
     private void Start()
     {
+
         lastDirection.Set(-1, 0);
     }
+
+
     private void Update()
     {
-        if(attack == null)
+        if (attack == null)
             Debug.LogError($"{name}: CharacterShooting in CharacterMovement is null.");
 
         if (attack.canShoot)
@@ -33,6 +54,13 @@ public class CharacterMovement : MonoBehaviour
 
     public void SetDirection(Vector2 direction)
     {
+        //MAKE THIS LOOK BETTER
+        //THIS DOES NOT GO HERE!!! should be controlled by events maybe??
+        if (speedHandler != null)
+        {
+            speed = speedHandler.HandleSpeed(speed, maxSpeed);
+        }
+
         this.direction = direction;
         if(direction != Vector2.zero)
         {

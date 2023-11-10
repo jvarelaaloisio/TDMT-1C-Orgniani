@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 5575898514461483271}
   m_Layer: 7
   m_Name: EnemySlime
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53,10 +53,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  maxSpeed: 8
   direction: {x: 0, y: 0}
   lastDirection: {x: 0, y: 0}
   currentPosition: {x: 0, y: 0}
   attack: {fileID: 5688766348603592924}
+  speedHandler: {fileID: 0}
 --- !u!114 &5688766348603592924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,8 +90,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3dda84158df34942b063713c288d878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  model: {fileID: 0}
   maxHP: 6
   HP: 6
+  damageHandler: {fileID: 0}
   shouldDestroyOnDeath: 0
   isEnemy: 1
   hurtCooldown: 0.5

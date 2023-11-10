@@ -134,6 +134,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 8c816314-c372-4328-a468-711fccddb4e7
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: bef9a731d475351478c7c7e6fabb3613, type: 2}
+        m_TargetAssemblyTypeName: DamageHandlerReplacer, Assembly-CSharp
+        m_MethodName: ReplaceDamageHandler
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b38dc3b2-cf7b-4a2e-86f7-78ea39f227bb
+    m_ActionName: Player/InvincibleCheat[/Keyboard/f10]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -152,5 +168,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterMovement: {fileID: 0}
-  gun: {fileID: 0}
+  attack: {fileID: 0}
   playerHP: {fileID: 0}

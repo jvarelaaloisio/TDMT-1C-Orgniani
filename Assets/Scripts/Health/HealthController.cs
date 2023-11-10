@@ -7,7 +7,7 @@ public class HealthController : MonoBehaviour
     [SerializeField] public int maxHP = 100;
     [SerializeField] public int HP = 100;
 
-    [SerializeField] public DamageHandler damageHandler;
+    [SerializeField] private DamageHandler damageHandler;
 
     [SerializeField] private bool shouldDestroyOnDeath;
     [SerializeField] private bool isEnemy;
@@ -32,16 +32,19 @@ public class HealthController : MonoBehaviour
         HP = model.maxHP;
     }
 
-    //GETTERS
-    public int getHP()
+    public DamageHandler DamageHandler
     {
-        return HP;
-    }
+        //getter
+        get
+        {
+            return damageHandler;
+        }
 
-    //SETTERS
-    public void SetHP(int value)
-    {
-        HP = value;
+        //setter
+        set
+        {
+            damageHandler = value;
+        }
     }
 
     private void Update()
@@ -65,6 +68,7 @@ public class HealthController : MonoBehaviour
         if (isEnemy && damage == 1) return;
         
         //CHANGE THIS
+        //THEY ALL SHOULD HAVE THE NORMAL DAMAGEHANDLER
         if(damageHandler != null)
         {
             HP = damageHandler.HandleDamage(HP, damage);
@@ -108,9 +112,14 @@ public class HealthController : MonoBehaviour
             GetComponent<CharacterShooting>().enabled = false;
 
             //TODO: TP2 - Optimization - TryGetComponent
-            if (GetComponent<CommonEnemy>() != null) GetComponent<CommonEnemy>().enabled = false;
+            //if (GetComponent<CommonEnemy>() != null) GetComponent<CommonEnemy>().enabled = false;
 
-            if(isEnemy)
+            if (TryGetComponent(out CommonEnemy commonEnemy))
+            {
+                GetComponent<CommonEnemy>().enabled = false;
+            }
+
+            if (isEnemy)
             {
                 StartCoroutine(Deactivate());
             }

@@ -517,7 +517,7 @@ GameObject:
   - component: {fileID: 8379348307367787148}
   m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -557,6 +557,7 @@ MonoBehaviour:
   lastDirection: {x: 0, y: 0}
   currentPosition: {x: 0, y: 0}
   attack: {fileID: 8137019513120073274}
+  speedHandler: {fileID: 11400000, guid: 92e1d87dc3e391f42b25f3993637b34d, type: 2}
 --- !u!114 &8137019513120073274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -588,8 +589,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3dda84158df34942b063713c288d878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  model: {fileID: 11400000, guid: f6a07646aec933e4386972e1b760a2a1, type: 2}
   maxHP: 3
   HP: 3
+  damageHandler: {fileID: 11400000, guid: 195a724c96dfeb34ebd2e9ba89477c23, type: 2}
   shouldDestroyOnDeath: 0
   isEnemy: 0
   hurtCooldown: 1

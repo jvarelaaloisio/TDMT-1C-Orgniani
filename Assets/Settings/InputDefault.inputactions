@@ -40,6 +40,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "SpeedMultiplierCheat",
+                    "type": "Button",
+                    "id": "31dc5bd5-cf6a-4f11-8260-1b508f60f0ec",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "DamageAllEnemiesCheat",
+                    "type": "Button",
+                    "id": "be6cd2bc-0d42-4d68-bb64-a8f63d32c927",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -271,6 +289,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "InvincibleCheat",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3140f60f-ec4c-432e-996c-6ee634de13cf",
+                    "path": "<Keyboard>/f11",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SpeedMultiplierCheat",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "71f35f5e-ea47-426c-acbd-e4aad7e10cb6",
+                    "path": "<Keyboard>/f12",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DamageAllEnemiesCheat",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

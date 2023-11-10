@@ -57,4 +57,14 @@ public class OpenDoor : MonoBehaviour
                 enemies.Remove(enemies[i]);
         }
     }
+
+    public void DamageAllEnemies()
+    {
+        for (int i = enemies.Count - 1; i >= 0; i--)
+        {
+            //TODO: TP2 - Optimization - Cache values/refs
+            var HP = enemies[i].GetComponent<HealthController>();
+            HP.TakeDamage(3);
+        }
+    }
 }
