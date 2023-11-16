@@ -553,6 +553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
+  maxSpeed: 8
   direction: {x: 0, y: 0}
   lastDirection: {x: 0, y: 0}
   currentPosition: {x: 0, y: 0}
@@ -572,7 +573,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 390093497661218515, guid: d170409028dbd7d4ab663e03b3b18156, type: 3}
   spawnPoint: {fileID: 7209178835658482508}
-  shootCooldown: 0.5
+  shootCooldown: 0
   canShoot: 1
   shootDelay: 1
   bulletDelay: 0.3

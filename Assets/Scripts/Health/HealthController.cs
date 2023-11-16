@@ -66,18 +66,8 @@ public class HealthController : MonoBehaviour
         if (!canHurt) return;
 
         if (isEnemy && damage == 1) return;
-        
-        //CHANGE THIS
-        //THEY ALL SHOULD HAVE THE NORMAL DAMAGEHANDLER
-        if(damageHandler != null)
-        {
-            HP = damageHandler.HandleDamage(HP, damage);
-        }
-        else
-        {
-            HP -= damage;
-        }
 
+        HP = damageHandler.HandleDamage(HP, damage);
 
         if(onHurt != null)
         {
@@ -106,23 +96,15 @@ public class HealthController : MonoBehaviour
 
         else
         {
-            //TODO: TP2 - Fix - This should be handled by other scripts, like the enemy scripts, by subscribing to the onDead event.
+            //TODO: TP2 - Fix - This should be handled by other scripts, like the enemy scripts, by subscribing to the onDead event. --> ASK
             GetComponent<Collider2D>().enabled = false;
             GetComponent<CharacterMovement>().enabled = false;
             GetComponent<CharacterShooting>().enabled = false;
 
-            //TODO: TP2 - Optimization - TryGetComponent
-            //if (GetComponent<CommonEnemy>() != null) GetComponent<CommonEnemy>().enabled = false;
-
-            if (TryGetComponent(out CommonEnemy commonEnemy))
-            {
-                GetComponent<CommonEnemy>().enabled = false;
-            }
+            //A esto lo uso para todos los personajes, incluido el protagonista. Esto significa que voy a tener que crear un script específico para el protagonista para poder subscribirme al OnDead event deade ahí?
 
             if (isEnemy)
-            {
                 StartCoroutine(Deactivate());
-            }
         }
     }
 

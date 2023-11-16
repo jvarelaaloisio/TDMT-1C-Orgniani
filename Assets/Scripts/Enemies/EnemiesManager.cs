@@ -1,9 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Subsystems;
 
-public class OpenDoor : MonoBehaviour
+public class EnemiesManager : MonoBehaviour
 {
     [SerializeField] private List<Sprite> sprites;
     [SerializeField] private SpriteRenderer spriteRenderer;
@@ -25,10 +23,10 @@ public class OpenDoor : MonoBehaviour
 
     private void Update()
     {
-        //TODO: TP2 - Optimization - Should be event based
+        //TODO: TP2 - Optimization - Should be event based --> ASK
         KillCounter();
 
-        //TODO: TP2 - Optimization - Should be event based
+        //TODO: TP2 - Optimization - Should be event based --> ASK
         if (enemies.Count == 0)
         {
             currentSpriteIndex++;
@@ -41,8 +39,9 @@ public class OpenDoor : MonoBehaviour
 
             spriteRenderer.sprite = sprites[currentSpriteIndex];
 
-            //TODO: TP2 - Fix - Possible null reference
-            GetComponent<Collider2D>().enabled = false;
+            //TODO: TP2 - Fix - Possible null reference --> DONE
+            if(TryGetComponent(out Collider2D collider))
+                collider.enabled = false;
 
             winLevelSoundEffect.Play();
         }
@@ -52,9 +51,12 @@ public class OpenDoor : MonoBehaviour
     {
         for (int i = enemies.Count - 1; i >= 0; i--)
         {
-            //TODO: TP2 - Optimization - Cache values/refs
-            if (enemies[i].GetComponent<Collider2D>().enabled == false)
-                enemies.Remove(enemies[i]);
+            //TODO: TP2 - Optimization - Cache values/refs --> CHECK WITH EMILIANO!
+            if (enemies[i].TryGetComponent(out Collider2D collider))
+            {
+                if (collider.enabled == false)
+                    enemies.Remove(enemies[i]);
+            }
         }
     }
 
@@ -62,9 +64,12 @@ public class OpenDoor : MonoBehaviour
     {
         for (int i = enemies.Count - 1; i >= 0; i--)
         {
-            //TODO: TP2 - Optimization - Cache values/refs
-            var HP = enemies[i].GetComponent<HealthController>();
-            HP.TakeDamage(3);
+            if (enemies[i].activeSelf)
+            {
+                //TODO: TP2 - Optimization - Cache values/refs --> DONE
+                if (enemies[i].TryGetComponent(out HealthController health))
+                    health.TakeDamage(3);
+            }
         }
     }
 }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,26 +6,21 @@ public class InputReader : MonoBehaviour
     [SerializeField] private CharacterMovement characterMovement;
     [SerializeField] private CharacterShooting attack;
 
-    [SerializeField] private HealthController playerHP;
-
-    [SerializeField] private OpenDoor enemies;
+    [SerializeField] private EnemiesManager enemies;
 
     public void SetMovementValue(InputAction.CallbackContext inputContext)
     {
         if (!characterMovement)
             return;
 
-        //TODO: TP2 - Fix - Enabling movement based on HP should be handled by the character, not the input class
-        if (playerHP.HP > 0)
-        {
-            Vector2 inputValue = inputContext.ReadValue<Vector2>();
-            characterMovement.SetDirection(inputValue);
-        }
+        //TODO: TP2 - Fix - Enabling movement based on HP should be handled by the character, not the input class --> DONE
+        Vector2 inputValue = inputContext.ReadValue<Vector2>();
+        characterMovement.SetDirection(inputValue);
     }
 
     public void Shoot(InputAction.CallbackContext inputContext)
     {
-        if (inputContext.started && playerHP.HP > 0)
+        if (inputContext.started)
         {
             if (attack == null)
             {

@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
 public class CommonEnemy : MonoBehaviour
@@ -9,6 +6,7 @@ public class CommonEnemy : MonoBehaviour
     [SerializeField] private CharacterMovement targetPosition;
 
     private float distance;
+    private bool shouldFollowTarget = false;
     [SerializeField] private float startFollowingDistance = 4f;
 
     private void Update()
@@ -26,12 +24,12 @@ public class CommonEnemy : MonoBehaviour
             Vector2 directionToNextPos = nextPosition - currentPosition;
             directionToNextPos.Normalize();
 
-            if(distance < startFollowingDistance)
-            {
-                //TODO: TP2 - Unclear logic
-                startFollowingDistance = 1000f;
+            //TODO: TP2 - Unclear logic --> DONE
+            if (distance < startFollowingDistance)
+                shouldFollowTarget = true;
+
+            if (shouldFollowTarget)
                 characterMovement.SetDirection(directionToNextPos);
-            }
         }
     }
 }

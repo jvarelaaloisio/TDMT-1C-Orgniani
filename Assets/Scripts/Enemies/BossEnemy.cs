@@ -16,15 +16,10 @@ public class BossEnemy : MonoBehaviour
 
     private void Update()
     {
-        //TODO: TP2 - Optimization - Should be event based
-        if (enemyHP.HP > 0 && targetHP.HP > 0)
-        {
-            ShootAndSpawn();
-        }
-    }
-    
-    private void ShootAndSpawn()
-    {
+        //TODO: TP2 - Optimization - Should be event based --> DONE
+        if (targetHP.HP <= 0)
+            return;
+
         if (attack == null)
         {
             Debug.LogError($"{name}: CharacterShooting is null!");
@@ -55,9 +50,10 @@ public class BossEnemy : MonoBehaviour
     {
         foreach (GameObject frog in frogs)
         {
-            //TODO: TP2 - Optimization - Cache values/refs
-            if (frog.GetComponent<Collider2D>().enabled == true)
-                frog.SetActive(true);
+            //TODO: TP2 - Optimization - Cache values/refs --> DONE
+            if (frog.TryGetComponent(out Collider2D collider))
+                if (collider.enabled == true)
+                    frog.SetActive(true);
 
             yield return new WaitForSeconds(spawnDelay);
         }

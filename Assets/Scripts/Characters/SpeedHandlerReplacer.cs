@@ -1,12 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Character Movement/Speed Handler Replacer", fileName = "SR_")]
 public class SpeedHandlerReplacer : ScriptableObject
 {
-    [SerializeField] SpeedHandler replacement;
+    [SerializeField] SpeedHandler speedMultiplier;
     [SerializeField] private string tagToSearch = "Player";
+
+    private SpeedHandler replacement;
 
     public void ReplaceSpeedHandler()
     {
@@ -14,7 +14,13 @@ public class SpeedHandlerReplacer : ScriptableObject
 
         if (target.TryGetComponent(out CharacterMovement controller))
         {
+            if (replacement == controller.SpeedHandler)
+            {
+                replacement = speedMultiplier;
+            }
+
             var temp = controller.SpeedHandler;
+
             controller.SpeedHandler = replacement;
             replacement = temp;
         }

@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -12,9 +9,9 @@ public class MenuInputReader : MonoBehaviour
 
     private void Start()
     {
-        //TODO: TP2 - Fix - Careful with float equal comparisons, they can lead to decimal errors
-        if (Time.timeScale == 0f)
-            Time.timeScale = 1f;
+        //TODO: TP2 - Fix - Careful with float equal comparisons, they can lead to decimal errors --> DONE
+        if (Time.timeScale == 0)
+            Time.timeScale = 1;
     }
 
     public void StartButton()

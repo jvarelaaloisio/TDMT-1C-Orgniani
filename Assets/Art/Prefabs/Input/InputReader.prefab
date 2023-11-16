@@ -150,6 +150,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: b38dc3b2-cf7b-4a2e-86f7-78ea39f227bb
     m_ActionName: Player/InvincibleCheat[/Keyboard/f10]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: a9d60b4eec30e8d4fbd044fe9d44ec98, type: 2}
+        m_TargetAssemblyTypeName: SpeedHandlerReplacer, Assembly-CSharp
+        m_MethodName: ReplaceSpeedHandler
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 31dc5bd5-cf6a-4f11-8260-1b508f60f0ec
+    m_ActionName: Player/SpeedMultiplierCheat[/Keyboard/f11]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8037174926634703362}
+        m_TargetAssemblyTypeName: InputReader, Assembly-CSharp
+        m_MethodName: DamageAllEnemiesCheat
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: be6cd2bc-0d42-4d68-bb64-a8f63d32c927
+    m_ActionName: Player/DamageAllEnemiesCheat[/Keyboard/f12]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -170,3 +202,4 @@ MonoBehaviour:
   characterMovement: {fileID: 0}
   attack: {fileID: 0}
   playerHP: {fileID: 0}
+  enemies: {fileID: 0}

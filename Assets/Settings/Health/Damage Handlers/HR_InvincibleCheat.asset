@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f7e283b241e70c4db113e0176e9425d, type: 3}
   m_Name: HR_InvincibleCheat
   m_EditorClassIdentifier: 
-  replacement: {fileID: 11400000, guid: 195a724c96dfeb34ebd2e9ba89477c23, type: 2}
+  invincibleHandler: {fileID: 11400000, guid: 76f457fd113a53244af5d641e24af1ad, type: 2}
   tagToSearch: Player

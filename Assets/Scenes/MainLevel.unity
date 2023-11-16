@@ -3489,7 +3489,7 @@ PrefabInstance:
     - target: {fileID: 5088241470233011989, guid: b223e08b901ce4a45a3369fb607c7644, type: 3}
       propertyPath: damageHandler
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 195a724c96dfeb34ebd2e9ba89477c23, type: 2}
     - target: {fileID: 6278701980351504811, guid: b223e08b901ce4a45a3369fb607c7644, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.02
@@ -11997,7 +11997,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 257911917335221715, guid: df485dc7b3296ee478a12bff9073cbfa, type: 3}
       propertyPath: m_Name
-      value: Door
+      value: EM_Door
       objectReference: {fileID: 0}
     - target: {fileID: 257911917335221715, guid: df485dc7b3296ee478a12bff9073cbfa, type: 3}
       propertyPath: m_IsActive
@@ -12081,6 +12081,17 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 8573846903335249911, guid: df485dc7b3296ee478a12bff9073cbfa, type: 3}
   m_PrefabInstance: {fileID: 2080145079}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2080145081 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4261863338654285251, guid: df485dc7b3296ee478a12bff9073cbfa, type: 3}
+  m_PrefabInstance: {fileID: 2080145079}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69c5bb99a80ade44d833e50314506576, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2107502412 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1592490965652801410, guid: b223e08b901ce4a45a3369fb607c7644, type: 3}
@@ -12689,6 +12700,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8137019513120073274, guid: 44a1f8282be3f79429721e3bd6110d88, type: 3}
+      propertyPath: shootCooldown
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137019513120073274, guid: 44a1f8282be3f79429721e3bd6110d88, type: 3}
       propertyPath: animationCooldown
       value: 0.1
       objectReference: {fileID: 0}
@@ -12765,6 +12780,10 @@ PrefabInstance:
       propertyPath: attack
       value: 
       objectReference: {fileID: 1702048380}
+    - target: {fileID: 8037174926634703362, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
+      propertyPath: enemies
+      value: 
+      objectReference: {fileID: 2080145081}
     - target: {fileID: 8037174926634703362, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
       propertyPath: playerHP
       value: 

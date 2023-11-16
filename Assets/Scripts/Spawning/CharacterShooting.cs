@@ -1,7 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public delegate void VoidDelegateType();
@@ -12,7 +9,6 @@ public class CharacterShooting : MonoBehaviour
     [SerializeField] private Transform spawnPoint;
 
     [SerializeField] private float shootCooldown = 1f;
-    private float currentTime = 0;
     public bool canShoot = true;
 
     [SerializeField] private float shootDelay = 1f;
@@ -24,24 +20,13 @@ public class CharacterShooting : MonoBehaviour
     
     [ContextMenu(itemName: "Shoot")]
 
-    private void Update()
-    {
-        //TODO: TP2 - Could be a coroutine/Invoke
-        if (!canShoot)
-        {
-            currentTime += Time.deltaTime;
-            if (currentTime >= shootCooldown)
-            {
-                canShoot = true;
-                currentTime = 0;
-            }
-
-        }
-    }
-
     public void Shoot(Vector2 bulletDirection)
     {
         if (!canShoot) return;
+
+        if(TryGetComponent(out CharacterShooting characterShooting))
+            if (characterShooting.enabled == false)
+                return;
 
         if (!bulletPrefab)
         {
@@ -56,7 +41,7 @@ public class CharacterShooting : MonoBehaviour
         StartCoroutine(ShootSequence(bulletDirection));
     }
 
-    //TODO: TP2 - Fix - Should be handled by the boss
+    //TODO: TP2 - Fix - Should be handled by the boss --> ASK
     public void BossShoot(Vector2 bulletDirection, Vector2 bulletDirection2, Vector2 bulletDirection3)
     {
         if (!canShoot) return;
@@ -96,5 +81,10 @@ public class CharacterShooting : MonoBehaviour
 
             yield return new WaitForSeconds(bulletDelay);
         }
+
+        //TODO: TP2 - Could be a coroutine/Invoke --> DONE
+        yield return new WaitForSeconds(shootCooldown);
+
+        canShoot = true;
     }
 }

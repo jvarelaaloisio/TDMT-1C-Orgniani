@@ -1,15 +1,25 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//TODO: TP2 - Fix - Unify with BossHealthBar
+//TODO: TP2 - Fix - Unify with BossHealthBar --> ASK
 public class HealthPointsBar : MonoBehaviour
 {
     [SerializeField] private HealthController playerHP;
 
     [SerializeField] private GameObject heart;
     [SerializeField] private List<Image> hearts;
+
+
+    private void OnEnable()
+    {
+        playerHP.onHurt += HandleHealthBar;
+    }
+
+    private void OnDisable()
+    {
+        playerHP.onHurt -= HandleHealthBar;
+    }
 
     private void Start()
     {
@@ -20,7 +30,7 @@ public class HealthPointsBar : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void HandleHealthBar()
     {
         int heartFill = playerHP.HP;
 

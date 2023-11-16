@@ -1,12 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameOverScreen : MonoBehaviour
 {
-    //TODO: TP2 - Syntax - Consistency in access modifiers (private/protected/public/etc)
+    //TODO: TP2 - Syntax - Consistency in access modifiers (private/protected/public/etc) --> DONE
     [SerializeField] private PauseScreen pauseScreen;
 
     public void Setup()

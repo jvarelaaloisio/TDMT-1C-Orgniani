@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Hazard : MonoBehaviour
@@ -11,10 +8,8 @@ public class Hazard : MonoBehaviour
     {
         GameObject playerGameObject = col.gameObject;
 
-        //TODO: TP2 - Optimization - TryGetComponent
-        HealthController playerHP = playerGameObject.GetComponent<HealthController>();
-
-        if (playerHP)
+        //TODO: TP2 - Optimization - TryGetComponent --> DONE
+        if(playerGameObject.TryGetComponent(out HealthController playerHP))
             playerHP.TakeDamage(damage);
     }
 }

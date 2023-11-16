@@ -1,12 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Health/Damage Handler Replacer", fileName = "HR_")]
 public class DamageHandlerReplacer : ScriptableObject
 {
-    [SerializeField] DamageHandler replacement;
+    [SerializeField] DamageHandler invincibleHandler;
     [SerializeField] private string tagToSearch = "Player";
+
+    private DamageHandler replacement;
 
     public void ReplaceDamageHandler()
     {
@@ -14,7 +14,13 @@ public class DamageHandlerReplacer : ScriptableObject
 
         if(target.TryGetComponent(out HealthController controller))
         {
+            if (replacement == controller.DamageHandler)
+            {
+                replacement = invincibleHandler;
+            }
+
             var temp = controller.DamageHandler;
+
             controller.DamageHandler = replacement;
             replacement = temp;
         }

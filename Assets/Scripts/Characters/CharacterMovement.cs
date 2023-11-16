@@ -1,8 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class CharacterMovement : MonoBehaviour
 {
@@ -54,14 +50,14 @@ public class CharacterMovement : MonoBehaviour
 
     public void SetDirection(Vector2 direction)
     {
-        //MAKE THIS LOOK BETTER
-        //THIS DOES NOT GO HERE!!! should be controlled by events maybe??
-        if (speedHandler != null)
-        {
-            speed = speedHandler.HandleSpeed(speed, maxSpeed);
-        }
+        if (TryGetComponent(out CharacterMovement characterMovement))
+            if (characterMovement.enabled == false)
+                return;
+
+        speed = speedHandler.HandleSpeed(speed, maxSpeed);
 
         this.direction = direction;
+
         if(direction != Vector2.zero)
         {
             lastDirection = direction;

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da86a50671196e64f81c6341a9d998cf, type: 3}
   m_Name: SR_SpeedMultiplierCheat
   m_EditorClassIdentifier: 
-  replacement: {fileID: 11400000, guid: 59c6966facb489749a2161e0ec28dfff, type: 2}
+  speedMultiplier: {fileID: 11400000, guid: 59c6966facb489749a2161e0ec28dfff, type: 2}
   tagToSearch: Player

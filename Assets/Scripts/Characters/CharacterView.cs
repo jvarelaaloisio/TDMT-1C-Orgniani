@@ -1,11 +1,8 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
 
-//TODO: TP2 - Fix - File name. NO SPACES!!
+//TODO: TP2 - Fix - File name. NO SPACES!! --> DONE
 public class CharacterView : MonoBehaviour
 {
     [SerializeField] private Animator animator;

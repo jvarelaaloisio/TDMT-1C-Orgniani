@@ -123,17 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &185081699 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8037174926634703362, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
-  m_PrefabInstance: {fileID: 592622129}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d03cfb60e04d8824b9547f1b76b7c408, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &224789827 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2540910472825589439, guid: e869362d17f941a4ca6b5cf81fec9353, type: 3}
@@ -409,82 +398,6 @@ PrefabInstance:
     - target: {fileID: 2070993387552126582, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
-      propertyPath: m_ActionEvents.Array.size
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
-      propertyPath: m_ActionEvents.Array.data[14].m_ActionId
-      value: 31dc5bd5-cf6a-4f11-8260-1b508f60f0ec
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
-      propertyPath: m_ActionEvents.Array.data[15].m_ActionId
-      value: be6cd2bc-0d42-4d68-bb64-a8f63d32c927
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
-      propertyPath: m_ActionEvents.Array.data[14].m_ActionName
-      value: Player/SpeedMultiplierCheat[/Keyboard/f11]
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
-      propertyPath: m_ActionEvents.Array.data[15].m_ActionName
-      value: Player/DamageAllEnemiesCheat[/Keyboard/f12]
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
-      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
-      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
-      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
-      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
-      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 11400000, guid: a9d60b4eec30e8d4fbd044fe9d44ec98, type: 2}
-    - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
-      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 185081699}
-    - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
-      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
-      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
-      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ReplaceSpeedHandler
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
-      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DamageAllEnemiesCheat
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
-      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SpeedHandlerReplacer, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
-      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: InputReader, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
-      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 3232207240038049760, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
-      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5107337121082771934, guid: f27115d29018b9548ab17cdbfee33df5, type: 3}
       propertyPath: m_Name
@@ -4952,7 +4865,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 257911917335221715, guid: df485dc7b3296ee478a12bff9073cbfa, type: 3}
       propertyPath: m_Name
-      value: Door
+      value: EM_Door
       objectReference: {fileID: 0}
     - target: {fileID: 4261863338654285251, guid: df485dc7b3296ee478a12bff9073cbfa, type: 3}
       propertyPath: winLevelSoundEffect

@@ -1,44 +1,45 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MuteButtonController : MonoBehaviour
 {
     [SerializeField] GameObject crossMute;
-    private bool isMute = false;
 
-    private void Update()
+    //TODO: TP2 - Optimization - Should be event based --> DONE
+    private void OnEnable()
     {
-        //TODO: TP2 - Optimization - Should be event based
-        CheckIfMute();
+        SceneManager.sceneLoaded += CheckIfMute;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= CheckIfMute;
     }
 
     public void MuteButton()
     {
-        if (!isMute)
+        if (AudioListener.volume == 1f)
         {
             AudioListener.volume = 0f;
-            isMute = true;
-        }
-
-        else
-        {
-            AudioListener.volume = 1f;
-            isMute = false;
-        }
-    }
-
-    private void CheckIfMute()
-    {
-        if (AudioListener.volume == 0)
-        {
-            isMute = true;
             crossMute.SetActive(true);
         }
 
         else
         {
-            isMute = false;
+            AudioListener.volume = 1f;
+            crossMute.SetActive(false);
+        }
+    }
+
+    private void CheckIfMute(Scene scene, LoadSceneMode mode)
+    {
+        if (AudioListener.volume == 0f)
+        {
+            crossMute.SetActive(true);
+        }
+
+        else
+        {
             crossMute.SetActive(false);
         }
     }
