@@ -19,7 +19,7 @@ public class MenuInputReader : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    public void CreditsScreen()
+    public void CreditsButton()
     {
         creditsScreen.SetActive(true);
     }

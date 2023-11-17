@@ -11,7 +11,6 @@ public class BossEnemy : MonoBehaviour
     [SerializeField] private HealthController targetHP;
 
     [SerializeField] private List<GameObject> frogs;
-
     [SerializeField] private float spawnDelay = 1f;
 
     private void Update()

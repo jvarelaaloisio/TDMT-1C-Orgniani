@@ -24,9 +24,7 @@ public class CharacterShooting : MonoBehaviour
     {
         if (!canShoot) return;
 
-        if(TryGetComponent(out CharacterShooting characterShooting))
-            if (characterShooting.enabled == false)
-                return;
+        if (!enabled) return;
 
         if (!bulletPrefab)
         {

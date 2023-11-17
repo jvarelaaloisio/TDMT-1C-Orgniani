@@ -50,9 +50,7 @@ public class CharacterMovement : MonoBehaviour
 
     public void SetDirection(Vector2 direction)
     {
-        if (TryGetComponent(out CharacterMovement characterMovement))
-            if (characterMovement.enabled == false)
-                return;
+        if (!enabled) return;
 
         speed = speedHandler.HandleSpeed(speed, maxSpeed);
 

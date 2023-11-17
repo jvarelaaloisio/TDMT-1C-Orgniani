@@ -34,13 +34,11 @@ public class HealthController : MonoBehaviour
 
     public DamageHandler DamageHandler
     {
-        //getter
         get
         {
             return damageHandler;
         }
 
-        //setter
         set
         {
             damageHandler = value;
@@ -97,11 +95,14 @@ public class HealthController : MonoBehaviour
         else
         {
             //TODO: TP2 - Fix - This should be handled by other scripts, like the enemy scripts, by subscribing to the onDead event. --> ASK
-            GetComponent<Collider2D>().enabled = false;
-            GetComponent<CharacterMovement>().enabled = false;
-            GetComponent<CharacterShooting>().enabled = false;
+            if (TryGetComponent(out Collider2D collider))
+                collider.enabled = false;
 
-            //A esto lo uso para todos los personajes, incluido el protagonista. Esto significa que voy a tener que crear un script específico para el protagonista para poder subscribirme al OnDead event deade ahí?
+            if(TryGetComponent(out CharacterMovement movement))
+                movement.enabled = false;
+
+            if(TryGetComponent(out CharacterShooting attack))
+                attack.enabled = false;
 
             if (isEnemy)
                 StartCoroutine(Deactivate());

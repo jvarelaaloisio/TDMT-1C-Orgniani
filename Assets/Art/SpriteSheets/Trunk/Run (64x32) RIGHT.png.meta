@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8352525a33b50304ea5c17f3b0cfc5fe
+guid: f396afd0647771d49b139076a2754abb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Attack (64x32)_0
+      name: Run (64x32) RIGHT_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 499f7fadd64c34d4da6a88003dc263c2
-      internalID: -933492405
+      spriteID: 06a59ec1ffc2df84da6c39048e564ecc
+      internalID: 815361870
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack (64x32)_1
+      name: Run (64x32) RIGHT_1
       rect:
         serializedVersion: 2
         x: 64
@@ -158,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0466567bd42f2ff43b26811755162820
-      internalID: 450327175
+      spriteID: 2c01908992b6e6f43ba5139f60157451
+      internalID: 1232310546
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack (64x32)_2
+      name: Run (64x32) RIGHT_2
       rect:
         serializedVersion: 2
         x: 128
@@ -179,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52a356df97b3572408f9357da99adc11
-      internalID: -866920766
+      spriteID: fcc60539d80995849a4622c925b12f76
+      internalID: 1014716609
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack (64x32)_3
+      name: Run (64x32) RIGHT_3
       rect:
         serializedVersion: 2
         x: 192
@@ -200,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56fb81a7b04be39459dc91cfb695ba1d
-      internalID: -1185530592
+      spriteID: 40f337bcf6d0d1b40b37963bc3595080
+      internalID: -1760592801
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack (64x32)_4
+      name: Run (64x32) RIGHT_4
       rect:
         serializedVersion: 2
         x: 256
@@ -221,14 +221,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 282d4ff3954780e4c9ef0a8210f3bc31
-      internalID: 786804542
+      spriteID: 76ff0ed8c6e3c2a48bbfedd79f811b7d
+      internalID: 870320590
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack (64x32)_5
+      name: Run (64x32) RIGHT_5
       rect:
         serializedVersion: 2
         x: 320
@@ -242,14 +242,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3eb78a7773d8f5b4684fc79acb209376
-      internalID: -1088897086
+      spriteID: 5c2ceac981459bb4e8b7d2823b9d5bf8
+      internalID: -798400388
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack (64x32)_6
+      name: Run (64x32) RIGHT_6
       rect:
         serializedVersion: 2
         x: 384
@@ -263,14 +263,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0549d4c9e1dd6824dbb64acd0696f80d
-      internalID: -1611818129
+      spriteID: 28e76b6fb241e904faf21179b11199e7
+      internalID: -1783235919
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack (64x32)_7
+      name: Run (64x32) RIGHT_7
       rect:
         serializedVersion: 2
         x: 448
@@ -284,14 +284,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af072750c0d14fc42b668f01b37e0da1
-      internalID: -993159617
+      spriteID: 4e466b8c72ab15740a245f96496f0f7d
+      internalID: -1079045665
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack (64x32)_8
+      name: Run (64x32) RIGHT_8
       rect:
         serializedVersion: 2
         x: 512
@@ -305,14 +305,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1702f8dee1a15b40a7532878997078e
-      internalID: 35743383
+      spriteID: 87ee17d9af9c8e941a4b897e12eedde4
+      internalID: 966561982
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack (64x32)_9
+      name: Run (64x32) RIGHT_9
       rect:
         serializedVersion: 2
         x: 576
@@ -326,14 +326,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed4df41be2a87c14d8a167875d6e24fe
-      internalID: 963736660
+      spriteID: 6273ad800cd015f4d82b9bdf70af27f5
+      internalID: -913426792
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack (64x32)_10
+      name: Run (64x32) RIGHT_10
       rect:
         serializedVersion: 2
         x: 640
@@ -347,8 +347,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a21a82b4ecb98649a58af9378230e33
-      internalID: -286109784
+      spriteID: bca7367be3c8014439d837386bc701ae
+      internalID: 1700709344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run (64x32) RIGHT_11
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b721632155de53e4891bae006afe1242
+      internalID: -2108546924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run (64x32) RIGHT_12
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2a154bf1c3ab7c4f98e60a3faf60cf9
+      internalID: -349449077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run (64x32) RIGHT_13
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe5b6fc9279da074293bb9092d789c50
+      internalID: -1005233903
       vertices: []
       indices: 
       edges: []
@@ -364,17 +427,20 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Attack (64x32)_0: -933492405
-      Attack (64x32)_1: 450327175
-      Attack (64x32)_10: -286109784
-      Attack (64x32)_2: -866920766
-      Attack (64x32)_3: -1185530592
-      Attack (64x32)_4: 786804542
-      Attack (64x32)_5: -1088897086
-      Attack (64x32)_6: -1611818129
-      Attack (64x32)_7: -993159617
-      Attack (64x32)_8: 35743383
-      Attack (64x32)_9: 963736660
+      Run (64x32) RIGHT_0: 815361870
+      Run (64x32) RIGHT_1: 1232310546
+      Run (64x32) RIGHT_10: 1700709344
+      Run (64x32) RIGHT_11: -2108546924
+      Run (64x32) RIGHT_12: -349449077
+      Run (64x32) RIGHT_13: -1005233903
+      Run (64x32) RIGHT_2: 1014716609
+      Run (64x32) RIGHT_3: -1760592801
+      Run (64x32) RIGHT_4: 870320590
+      Run (64x32) RIGHT_5: -798400388
+      Run (64x32) RIGHT_6: -1783235919
+      Run (64x32) RIGHT_7: -1079045665
+      Run (64x32) RIGHT_8: 966561982
+      Run (64x32) RIGHT_9: -913426792
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

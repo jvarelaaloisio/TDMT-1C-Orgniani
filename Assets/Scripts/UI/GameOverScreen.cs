@@ -5,6 +5,8 @@ public class GameOverScreen : MonoBehaviour
 {
     //TODO: TP2 - Syntax - Consistency in access modifiers (private/protected/public/etc) --> DONE
     [SerializeField] private PauseScreen pauseScreen;
+    [SerializeField] private string firstLevel = "FirstLevel";
+    [SerializeField] private string mainMenu = "MainMenu";
 
     public void Setup()
     {
@@ -13,13 +15,17 @@ public class GameOverScreen : MonoBehaviour
 
     public void RestartButton()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        //SceneManager.LoadScene(gameObject.scene.name);
+        SceneManager.LoadScene(firstLevel);
+    }
+
+    public void RestartLevelButton()
+    {
+        SceneManager.LoadScene(gameObject.scene.name);
     }
 
     public void BackToMenuButton()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(mainMenu);
     }
 
     public void PauseButton()

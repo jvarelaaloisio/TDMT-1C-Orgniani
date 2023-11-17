@@ -361,6 +361,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseScreen: {fileID: 5600363575330478244}
+  firstLevel: FirstLevel
+  mainMenu: MainMenu
 --- !u!1 &3129105815954659595
 GameObject:
   m_ObjectHideFlags: 0

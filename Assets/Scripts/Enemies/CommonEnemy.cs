@@ -28,6 +28,10 @@ public class CommonEnemy : MonoBehaviour
             if (distance < startFollowingDistance)
                 shouldFollowTarget = true;
 
+            if (TryGetComponent(out HealthController enemyHP))
+                if (enemyHP.HP < enemyHP.maxHP)
+                    shouldFollowTarget = true;
+
             if (shouldFollowTarget)
                 characterMovement.SetDirection(directionToNextPos);
         }
