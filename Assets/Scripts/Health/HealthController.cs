@@ -94,15 +94,7 @@ public class HealthController : MonoBehaviour
 
         else
         {
-            //TODO: TP2 - Fix - This should be handled by other scripts, like the enemy scripts, by subscribing to the onDead event. --> ASK
-            if (TryGetComponent(out Collider2D collider))
-                collider.enabled = false;
-
-            if(TryGetComponent(out CharacterMovement movement))
-                movement.enabled = false;
-
-            if(TryGetComponent(out CharacterShooting attack))
-                attack.enabled = false;
+            //TODO: TP2 - Fix - This should be handled by other scripts, like the enemy scripts, by subscribing to the onDead event. --> DONE
 
             if (isEnemy)
                 StartCoroutine(Deactivate());

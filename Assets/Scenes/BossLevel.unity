@@ -4833,7 +4833,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 390093497661218515, guid: d1080cc0b71b3544f8f278a81f3844c0, type: 3}
   spawnPoint: {fileID: 1649834930}
-  shootCooldown: 3
+  shootCooldown: 1
   canShoot: 1
   shootDelay: 0.4
   bulletDelay: 0.1
@@ -4884,7 +4884,10 @@ MonoBehaviour:
   - {fileID: 1561488372}
   - {fileID: 1393692552}
   - {fileID: 851753133}
-  spawnDelay: 3
+  spawnDelay: 2
+  canShoot: 1
+  canSpawnFrogs: 1
+  attackChangeCooldown: 10
 --- !u!4 &1234172098 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2594990760858113784, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}

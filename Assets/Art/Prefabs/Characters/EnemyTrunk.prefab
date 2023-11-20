@@ -272,8 +272,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11e0261cde9437c429b94265c70fb2cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterMovement: {fileID: 0}
+  characterMovement: {fileID: 3693272513374255347}
   targetPosition: {fileID: 0}
+  enemyHP: {fileID: 6099257096883031374}
   startFollowingDistance: 4
 --- !u!50 &3480363291545098720
 Rigidbody2D:

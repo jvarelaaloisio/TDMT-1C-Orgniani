@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//TODO: TP2 - Fix - Unify with BossHealthBar --> ASK
+//TODO: TP2 - Fix - Unify with BossHealthBar --> ASKED TO IGNORE BY TEACHER
 public class HealthPointsBar : MonoBehaviour
 {
     [SerializeField] private HealthController playerHP;

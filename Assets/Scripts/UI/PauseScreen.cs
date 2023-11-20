@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class PauseScreen : MonoBehaviour
 {
+    [SerializeField] private string mainMenu = "MainMenu";
     public void PauseGame()
     {
         gameObject.SetActive(true);
@@ -17,6 +18,6 @@ public class PauseScreen : MonoBehaviour
 
     public void BackToMenuButton()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(mainMenu);
     }
 }

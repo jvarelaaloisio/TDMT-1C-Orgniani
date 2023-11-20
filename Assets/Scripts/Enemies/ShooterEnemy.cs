@@ -15,14 +15,24 @@ public class ShooterEnemy : MonoBehaviour
     private float distance;
     [SerializeField] private float startShootingDistance = 4f;
 
+    private void OnEnable()
+    {
+        enemyHP.onDead += HandleDeath;
+    }
+
+    private void OnDisable()
+    {
+        enemyHP.onDead -= HandleDeath;
+    }
+
     private void Update()
     {
         if (!isShooting) return;
 
-        distance = Vector2.Distance(transform.position, targetPosition.transform.position);
-
         if (targetHP.HP <= 0)
             return;
+
+        distance = Vector2.Distance(transform.position, targetPosition.transform.position);
 
         if (attack == null)
         {
@@ -54,5 +64,17 @@ public class ShooterEnemy : MonoBehaviour
         yield return new WaitForSeconds(attackCooldown);
 
         isShooting = true;
+    }
+
+    private void HandleDeath()
+    {
+        if (TryGetComponent(out Collider2D collider))
+            collider.enabled = false;
+
+        if (TryGetComponent(out CharacterMovement movement))
+            movement.enabled = false;
+
+        if (TryGetComponent(out CharacterShooting attack))
+            attack.enabled = false;
     }
 }

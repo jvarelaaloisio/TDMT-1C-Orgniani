@@ -4,8 +4,9 @@ using UnityEngine.UI;
 
 public class MenuInputReader : MonoBehaviour
 {
-    [SerializeField] GameObject creditsScreen;
-    [SerializeField] Button button;
+    [SerializeField] private GameObject creditsScreen;
+
+    [SerializeField] private string tutorialLevel = "TutorialLevel";
 
     private void Start()
     {
@@ -16,7 +17,7 @@ public class MenuInputReader : MonoBehaviour
 
     public void StartButton()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(tutorialLevel);
     }
 
     public void CreditsButton()

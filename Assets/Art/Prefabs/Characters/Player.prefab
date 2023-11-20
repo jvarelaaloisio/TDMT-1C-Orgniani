@@ -513,6 +513,7 @@ GameObject:
   - component: {fileID: 8137019513120073274}
   - component: {fileID: 6149567213819325555}
   - component: {fileID: 6555825157712399147}
+  - component: {fileID: 8362704045239712338}
   - component: {fileID: 8023332327521035857}
   - component: {fileID: 8379348307367787148}
   m_Layer: 6
@@ -611,6 +612,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+--- !u!114 &8362704045239712338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9093090905388126332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95a676d9e39959e4581aeceffc27dca3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHP: {fileID: 6149567213819325555}
 --- !u!50 &8023332327521035857
 Rigidbody2D:
   serializedVersion: 4

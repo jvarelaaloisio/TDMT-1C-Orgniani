@@ -16,6 +16,8 @@ public class CharacterShooting : MonoBehaviour
     [SerializeField] private float bulletDelay = 0.3f;
     [SerializeField] private int bulletAmount = 1;
 
+    private float shotsAmount = 1;
+
     public VoidDelegateType onShoot;
     
     [ContextMenu(itemName: "Shoot")]
@@ -39,27 +41,7 @@ public class CharacterShooting : MonoBehaviour
         StartCoroutine(ShootSequence(bulletDirection));
     }
 
-    //TODO: TP2 - Fix - Should be handled by the boss --> ASK
-    public void BossShoot(Vector2 bulletDirection, Vector2 bulletDirection2, Vector2 bulletDirection3)
-    {
-        if (!canShoot) return;
-
-        if (!bulletPrefab)
-        {
-            Debug.LogError($"{name}: bulletPrefab is null");
-        }
-
-        if (!spawnPoint)
-        {
-            Debug.LogError($"{name}: spawnPoint is null");
-        }
-
-        StartCoroutine(ShootSequence(bulletDirection));
-        StartCoroutine(ShootSequence(bulletDirection2));
-        StartCoroutine(ShootSequence(bulletDirection3));
-    }
-
-    private IEnumerator ShootSequence(Vector2 bulletDirection)
+    public IEnumerator ShootSequence(Vector2 bulletDirection)
     {
         canShoot = false;
 

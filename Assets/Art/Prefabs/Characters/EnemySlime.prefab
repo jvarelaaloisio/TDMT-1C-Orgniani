@@ -125,6 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterMovement: {fileID: 8884600967923930237}
   targetPosition: {fileID: 0}
+  enemyHP: {fileID: 5088241470233011989}
   startFollowingDistance: 10
 --- !u!50 &1109612411721284439
 Rigidbody2D:
