@@ -6,7 +6,7 @@ public class EnemiesManager : MonoBehaviour
 {
     [SerializeField] private List<Sprite> sprites;
     [SerializeField] private SpriteRenderer spriteRenderer;
-    [SerializeField] private List<GameObject> enemies;
+    [SerializeField] private List<HealthController> enemies;
 
     [SerializeField] private AudioSource winLevelSoundEffect;
 
@@ -23,9 +23,8 @@ public class EnemiesManager : MonoBehaviour
 
         for (int i = enemies.Count - 1; i >= 0; i--)
         {
-            //TODO: TP2 - Optimization - Cache values/refs --> ASK
-            if (enemies[i].TryGetComponent(out HealthController enemyHP))
-                enemyHP.onDead += KillCounter;
+            //TODO: TP2 - Optimization - Cache values/refs --> DONE
+            enemies[i].onDead += KillCounter;
         }
     }
 
@@ -34,13 +33,9 @@ public class EnemiesManager : MonoBehaviour
     {
         for (int i = enemies.Count - 1; i >= 0; i--)
         {
-            if (enemies[i].TryGetComponent(out HealthController enemyHP))
+            if (enemies[i].HP <= 0)
             {
-                if(enemyHP.HP <= 0)
-                {
-                    enemies.Remove(enemies[i]);
-                    enemyHP.onDead -= KillCounter;
-                }
+                enemies.Remove(enemies[i]);
             }
         }
 
@@ -74,11 +69,9 @@ public class EnemiesManager : MonoBehaviour
     {
         for (int i = enemies.Count - 1; i >= 0; i--)
         {
-            if (enemies[i].activeSelf)
+            if (enemies[i].gameObject.activeSelf)
             {
-                //TODO: TP2 - Optimization - Cache values/refs --> ASK
-                if (enemies[i].TryGetComponent(out HealthController health))
-                    health.TakeDamage(3);
+                enemies[i].TakeDamage(3);
             }
         }
     }

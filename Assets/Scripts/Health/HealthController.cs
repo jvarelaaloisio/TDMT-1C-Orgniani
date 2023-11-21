@@ -80,6 +80,11 @@ public class HealthController : MonoBehaviour
         canHurt = false;
     }
 
+    public void Resurrect()
+    {
+        HP = maxHP;
+    }
+
     private void Die()
     {
         if (onDead != null)

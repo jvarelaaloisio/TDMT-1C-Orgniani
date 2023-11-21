@@ -128,11 +128,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2540910472825589439, guid: e869362d17f941a4ca6b5cf81fec9353, type: 3}
   m_PrefabInstance: {fileID: 476614898}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &442183022 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1592490965652801410, guid: b223e08b901ce4a45a3369fb607c7644, type: 3}
-  m_PrefabInstance: {fileID: 1656086641}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &475617858
 GameObject:
   m_ObjectHideFlags: 0
@@ -3299,7 +3294,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5088241470233011989, guid: b223e08b901ce4a45a3369fb607c7644, type: 3}
   m_PrefabInstance: {fileID: 1656086641}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 442183022}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f3dda84158df34942b063713c288d878, type: 3}
@@ -4734,17 +4729,12 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1263194945520695099, guid: 63862a4eea7c0cc46a8b4576dcfe7ea9, type: 3}
   m_PrefabInstance: {fileID: 1847723547}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1951481817 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1592490965652801410, guid: b223e08b901ce4a45a3369fb607c7644, type: 3}
-  m_PrefabInstance: {fileID: 1685615958}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1951481822 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5088241470233011989, guid: b223e08b901ce4a45a3369fb607c7644, type: 3}
   m_PrefabInstance: {fileID: 1685615958}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1951481817}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f3dda84158df34942b063713c288d878, type: 3}
@@ -4908,17 +4898,21 @@ PrefabInstance:
       value: EM_Door
       objectReference: {fileID: 0}
     - target: {fileID: 4261863338654285251, guid: df485dc7b3296ee478a12bff9073cbfa, type: 3}
+      propertyPath: enemies.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4261863338654285251, guid: df485dc7b3296ee478a12bff9073cbfa, type: 3}
       propertyPath: winLevelSoundEffect
       value: 
       objectReference: {fileID: 1213773012981767555}
     - target: {fileID: 4261863338654285251, guid: df485dc7b3296ee478a12bff9073cbfa, type: 3}
       propertyPath: enemies.Array.data[0]
       value: 
-      objectReference: {fileID: 442183022}
+      objectReference: {fileID: 1656086643}
     - target: {fileID: 4261863338654285251, guid: df485dc7b3296ee478a12bff9073cbfa, type: 3}
       propertyPath: enemies.Array.data[1]
       value: 
-      objectReference: {fileID: 1951481817}
+      objectReference: {fileID: 1951481822}
     - target: {fileID: 7571274486272955754, guid: df485dc7b3296ee478a12bff9073cbfa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.504

@@ -8,6 +8,11 @@ public class SpeedHandlerReplacer : ScriptableObject
 
     private SpeedHandler replacement;
 
+    private void OnEnable()
+    {
+        replacement = speedMultiplier;
+    }
+
     public void ReplaceSpeedHandler()
     {
         var target = GameObject.FindGameObjectWithTag(tagToSearch);

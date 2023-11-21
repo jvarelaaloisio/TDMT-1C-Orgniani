@@ -10,16 +10,24 @@ public class BossEnemy : MonoBehaviour
     [SerializeField] private CharacterMovement targetPosition;
     [SerializeField] private HealthController targetHP;
 
-    [SerializeField] private List<GameObject> frogs;
+    [SerializeField] private List<HealthController> frogs;
     [SerializeField] private float spawnDelay = 1f;
 
     [SerializeField] private float attackCooldown = 5f;
-    [SerializeField] private bool shouldShoot = false;
-    [SerializeField] private bool shouldSpawn = false;
+
+    //SHOULDNT BE SERIALIZED FIELD
+    public bool isTripleShooting = true;
+    public bool isExplodingShooting = false;
+
+    private GameObject normalBulletPrefab;
+    [SerializeField] private GameObject explodingBulletPrefab;
+
+    public VoidDelegateType onAttackChange;
 
     private void OnEnable()
     {
         enemyHP.onDead += HandleDeath;
+        normalBulletPrefab = attack.bulletPrefab;
     }
 
     private void OnDisable()
@@ -44,44 +52,76 @@ public class BossEnemy : MonoBehaviour
         if (targetPosition == null)
             Debug.LogError($"{name}: Target is null!");
 
+        StartCoroutine(SpawnFrogsCoroutine());
+        ExplodingShoot();
+
+        if (!isTripleShooting) return;
+
         else
         {
-            BossShoot();
-            StartCoroutine(SpawnFrogsCoroutine());
+            TripleShoot();
+            StartCoroutine(AttackSequence());
         }
     }
 
+
+    private Vector2 GetTargetLocation(Vector2 displacement)
+    {
+        Vector2 currentPosition = transform.position;
+
+        Vector2 nextPosition = targetPosition.currentPosition + displacement;
+
+        Vector2 directionToNextPos = nextPosition - currentPosition;
+
+        return directionToNextPos;
+    }
+
     //TODO: TP2 - Fix - Should be handled by the boss --> DONE
-    private void BossShoot()
+    private void TripleShoot()
     {
         if (!attack.canShoot) return;
 
-        Vector2 currentPosition = transform.position;
+        StartCoroutine(attack.ShootSequence(GetTargetLocation(new Vector2(0, 0))));
+        StartCoroutine(attack.ShootSequence(GetTargetLocation(new Vector2(3, 0))));
+        StartCoroutine(attack.ShootSequence(GetTargetLocation(new Vector2(-3, 0))));
+    }
 
-        Vector2 nextPosition = targetPosition.currentPosition;
-        Vector2 nextPosition2 = targetPosition.currentPosition - new Vector2(3, 0);
-        Vector2 nextPosition3 = targetPosition.currentPosition + new Vector2(3, 0);
-
-        Vector2 directionToNextPos = nextPosition - currentPosition;
-        Vector2 directionToNextPos2 = nextPosition2 - currentPosition;
-        Vector2 directionToNextPos3 = nextPosition3 - currentPosition;
-
-        StartCoroutine(attack.ShootSequence(directionToNextPos));
-        StartCoroutine(attack.ShootSequence(directionToNextPos2));
-        StartCoroutine(attack.ShootSequence(directionToNextPos3));
+    private void ExplodingShoot()
+    {
+        if (!isExplodingShooting) return;
+        attack.Shoot(GetTargetLocation(new Vector2 (0,0)));
     }
 
     private IEnumerator SpawnFrogsCoroutine()
     {
-        foreach (GameObject frog in frogs)
+        foreach (HealthController frog in frogs)
         {
-            //TODO: TP2 - Optimization - Cache values/refs --> DONE ?? Check later if it can improve
-            if (frog.TryGetComponent(out Collider2D collider))
-                if (collider.enabled == true)
-                    frog.SetActive(true);
+            //TODO: TP2 - Optimization - Cache values/refs --> DONE
+            if (frog.HP > 0)
+            {
+                frog.gameObject.SetActive(true);
+            }
 
             yield return new WaitForSeconds(spawnDelay);
         }
+    }
+
+    private IEnumerator AttackSequence()
+    {
+        yield return new WaitForSeconds(attackCooldown);
+
+        if (onAttackChange != null) onAttackChange();
+        isTripleShooting = false;
+        attack.bulletPrefab = explodingBulletPrefab;
+        isExplodingShooting = true;
+
+        yield return new WaitForSeconds(attackCooldown);
+
+        if (onAttackChange != null) onAttackChange();
+        isExplodingShooting = false;
+        attack.bulletPrefab = normalBulletPrefab;
+        isTripleShooting = true;
+
     }
 
     private void HandleDeath()

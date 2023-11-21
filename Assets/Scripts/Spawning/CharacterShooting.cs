@@ -5,7 +5,7 @@ public delegate void VoidDelegateType();
 
 public class CharacterShooting : MonoBehaviour
 {
-    [SerializeField] private GameObject bulletPrefab;
+    public GameObject bulletPrefab;
     [SerializeField] private Transform spawnPoint;
 
     [SerializeField] private float shootCooldown = 1f;
@@ -15,8 +15,6 @@ public class CharacterShooting : MonoBehaviour
 
     [SerializeField] private float bulletDelay = 0.3f;
     [SerializeField] private int bulletAmount = 1;
-
-    private float shotsAmount = 1;
 
     public VoidDelegateType onShoot;
     

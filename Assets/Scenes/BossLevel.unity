@@ -605,11 +605,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 1175542000}
   bossHP: {fileID: 1226203779}
---- !u!1 &103766289 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1592490965652801410, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
-  m_PrefabInstance: {fileID: 553950671}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &122865340
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -700,7 +695,7 @@ GameObject:
   - component: {fileID: 228084129}
   - component: {fileID: 228084130}
   m_Layer: 7
-  m_Name: SpriteBossFrog
+  m_Name: SpriteBossFrogRed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1345,6 +1340,10 @@ PrefabInstance:
       propertyPath: targetPosition
       value: 
       objectReference: {fileID: 1033073772}
+    - target: {fileID: 1399274091689977421, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
+      propertyPath: startFollowingDistance
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1592490965652801410, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
       propertyPath: m_Name
       value: EnemyFrog
@@ -1392,6 +1391,10 @@ PrefabInstance:
     - target: {fileID: 2594990760858113784, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8884600967923930237, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
+      propertyPath: speed
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3769,47 +3772,47 @@ PrefabInstance:
     - target: {fileID: 4261863338654285251, guid: df485dc7b3296ee478a12bff9073cbfa, type: 3}
       propertyPath: enemies.Array.data[0]
       value: 
-      objectReference: {fileID: 1226203775}
+      objectReference: {fileID: 1226203779}
     - target: {fileID: 4261863338654285251, guid: df485dc7b3296ee478a12bff9073cbfa, type: 3}
       propertyPath: enemies.Array.data[1]
       value: 
-      objectReference: {fileID: 103766289}
+      objectReference: {fileID: 926003099}
     - target: {fileID: 4261863338654285251, guid: df485dc7b3296ee478a12bff9073cbfa, type: 3}
       propertyPath: enemies.Array.data[2]
       value: 
-      objectReference: {fileID: 869144216}
+      objectReference: {fileID: 2118052152}
     - target: {fileID: 4261863338654285251, guid: df485dc7b3296ee478a12bff9073cbfa, type: 3}
       propertyPath: enemies.Array.data[3]
       value: 
-      objectReference: {fileID: 852768649}
+      objectReference: {fileID: 1234172099}
     - target: {fileID: 4261863338654285251, guid: df485dc7b3296ee478a12bff9073cbfa, type: 3}
       propertyPath: enemies.Array.data[4]
       value: 
-      objectReference: {fileID: 1591192465}
+      objectReference: {fileID: 1591192466}
     - target: {fileID: 4261863338654285251, guid: df485dc7b3296ee478a12bff9073cbfa, type: 3}
       propertyPath: enemies.Array.data[5]
       value: 
-      objectReference: {fileID: 1313221196}
+      objectReference: {fileID: 2130477470}
     - target: {fileID: 4261863338654285251, guid: df485dc7b3296ee478a12bff9073cbfa, type: 3}
       propertyPath: enemies.Array.data[6]
       value: 
-      objectReference: {fileID: 1186526330}
+      objectReference: {fileID: 1186526331}
     - target: {fileID: 4261863338654285251, guid: df485dc7b3296ee478a12bff9073cbfa, type: 3}
       propertyPath: enemies.Array.data[7]
       value: 
-      objectReference: {fileID: 1026177195}
+      objectReference: {fileID: 1026177196}
     - target: {fileID: 4261863338654285251, guid: df485dc7b3296ee478a12bff9073cbfa, type: 3}
       propertyPath: enemies.Array.data[8]
       value: 
-      objectReference: {fileID: 1561488372}
+      objectReference: {fileID: 1561488374}
     - target: {fileID: 4261863338654285251, guid: df485dc7b3296ee478a12bff9073cbfa, type: 3}
       propertyPath: enemies.Array.data[9]
       value: 
-      objectReference: {fileID: 1393692552}
+      objectReference: {fileID: 1393692554}
     - target: {fileID: 4261863338654285251, guid: df485dc7b3296ee478a12bff9073cbfa, type: 3}
       propertyPath: enemies.Array.data[10]
       value: 
-      objectReference: {fileID: 851753133}
+      objectReference: {fileID: 851753139}
     - target: {fileID: 5349909009483399423, guid: df485dc7b3296ee478a12bff9073cbfa, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -3885,6 +3888,10 @@ PrefabInstance:
       propertyPath: targetPosition
       value: 
       objectReference: {fileID: 1033073772}
+    - target: {fileID: 1399274091689977421, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
+      propertyPath: startFollowingDistance
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1592490965652801410, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
       propertyPath: m_Name
       value: EnemyFrog (9)
@@ -3933,21 +3940,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8884600967923930237, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
---- !u!1 &851753133 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1592490965652801410, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
-  m_PrefabInstance: {fileID: 839194898}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &851753134 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2594990760858113784, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
   m_PrefabInstance: {fileID: 839194898}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &851753139 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5088241470233011989, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
+  m_PrefabInstance: {fileID: 839194898}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3dda84158df34942b063713c288d878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &852768648
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3964,6 +3981,10 @@ PrefabInstance:
       propertyPath: targetPosition
       value: 
       objectReference: {fileID: 1033073772}
+    - target: {fileID: 1399274091689977421, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
+      propertyPath: startFollowingDistance
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1592490965652801410, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
       propertyPath: m_Name
       value: EnemyFrog (2)
@@ -4012,16 +4033,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8884600967923930237, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
---- !u!1 &852768649 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1592490965652801410, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
-  m_PrefabInstance: {fileID: 852768648}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &869144215
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4038,6 +4058,10 @@ PrefabInstance:
       propertyPath: targetPosition
       value: 
       objectReference: {fileID: 1033073772}
+    - target: {fileID: 1399274091689977421, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
+      propertyPath: startFollowingDistance
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1592490965652801410, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
       propertyPath: m_Name
       value: EnemyFrog (1)
@@ -4086,16 +4110,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8884600967923930237, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
---- !u!1 &869144216 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1592490965652801410, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
-  m_PrefabInstance: {fileID: 869144215}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &875526771
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4112,6 +4135,10 @@ PrefabInstance:
       propertyPath: targetPosition
       value: 
       objectReference: {fileID: 1033073772}
+    - target: {fileID: 1399274091689977421, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
+      propertyPath: startFollowingDistance
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1592490965652801410, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
       propertyPath: m_Name
       value: EnemyFrog (8)
@@ -4160,6 +4187,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8884600967923930237, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4170,6 +4201,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2594990760858113784, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
   m_PrefabInstance: {fileID: 553950671}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &926003099 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5088241470233011989, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
+  m_PrefabInstance: {fileID: 553950671}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3dda84158df34942b063713c288d878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1026177194
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4186,6 +4228,10 @@ PrefabInstance:
       propertyPath: targetPosition
       value: 
       objectReference: {fileID: 1033073772}
+    - target: {fileID: 1399274091689977421, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
+      propertyPath: startFollowingDistance
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1592490965652801410, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
       propertyPath: m_Name
       value: EnemyFrog (6)
@@ -4234,16 +4280,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8884600967923930237, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
---- !u!1 &1026177195 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1592490965652801410, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
+--- !u!114 &1026177196 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5088241470233011989, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
   m_PrefabInstance: {fileID: 1026177194}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3dda84158df34942b063713c288d878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1033073772 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1116090878914013790, guid: 44a1f8282be3f79429721e3bd6110d88, type: 3}
@@ -4495,6 +4551,10 @@ PrefabInstance:
       propertyPath: targetPosition
       value: 
       objectReference: {fileID: 1033073772}
+    - target: {fileID: 1399274091689977421, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
+      propertyPath: startFollowingDistance
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1592490965652801410, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
       propertyPath: m_Name
       value: EnemyFrog (5)
@@ -4543,16 +4603,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8884600967923930237, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
---- !u!1 &1186526330 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1592490965652801410, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
+--- !u!114 &1186526331 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5088241470233011989, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
   m_PrefabInstance: {fileID: 1186526329}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3dda84158df34942b063713c288d878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1191294337
 GameObject:
   m_ObjectHideFlags: 0
@@ -4588,6 +4658,135 @@ Transform:
   - {fileID: 707327522}
   - {fileID: 1397207430}
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1204782616
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1204782620}
+  - component: {fileID: 1204782619}
+  - component: {fileID: 1204782618}
+  - component: {fileID: 1204782617}
+  m_Layer: 7
+  m_Name: SpriteBossFrogGreen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1204782617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204782616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2136b82554fcb664db9b0ce91248a83e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1204782618}
+  characterMovement: {fileID: 1226203784}
+  attack: {fileID: 1226203782}
+  hurtAndDead: {fileID: 1226203779}
+  animatorParameterDirX: dir_x
+  animatorParameterDirY: dir_y
+  animatorParameterIsMoving: is_moving
+  animatorParameterAttack: attack
+  animatorParameterHurt: hurt
+  animatorParameterIsDead: is_dead
+--- !u!95 &1204782618
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204782616}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 451f43fc140b4344ca7d023dbefe0d89, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!212 &1204782619
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204782616}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -293428279
+  m_SortingLayer: 3
+  m_SortingOrder: 0
+  m_Sprite: {fileID: -22654853, guid: 65bf95a70563177489f72b60d807cfbf, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.4, y: 0.4}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1204782620
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204782616}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1226203776}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1211956529
 GameObject:
@@ -4699,6 +4898,8 @@ GameObject:
   - component: {fileID: 1226203779}
   - component: {fileID: 1226203778}
   - component: {fileID: 1226203777}
+  - component: {fileID: 1226203786}
+  - component: {fileID: 1226203787}
   m_Layer: 7
   m_Name: BossFrog
   m_TagString: Untagged
@@ -4720,6 +4921,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 228084128}
+  - {fileID: 1204782620}
   - {fileID: 679080265}
   - {fileID: 1649834930}
   m_Father: {fileID: 0}
@@ -4833,7 +5035,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 390093497661218515, guid: d1080cc0b71b3544f8f278a81f3844c0, type: 3}
   spawnPoint: {fileID: 1649834930}
-  shootCooldown: 1
+  shootCooldown: 2
   canShoot: 1
   shootDelay: 0.4
   bulletDelay: 0.1
@@ -4874,25 +5076,149 @@ MonoBehaviour:
   targetPosition: {fileID: 1033073772}
   targetHP: {fileID: 1702048373}
   frogs:
-  - {fileID: 103766289}
-  - {fileID: 869144216}
-  - {fileID: 852768649}
-  - {fileID: 1591192465}
-  - {fileID: 1313221196}
-  - {fileID: 1186526330}
-  - {fileID: 1026177195}
-  - {fileID: 1561488372}
-  - {fileID: 1393692552}
-  - {fileID: 851753133}
+  - {fileID: 926003099}
+  - {fileID: 2118052152}
+  - {fileID: 1234172099}
+  - {fileID: 1591192466}
+  - {fileID: 2130477470}
+  - {fileID: 1186526331}
+  - {fileID: 1026177196}
+  - {fileID: 1561488374}
+  - {fileID: 1393692554}
+  - {fileID: 851753139}
   spawnDelay: 2
-  canShoot: 1
-  canSpawnFrogs: 1
-  attackChangeCooldown: 10
+  attackCooldown: 15.5
+  isTripleShooting: 1
+  isExplodingShooting: 0
+  explodingBulletPrefab: {fileID: 1911037431937360727, guid: a67384c0d46f2bd459445929895578ff, type: 3}
+--- !u!114 &1226203786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226203775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87d1191ab3af8974ba9d8121a7ce696b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossEnemy: {fileID: 1226203785}
+  bossFrogRedSprite: {fileID: 228084126}
+  bossFrogGreenSprite: {fileID: 1204782616}
+  spriteChanged: {fileID: 1226203787}
+--- !u!82 &1226203787
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226203775}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: f1b996af9e0891649956f23738ea15ed, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.2
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 209
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &1234172098 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2594990760858113784, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
   m_PrefabInstance: {fileID: 852768648}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1234172099 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5088241470233011989, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
+  m_PrefabInstance: {fileID: 852768648}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3dda84158df34942b063713c288d878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1313221195
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4909,6 +5235,10 @@ PrefabInstance:
       propertyPath: targetPosition
       value: 
       objectReference: {fileID: 1033073772}
+    - target: {fileID: 1399274091689977421, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
+      propertyPath: startFollowingDistance
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1592490965652801410, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
       propertyPath: m_Name
       value: EnemyFrog (4)
@@ -4957,26 +5287,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8884600967923930237, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
---- !u!1 &1313221196 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1592490965652801410, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
-  m_PrefabInstance: {fileID: 1313221195}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1393692552 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1592490965652801410, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
-  m_PrefabInstance: {fileID: 875526771}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1393692553 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2594990760858113784, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
   m_PrefabInstance: {fileID: 875526771}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1393692554 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5088241470233011989, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
+  m_PrefabInstance: {fileID: 875526771}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3dda84158df34942b063713c288d878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1397207430 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1249811137584280715, guid: 9001f141d941a8f459b32c7453f36c3a, type: 3}
@@ -5003,6 +5338,10 @@ PrefabInstance:
       propertyPath: targetPosition
       value: 
       objectReference: {fileID: 1033073772}
+    - target: {fileID: 1399274091689977421, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
+      propertyPath: startFollowingDistance
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1592490965652801410, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
       propertyPath: m_Name
       value: EnemyFrog (7)
@@ -5050,6 +5389,10 @@ PrefabInstance:
     - target: {fileID: 2594990760858113784, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8884600967923930237, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
+      propertyPath: speed
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5184,16 +5527,22 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7413310265943027727, guid: cd9c095bbabcd3a43b6c36d70e937274, type: 3}
   m_PrefabInstance: {fileID: 1489622451}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1561488372 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1592490965652801410, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
-  m_PrefabInstance: {fileID: 1488138769}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1561488373 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2594990760858113784, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
   m_PrefabInstance: {fileID: 1488138769}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1561488374 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5088241470233011989, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
+  m_PrefabInstance: {fileID: 1488138769}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3dda84158df34942b063713c288d878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1591192464
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5210,6 +5559,10 @@ PrefabInstance:
       propertyPath: targetPosition
       value: 
       objectReference: {fileID: 1033073772}
+    - target: {fileID: 1399274091689977421, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
+      propertyPath: startFollowingDistance
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1592490965652801410, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
       propertyPath: m_Name
       value: EnemyFrog (3)
@@ -5258,16 +5611,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8884600967923930237, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
---- !u!1 &1591192465 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1592490965652801410, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
+--- !u!114 &1591192466 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5088241470233011989, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
   m_PrefabInstance: {fileID: 1591192464}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3dda84158df34942b063713c288d878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1637254907
 GameObject:
   m_ObjectHideFlags: 0
@@ -8014,6 +8377,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2594990760858113784, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
   m_PrefabInstance: {fileID: 869144215}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2118052152 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5088241470233011989, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
+  m_PrefabInstance: {fileID: 869144215}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3dda84158df34942b063713c288d878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2124191518
 GameObject:
   m_ObjectHideFlags: 0
@@ -8153,6 +8527,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2594990760858113784, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
   m_PrefabInstance: {fileID: 1313221195}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2130477470 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5088241470233011989, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
+  m_PrefabInstance: {fileID: 1313221195}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3dda84158df34942b063713c288d878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &277592943158704972
 PrefabInstance:
   m_ObjectHideFlags: 0

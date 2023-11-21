@@ -8,6 +8,11 @@ public class DamageHandlerReplacer : ScriptableObject
 
     private DamageHandler replacement;
 
+    private void OnEnable()
+    {
+        replacement = invincibleHandler;
+    }
+
     public void ReplaceDamageHandler()
     {
         var target = GameObject.FindGameObjectWithTag(tagToSearch);
