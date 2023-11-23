@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using UnityEngine;
 
@@ -13,7 +14,6 @@ public class HealthController : MonoBehaviour
     [SerializeField] private bool isEnemy;
 
     [SerializeField] private float hurtCooldown = 1f;
-    private float currentTime = 0;
     private bool canHurt = true;
 
     [SerializeField] private float deactivateDelay = 2f;
@@ -45,29 +45,22 @@ public class HealthController : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (!canHurt)
-        {
-            currentTime += Time.deltaTime;
-
-            if (currentTime >= hurtCooldown)
-            {
-                canHurt = true;
-                currentTime = 0;
-            }
-        }
-    }
-
     public void TakeDamage(int damage)
     {
         if (!canHurt) return;
 
         if (isEnemy && damage == 1) return;
 
+        StartCoroutine(HurtSequence(damage));
+    }
+
+    public IEnumerator HurtSequence(int damage)
+    {
+        canHurt = false;
+
         HP = damageHandler.HandleDamage(HP, damage);
 
-        if(onHurt != null)
+        if (onHurt != null)
         {
             onHurt();
         }
@@ -77,12 +70,9 @@ public class HealthController : MonoBehaviour
             Die();
         }
 
-        canHurt = false;
-    }
+        yield return new WaitForSeconds(hurtCooldown);
 
-    public void Resurrect()
-    {
-        HP = maxHP;
+        canHurt = true;
     }
 
     private void Die()

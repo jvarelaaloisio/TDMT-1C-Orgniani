@@ -71,10 +71,6 @@ public class ShooterEnemy : MonoBehaviour
         if (TryGetComponent(out Collider2D collider))
             collider.enabled = false;
 
-        if (TryGetComponent(out CharacterMovement movement))
-            movement.enabled = false;
-
-        if (TryGetComponent(out CharacterShooting attack))
-            attack.enabled = false;
+        attack.enabled = false;
     }
 }

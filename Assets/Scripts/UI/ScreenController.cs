@@ -6,12 +6,14 @@ public class ScreenController : MonoBehaviour
     [SerializeField] private GameOverScreen screen;
     [SerializeField] private AudioSource gameMusic;
 
-    private void Update()
+    private void OnEnable()
     {
-        if (characterHP.HP <= 0)
-        {
-            screen.Setup();
-            gameMusic.Stop();
-        }
+        characterHP.onDead += GameOverScreenSetup;
+    }
+
+    private void GameOverScreenSetup()
+    {
+        screen.Setup();
+        gameMusic.Stop();
     }
 }

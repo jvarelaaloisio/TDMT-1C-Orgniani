@@ -14,10 +14,13 @@ public class BossEnemy : MonoBehaviour
     [SerializeField] private float spawnDelay = 1f;
 
     [SerializeField] private float attackCooldown = 5f;
+    [SerializeField] private float betweenAttacksCooldown = 5f;
 
-    //SHOULDNT BE SERIALIZED FIELD
     public bool isTripleShooting = true;
     public bool isExplodingShooting = false;
+    public bool isSpawning = false;
+
+    //public bool shouldChangeAttack;
 
     private GameObject normalBulletPrefab;
     [SerializeField] private GameObject explodingBulletPrefab;
@@ -52,18 +55,20 @@ public class BossEnemy : MonoBehaviour
         if (targetPosition == null)
             Debug.LogError($"{name}: Target is null!");
 
-        StartCoroutine(SpawnFrogsCoroutine());
-        ExplodingShoot();
-
-        if (!isTripleShooting) return;
-
         else
         {
-            TripleShoot();
-            StartCoroutine(AttackSequence());
+            StartCoroutine(SpawnFrogsCoroutine());
+            ExplodingShoot();
+
+            if (!isTripleShooting) return;
+
+            else
+            {
+                TripleShoot();
+                StartCoroutine(AttackSequence());
+            }
         }
     }
-
 
     private Vector2 GetTargetLocation(Vector2 displacement)
     {
@@ -94,8 +99,12 @@ public class BossEnemy : MonoBehaviour
 
     private IEnumerator SpawnFrogsCoroutine()
     {
+        if (!isSpawning) yield break;
+
         foreach (HealthController frog in frogs)
         {
+            if (!isSpawning) yield break;
+
             //TODO: TP2 - Optimization - Cache values/refs --> DONE
             if (frog.HP > 0)
             {
@@ -110,15 +119,29 @@ public class BossEnemy : MonoBehaviour
     {
         yield return new WaitForSeconds(attackCooldown);
 
-        if (onAttackChange != null) onAttackChange();
         isTripleShooting = false;
+
+        yield return new WaitForSeconds(betweenAttacksCooldown);
+
+        if (onAttackChange != null) onAttackChange();
         attack.bulletPrefab = explodingBulletPrefab;
         isExplodingShooting = true;
 
         yield return new WaitForSeconds(attackCooldown);
 
-        if (onAttackChange != null) onAttackChange();
         isExplodingShooting = false;
+
+        yield return new WaitForSeconds(betweenAttacksCooldown);
+
+        isSpawning = true;
+
+        yield return new WaitForSeconds(attackCooldown);
+
+        isSpawning = false;
+
+        yield return new WaitForSeconds(betweenAttacksCooldown);
+
+        if (onAttackChange != null) onAttackChange();
         attack.bulletPrefab = normalBulletPrefab;
         isTripleShooting = true;
 
@@ -129,10 +152,6 @@ public class BossEnemy : MonoBehaviour
         if (TryGetComponent(out Collider2D collider))
             collider.enabled = false;
 
-        if (TryGetComponent(out CharacterMovement movement))
-            movement.enabled = false;
-
-        if (TryGetComponent(out CharacterShooting attack))
-            attack.enabled = false;
+        attack.enabled = false;
     }
 }

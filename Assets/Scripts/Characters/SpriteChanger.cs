@@ -24,19 +24,20 @@ public class SpriteChanger : MonoBehaviour
 
     private void ReplaceSprite()
     {
-        if(!bossFrogRedSprite.activeSelf && bossEnemy.isTripleShooting)
+        if(bossFrogRedSprite.activeSelf && !bossEnemy.isTripleShooting)
+        {
+            bossFrogRedSprite.SetActive(false);
+            bossFrogGreenSprite.SetActive(true);
+            spriteChanged.Play();
+        }
+
+        else if (bossFrogGreenSprite.activeSelf && !bossEnemy.isExplodingShooting)
         {
             bossFrogGreenSprite.SetActive(false);
             bossFrogRedSprite.SetActive(true);
             spriteChanged.Play();
         }
 
-        else if (!bossFrogGreenSprite.activeSelf && bossEnemy.isExplodingShooting)
-        {
-            bossFrogRedSprite.SetActive(false);
-            bossFrogGreenSprite.SetActive(true);
-            spriteChanged.Play();
-        }
     }
 
 }

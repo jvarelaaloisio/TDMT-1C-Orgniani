@@ -7,6 +7,7 @@ public class GameOverScreen : MonoBehaviour
     [SerializeField] private PauseScreen pauseScreen;
     [SerializeField] private string firstLevel = "FirstLevel";
     [SerializeField] private string mainMenu = "MainMenu";
+    [SerializeField] private string currentScene = "BossLevel";
 
     public void Setup()
     {
@@ -20,7 +21,7 @@ public class GameOverScreen : MonoBehaviour
 
     public void RestartLevelButton()
     {
-        SceneManager.LoadScene(gameObject.scene.name);
+        SceneManager.LoadScene(currentScene);
     }
 
     public void BackToMenuButton()
