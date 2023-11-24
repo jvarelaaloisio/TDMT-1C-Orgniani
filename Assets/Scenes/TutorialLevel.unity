@@ -3207,7 +3207,7 @@ PrefabInstance:
       objectReference: {fileID: 1194874125}
     - target: {fileID: 1399274091689977421, guid: b223e08b901ce4a45a3369fb607c7644, type: 3}
       propertyPath: startFollowingDistance
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1592490965652801410, guid: b223e08b901ce4a45a3369fb607c7644, type: 3}
       propertyPath: m_Name
@@ -3257,6 +3257,10 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: d91d90654a97c1f46b6acb947a67aae3, type: 3}
+    - target: {fileID: 5088241470233011989, guid: b223e08b901ce4a45a3369fb607c7644, type: 3}
+      propertyPath: hurtCooldown
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6278701980351504811, guid: b223e08b901ce4a45a3369fb607c7644, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -3271,10 +3275,9 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 4306b109fab9b0642839f6f9a154c22e, type: 3}
     - target: {fileID: 8884600967923930237, guid: b223e08b901ce4a45a3369fb607c7644, type: 3}
       propertyPath: speed
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1399274091689977421, guid: b223e08b901ce4a45a3369fb607c7644, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3321,7 +3324,7 @@ PrefabInstance:
       objectReference: {fileID: 1194874125}
     - target: {fileID: 1399274091689977421, guid: b223e08b901ce4a45a3369fb607c7644, type: 3}
       propertyPath: startFollowingDistance
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1592490965652801410, guid: b223e08b901ce4a45a3369fb607c7644, type: 3}
       propertyPath: m_Name
@@ -3375,6 +3378,10 @@ PrefabInstance:
       propertyPath: m_FlipX
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5088241470233011989, guid: b223e08b901ce4a45a3369fb607c7644, type: 3}
+      propertyPath: hurtCooldown
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6278701980351504811, guid: b223e08b901ce4a45a3369fb607c7644, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.07
@@ -3393,10 +3400,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8884600967923930237, guid: b223e08b901ce4a45a3369fb607c7644, type: 3}
       propertyPath: speed
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1399274091689977421, guid: b223e08b901ce4a45a3369fb607c7644, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

@@ -1324,6 +1324,10 @@ PrefabInstance:
       propertyPath: respawnPoint
       value: 
       objectReference: {fileID: 752397165}
+    - target: {fileID: 8884600967923930237, guid: 58e5f887f3b3ba447bd3d1e4dd43e18a, type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4197,6 +4201,7 @@ GameObject:
   - component: {fileID: 1226203779}
   - component: {fileID: 1226203786}
   - component: {fileID: 1226203787}
+  - component: {fileID: 1226203788}
   - component: {fileID: 1226203778}
   - component: {fileID: 1226203777}
   m_Layer: 7
@@ -4300,8 +4305,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   model: {fileID: 0}
-  maxHP: 20
-  HP: 20
+  maxHP: 30
+  HP: 30
   damageHandler: {fileID: 11400000, guid: 195a724c96dfeb34ebd2e9ba89477c23, type: 2}
   shouldDestroyOnDeath: 0
   isEnemy: 1
@@ -4335,7 +4340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 390093497661218515, guid: d1080cc0b71b3544f8f278a81f3844c0, type: 3}
   spawnPoint: {fileID: 1649834930}
-  shootCooldown: 2
+  shootCooldown: 1
   canShoot: 1
   shootDelay: 0.4
   bulletDelay: 0.1
@@ -4382,8 +4387,7 @@ MonoBehaviour:
   - {fileID: 1591192466}
   - {fileID: 2130477470}
   spawnDelay: 1
-  attackCooldown: 15.5
-  betweenAttacksCooldown: 2
+  attackCooldown: 5
   isTripleShooting: 1
   isExplodingShooting: 0
   isSpawning: 0
@@ -4404,6 +4408,9 @@ MonoBehaviour:
   bossFrogRedSprite: {fileID: 228084126}
   bossFrogGreenSprite: {fileID: 1204782616}
   spriteChanged: {fileID: 1226203787}
+  callFrogs: {fileID: 1226203788}
+  animator: {fileID: 1204782618}
+  animatorParameterCallFrogs: call_frogs
 --- !u!82 &1226203787
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4431,6 +4438,102 @@ AudioSource:
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &1226203788
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226203775}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 6f05244fecd785f4e8314e21ef77ec02, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 1
+  BypassListenerEffects: 0
+  BypassReverbZones: 1
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:

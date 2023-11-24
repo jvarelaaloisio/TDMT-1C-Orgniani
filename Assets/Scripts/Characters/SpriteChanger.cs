@@ -1,5 +1,7 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.InputSystem;
 using UnityEditor.Animations;
 using UnityEngine;
 
@@ -10,7 +12,10 @@ public class SpriteChanger : MonoBehaviour
     [SerializeField] private GameObject bossFrogGreenSprite;
 
     [SerializeField] private AudioSource spriteChanged;
+    [SerializeField] private AudioSource callFrogs;
 
+    [SerializeField] private Animator animator;
+    [SerializeField] private string animatorParameterCallFrogs = "call_frogs";
 
     private void OnEnable()
     {
@@ -24,20 +29,24 @@ public class SpriteChanger : MonoBehaviour
 
     private void ReplaceSprite()
     {
-        if(bossFrogRedSprite.activeSelf && !bossEnemy.isTripleShooting)
+        if(bossEnemy.isTripleShooting)
         {
             bossFrogRedSprite.SetActive(false);
             bossFrogGreenSprite.SetActive(true);
             spriteChanged.Play();
         }
 
-        else if (bossFrogGreenSprite.activeSelf && !bossEnemy.isExplodingShooting)
+        if (bossEnemy.isExplodingShooting)
+        {
+            animator.SetTrigger(animatorParameterCallFrogs);
+            callFrogs.Play();
+        }
+
+        if (bossEnemy.isSpawning)
         {
             bossFrogGreenSprite.SetActive(false);
             bossFrogRedSprite.SetActive(true);
             spriteChanged.Play();
         }
-
     }
-
 }

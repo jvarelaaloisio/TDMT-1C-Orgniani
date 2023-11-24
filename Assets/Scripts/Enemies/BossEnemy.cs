@@ -14,13 +14,10 @@ public class BossEnemy : MonoBehaviour
     [SerializeField] private float spawnDelay = 1f;
 
     [SerializeField] private float attackCooldown = 5f;
-    [SerializeField] private float betweenAttacksCooldown = 5f;
 
     public bool isTripleShooting = true;
     public bool isExplodingShooting = false;
     public bool isSpawning = false;
-
-    //public bool shouldChangeAttack;
 
     private GameObject normalBulletPrefab;
     [SerializeField] private GameObject explodingBulletPrefab;
@@ -119,30 +116,30 @@ public class BossEnemy : MonoBehaviour
     {
         yield return new WaitForSeconds(attackCooldown);
 
+        if (onAttackChange != null) onAttackChange();
         isTripleShooting = false;
 
-        yield return new WaitForSeconds(betweenAttacksCooldown);
+        yield return new WaitForSeconds(attackCooldown);
 
-        if (onAttackChange != null) onAttackChange();
         attack.bulletPrefab = explodingBulletPrefab;
         isExplodingShooting = true;
 
         yield return new WaitForSeconds(attackCooldown);
 
+        if (onAttackChange != null) onAttackChange();
         isExplodingShooting = false;
 
-        yield return new WaitForSeconds(betweenAttacksCooldown);
+        yield return new WaitForSeconds(attackCooldown);
 
-        //if (onAttackChange != null) onAttackChange();
         isSpawning = true;
 
         yield return new WaitForSeconds(attackCooldown);
 
+        if (onAttackChange != null) onAttackChange();
         isSpawning = false;
 
-        yield return new WaitForSeconds(betweenAttacksCooldown);
+        yield return new WaitForSeconds(attackCooldown);
 
-        if (onAttackChange != null) onAttackChange();
         attack.bulletPrefab = normalBulletPrefab;
         isTripleShooting = true;
 
@@ -154,5 +151,10 @@ public class BossEnemy : MonoBehaviour
             collider.enabled = false;
 
         attack.enabled = false;
+
+        foreach (HealthController frog in frogs)
+        {
+            frog.gameObject.SetActive(false);
+        }
     }
 }
