@@ -335,6 +335,50 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 14307801}
     m_Modifications:
+    - target: {fileID: 2418780995938853480, guid: cd9c095bbabcd3a43b6c36d70e937274, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 519420031}
+    - target: {fileID: 2569739008075376015, guid: cd9c095bbabcd3a43b6c36d70e937274, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2569739008075376015, guid: cd9c095bbabcd3a43b6c36d70e937274, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2569739008075376015, guid: cd9c095bbabcd3a43b6c36d70e937274, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 104
+      objectReference: {fileID: 0}
+    - target: {fileID: 2569739008075376015, guid: cd9c095bbabcd3a43b6c36d70e937274, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -22.942501
+      objectReference: {fileID: 0}
+    - target: {fileID: 2652370273125530009, guid: cd9c095bbabcd3a43b6c36d70e937274, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5056833567674872562, guid: cd9c095bbabcd3a43b6c36d70e937274, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5056833567674872562, guid: cd9c095bbabcd3a43b6c36d70e937274, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5056833567674872562, guid: cd9c095bbabcd3a43b6c36d70e937274, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 104
+      objectReference: {fileID: 0}
+    - target: {fileID: 5056833567674872562, guid: cd9c095bbabcd3a43b6c36d70e937274, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -68.8275
+      objectReference: {fileID: 0}
+    - target: {fileID: 5600363575330478244, guid: cd9c095bbabcd3a43b6c36d70e937274, type: 3}
+      propertyPath: eventSystem
+      value: 
+      objectReference: {fileID: 493815140}
     - target: {fileID: 5631024862223132706, guid: cd9c095bbabcd3a43b6c36d70e937274, type: 3}
       propertyPath: m_Name
       value: CanvasGameOver
@@ -419,6 +463,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8266911428129025648, guid: cd9c095bbabcd3a43b6c36d70e937274, type: 3}
+      propertyPath: eventSystem
+      value: 
+      objectReference: {fileID: 493815140}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

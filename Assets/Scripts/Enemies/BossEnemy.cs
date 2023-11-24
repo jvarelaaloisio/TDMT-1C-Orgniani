@@ -106,7 +106,7 @@ public class BossEnemy : MonoBehaviour
             if (!isSpawning) yield break;
 
             //TODO: TP2 - Optimization - Cache values/refs --> DONE
-            if (frog.HP > 0)
+            if (frog.HP > 0 )
             {
                 frog.gameObject.SetActive(true);
             }
@@ -133,6 +133,7 @@ public class BossEnemy : MonoBehaviour
 
         yield return new WaitForSeconds(betweenAttacksCooldown);
 
+        //if (onAttackChange != null) onAttackChange();
         isSpawning = true;
 
         yield return new WaitForSeconds(attackCooldown);

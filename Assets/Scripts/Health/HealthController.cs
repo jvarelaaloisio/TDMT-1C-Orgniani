@@ -14,7 +14,7 @@ public class HealthController : MonoBehaviour
     [SerializeField] private bool isEnemy;
 
     [SerializeField] private float hurtCooldown = 1f;
-    private bool canHurt = true;
+    public bool canHurt = true;
 
     [SerializeField] private float deactivateDelay = 2f;
 

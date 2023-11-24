@@ -23,6 +23,7 @@ public class Resurrect : MonoBehaviour
         transform.position = respawnPoint.transform.position;
 
         HP.HP = HP.maxHP;
+        HP.canHurt = true;
 
         if (TryGetComponent(out Collider2D collider))
             collider.enabled = true;
