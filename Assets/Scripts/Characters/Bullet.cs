@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -8,17 +9,31 @@ public class Bullet : MonoBehaviour
 
     private void Update()
     {
-        if(shouldDestroyOnRoute)
-            Destroy(gameObject, destroyDelay);
+        if (shouldDestroyOnRoute)
+            StartCoroutine(DestroyOnRoute());
     }
 
-    private void OnDestroy()
+    private void OnTriggerEnter2D(Collider2D coL)
     {
-        if(deathParticlesPrefab)
+        InstantiateParticles();
+    }
+
+    private IEnumerator DestroyOnRoute()
+    {
+        yield return new WaitForSeconds(destroyDelay);
+
+        InstantiateParticles();
+        Destroy(gameObject);
+    }
+
+    private void InstantiateParticles()
+    {
+        if (deathParticlesPrefab)
         {
-            Instantiate(deathParticlesPrefab, 
-                        transform.position, 
+            Instantiate(deathParticlesPrefab,
+                        transform.position,
                          transform.rotation);
         }
     }
 }
+
