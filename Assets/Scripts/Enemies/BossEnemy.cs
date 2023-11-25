@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BossEnemy : MonoBehaviour
 {
+    [SerializeField] private EnemiesManager enemiesManager;
+
     [SerializeField] private CharacterShooting attack;
     [SerializeField] private HealthController enemyHP;
 
@@ -14,10 +16,13 @@ public class BossEnemy : MonoBehaviour
     [SerializeField] private float spawnDelay = 1f;
 
     [SerializeField] private float attackCooldown = 5f;
+    [SerializeField] private float betweenAttacksCooldown = 2f;
 
     public bool isTripleShooting = true;
     public bool isExplodingShooting = false;
     public bool isSpawning = false;
+
+    public int attackNumber = 1;
 
     private GameObject normalBulletPrefab;
     [SerializeField] private GameObject explodingBulletPrefab;
@@ -27,12 +32,14 @@ public class BossEnemy : MonoBehaviour
     private void OnEnable()
     {
         enemyHP.onDead += HandleDeath;
+        enemiesManager.onDamageAll += KillAllActiveFrogs;
         normalBulletPrefab = attack.bulletPrefab;
     }
 
     private void OnDisable()
     {
         enemyHP.onDead -= HandleDeath;
+        enemiesManager.onDamageAll -= KillAllActiveFrogs;
     }
 
     private void Update()
@@ -116,30 +123,33 @@ public class BossEnemy : MonoBehaviour
     {
         yield return new WaitForSeconds(attackCooldown);
 
-        if (onAttackChange != null) onAttackChange();
         isTripleShooting = false;
 
-        yield return new WaitForSeconds(attackCooldown);
+        yield return new WaitForSeconds(betweenAttacksCooldown);
 
+        attackNumber = 2;
+        if (onAttackChange != null) onAttackChange();
         attack.bulletPrefab = explodingBulletPrefab;
         isExplodingShooting = true;
 
         yield return new WaitForSeconds(attackCooldown);
 
-        if (onAttackChange != null) onAttackChange();
         isExplodingShooting = false;
 
-        yield return new WaitForSeconds(attackCooldown);
+        yield return new WaitForSeconds(betweenAttacksCooldown);
 
+        attackNumber = 3;
+        if (onAttackChange != null) onAttackChange();
         isSpawning = true;
 
         yield return new WaitForSeconds(attackCooldown);
 
-        if (onAttackChange != null) onAttackChange();
         isSpawning = false;
 
-        yield return new WaitForSeconds(attackCooldown);
+        yield return new WaitForSeconds(betweenAttacksCooldown);
 
+        attackNumber = 1;
+        if (onAttackChange != null) onAttackChange();
         attack.bulletPrefab = normalBulletPrefab;
         isTripleShooting = true;
 
@@ -155,6 +165,17 @@ public class BossEnemy : MonoBehaviour
         foreach (HealthController frog in frogs)
         {
             frog.gameObject.SetActive(false);
+        }
+    }
+
+    private void KillAllActiveFrogs()
+    {
+        foreach (HealthController frog in frogs)
+        {
+            if(frog.gameObject.activeSelf)
+            {
+                frog.TakeDamage(2);
+            }
         }
     }
 }

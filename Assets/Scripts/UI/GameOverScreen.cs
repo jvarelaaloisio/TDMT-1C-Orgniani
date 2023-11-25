@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
-using UnityEngine.Tilemaps;
 
 public class GameOverScreen : MonoBehaviour
 {

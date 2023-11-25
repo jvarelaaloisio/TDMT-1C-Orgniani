@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,6 +10,8 @@ public class EnemiesManager : MonoBehaviour
     [SerializeField] private AudioSource winLevelSoundEffect;
 
     private int currentSpriteIndex;
+
+    public VoidDelegateType onDamageAll;
 
     private void OnEnable()
     {
@@ -69,10 +70,8 @@ public class EnemiesManager : MonoBehaviour
     {
         for (int i = enemies.Count - 1; i >= 0; i--)
         {
-            if (enemies[i].gameObject.activeSelf)
-            {
-                enemies[i].TakeDamage(3);
-            }
+            enemies[i].TakeDamage(3);
+            if (onDamageAll != null) onDamageAll();
         }
     }
 }

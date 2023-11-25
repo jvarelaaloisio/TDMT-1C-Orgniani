@@ -1,11 +1,6 @@
-using Cinemachine;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting.InputSystem;
-using UnityEditor.Animations;
 using UnityEngine;
 
-public class SpriteChanger : MonoBehaviour
+public class BossSpriteReplacer : MonoBehaviour
 {
     [SerializeField] private BossEnemy bossEnemy;
     [SerializeField] private GameObject bossFrogRedSprite;
@@ -29,24 +24,26 @@ public class SpriteChanger : MonoBehaviour
 
     private void ReplaceSprite()
     {
-        if(bossEnemy.isTripleShooting)
+        //CHANGE TO GREEN
+        if (bossFrogRedSprite.activeSelf && !bossEnemy.isTripleShooting && bossEnemy.attackNumber == 2)
         {
             bossFrogRedSprite.SetActive(false);
             bossFrogGreenSprite.SetActive(true);
             spriteChanged.Play();
         }
 
-        if (bossEnemy.isExplodingShooting)
-        {
-            animator.SetTrigger(animatorParameterCallFrogs);
-            callFrogs.Play();
-        }
-
-        if (bossEnemy.isSpawning)
+        //CHANGE TO RED
+        else if (bossFrogGreenSprite.activeSelf && !bossEnemy.isExplodingShooting && bossEnemy.attackNumber == 1)
         {
             bossFrogGreenSprite.SetActive(false);
             bossFrogRedSprite.SetActive(true);
             spriteChanged.Play();
+        }
+
+        else if (!bossEnemy.isSpawning && bossEnemy.attackNumber == 3)
+        {
+            callFrogs.Play();
+            animator.SetTrigger(animatorParameterCallFrogs);
         }
     }
 }
