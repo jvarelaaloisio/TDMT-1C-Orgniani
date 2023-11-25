@@ -10,7 +10,6 @@ public class HealthPointsBar : MonoBehaviour
     [SerializeField] private GameObject heart;
     [SerializeField] private List<Image> hearts;
 
-
     private void OnEnable()
     {
         playerHP.onHurt += HandleHealthBar;

@@ -42,10 +42,7 @@ public class CommonEnemy : MonoBehaviour
             directionToNextPos.Normalize();
 
             //TODO: TP2 - Unclear logic --> DONE
-            if (distance < startFollowingDistance)
-                shouldFollowTarget = true;
-
-            if (enemyHP.HP < enemyHP.maxHP)
+            if (distance < startFollowingDistance || enemyHP.HP < enemyHP.maxHP)
                 shouldFollowTarget = true;
 
             if (shouldFollowTarget)

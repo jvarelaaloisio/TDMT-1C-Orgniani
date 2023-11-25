@@ -7,6 +7,8 @@ public class EnemiesManager : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private List<HealthController> enemies;
 
+    [SerializeField] private int hurtAllEnemiesDamage = 3;
+
     [SerializeField] private AudioSource winLevelSoundEffect;
 
     private int currentSpriteIndex;
@@ -70,7 +72,7 @@ public class EnemiesManager : MonoBehaviour
     {
         for (int i = enemies.Count - 1; i >= 0; i--)
         {
-            enemies[i].TakeDamage(3);
+            enemies[i].TakeDamage(hurtAllEnemiesDamage);
             if (onDamageAll != null) onDamageAll();
         }
     }

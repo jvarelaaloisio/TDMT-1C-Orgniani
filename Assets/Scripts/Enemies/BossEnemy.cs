@@ -152,7 +152,6 @@ public class BossEnemy : MonoBehaviour
         if (onAttackChange != null) onAttackChange();
         attack.bulletPrefab = normalBulletPrefab;
         isTripleShooting = true;
-
     }
 
     private void HandleDeath()
@@ -162,10 +161,9 @@ public class BossEnemy : MonoBehaviour
 
         attack.enabled = false;
 
-        foreach (HealthController frog in frogs)
-        {
-            frog.gameObject.SetActive(false);
-        }
+        KillAllActiveFrogs();
+
+        enabled = false;
     }
 
     private void KillAllActiveFrogs()
@@ -174,7 +172,7 @@ public class BossEnemy : MonoBehaviour
         {
             if(frog.gameObject.activeSelf)
             {
-                frog.TakeDamage(2);
+                frog.TakeDamage(frog.HP);
             }
         }
     }

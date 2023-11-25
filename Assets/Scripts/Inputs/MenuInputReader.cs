@@ -1,13 +1,13 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.SceneManagement;
 
 public class MenuInputReader : MonoBehaviour
 {
     [SerializeField] private EventSystem eventSystem;
+    [SerializeField] private GameManager gameManager;
+
     [SerializeField] private GameObject creditsScreen;
     [SerializeField] private GameObject backButton;
-    [SerializeField] private string tutorialLevel = "TutorialLevel";
 
     private void Start()
     {
@@ -18,7 +18,7 @@ public class MenuInputReader : MonoBehaviour
 
     public void StartButton()
     {
-        SceneManager.LoadScene(tutorialLevel);
+        gameManager.GoToNextLevel();
     }
 
     public void CreditsButton()

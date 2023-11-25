@@ -53,11 +53,11 @@ public class ShooterEnemy : MonoBehaviour
             if (distance < startShootingDistance)
                 attack.Shoot(directionToNextPos);
 
-            StartCoroutine(AttackSequence());
+            StartCoroutine(AttackCooldown());
         }
     }
 
-    private IEnumerator AttackSequence()
+    private IEnumerator AttackCooldown()
     {
         isShooting = false;
 
@@ -72,5 +72,7 @@ public class ShooterEnemy : MonoBehaviour
             collider.enabled = false;
 
         attack.enabled = false;
+
+        enabled = false;
     }
 }

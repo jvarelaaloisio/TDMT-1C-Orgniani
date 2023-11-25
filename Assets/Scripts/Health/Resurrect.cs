@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Resurrect : MonoBehaviour
 {
-    [SerializeField] HealthController HP;
+    [SerializeField] private HealthController HP;
     [SerializeField] private GameObject respawnPoint;
 
     private void OnEnable()

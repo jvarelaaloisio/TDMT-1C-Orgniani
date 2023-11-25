@@ -1,20 +1,17 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.SceneManagement;
 
 public class GameOverScreen : MonoBehaviour
 {
     //TODO: TP2 - Syntax - Consistency in access modifiers (private/protected/public/etc) --> DONE
     [SerializeField] private PauseScreen pauseScreen;
     [SerializeField] private GameOverScreen victoryScreen;
-    [SerializeField] private string firstLevel = "FirstLevel";
-    [SerializeField] private string mainMenu = "MainMenu";
-    [SerializeField] private string currentScene = "BossLevel";
 
+    [SerializeField] private GameManager gameManager;
     [SerializeField] private EventSystem eventSystem;
+
     [SerializeField] private GameObject restartButton;
     [SerializeField] private GameObject continueButton;
-
     [SerializeField] private GameObject tile;
 
     public void Setup()
@@ -26,17 +23,17 @@ public class GameOverScreen : MonoBehaviour
 
     public void RestartButton()
     {
-        SceneManager.LoadScene(firstLevel);
+        gameManager.RestartGame();
     }
 
     public void RestartLevelButton()
     {
-        SceneManager.LoadScene(currentScene);
+        gameManager.RestartLevel();
     }
 
     public void BackToMenuButton()
     {
-        SceneManager.LoadScene(mainMenu);
+        gameManager.BackToMenu();
     }
 
     public void PauseButton()

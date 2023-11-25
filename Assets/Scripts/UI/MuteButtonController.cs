@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class MuteButtonController : MonoBehaviour
 {
-    [SerializeField] GameObject crossMute;
+    [SerializeField] private  GameObject crossMute;
 
     //TODO: TP2 - Optimization - Should be event based --> DONE
     private void OnEnable()
@@ -31,7 +31,7 @@ public class MuteButtonController : MonoBehaviour
         }
     }
 
-    private void CheckIfMute(Scene scene, LoadSceneMode mode)
+    public void CheckIfMute(Scene scene, LoadSceneMode mode)
     {
         if (AudioListener.volume == 0f)
         {

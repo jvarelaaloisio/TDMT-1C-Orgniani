@@ -135,9 +135,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 504148a763e023241bd0b98f410419ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenu: MainMenu
+  gameManager: {fileID: 0}
   eventSystem: {fileID: 0}
-  tile: {fileID: 7757349676863099759}
+  tile: {fileID: 8339694950880473845, guid: 49625ca834689564780fe12080e34c34, type: 3}
 --- !u!1 &1674527021255038262
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,9 +363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseScreen: {fileID: 5600363575330478244}
   victoryScreen: {fileID: 0}
-  firstLevel: FirstLevel
-  mainMenu: MainMenu
-  currentScene: BossLevel
+  gameManager: {fileID: 3018406658719910350, guid: 49625ca834689564780fe12080e34c34, type: 3}
   eventSystem: {fileID: 0}
   restartButton: {fileID: 7654369457986983343}
   continueButton: {fileID: 4351938537491508454}

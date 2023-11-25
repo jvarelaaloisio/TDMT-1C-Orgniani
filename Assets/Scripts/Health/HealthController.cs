@@ -3,9 +3,8 @@ using UnityEngine;
 
 public class HealthController : MonoBehaviour
 {
-    [SerializeField] public HealthModel model;
-    [SerializeField] public int maxHP = 100;
-    [SerializeField] public int HP = 100;
+    public int maxHP = 100;
+    public int HP = 100;
 
     [SerializeField] private DamageHandler damageHandler;
 
@@ -19,17 +18,6 @@ public class HealthController : MonoBehaviour
 
     public VoidDelegateType onHurt;
     public VoidDelegateType onDead;
-
-    //private void Awake()
-    //{
-    //    SetHpToMaxHp();
-    //}
-
-    [ContextMenu("Reset HP to maxHP")]
-    private void SetHpToMaxHp()
-    {
-        HP = model.maxHP;
-    }
 
     public DamageHandler DamageHandler
     {
@@ -60,14 +48,10 @@ public class HealthController : MonoBehaviour
         HP = damageHandler.HandleDamage(HP, damage);
 
         if (onHurt != null)
-        {
             onHurt();
-        }
 
         if (HP <= 0)
-        {
             Die();
-        }
 
         yield return new WaitForSeconds(hurtCooldown);
 
@@ -77,22 +61,15 @@ public class HealthController : MonoBehaviour
     private void Die()
     {
         if (onDead != null)
-        {
             onDead();
-        }
 
         if (shouldDestroyOnDeath)
-        {
             Destroy(gameObject);
-        }
 
-        else
-        {
-            //TODO: TP2 - Fix - This should be handled by other scripts, like the enemy scripts, by subscribing to the onDead event. --> DONE
+        //TODO: TP2 - Fix - This should be handled by other scripts, like the enemy scripts, by subscribing to the onDead event. --> DONE
 
-            if (isEnemy)
-                StartCoroutine(Deactivate());
-        }
+        if (isEnemy)
+            StartCoroutine(Deactivate());
     }
 
     private IEnumerator Deactivate()

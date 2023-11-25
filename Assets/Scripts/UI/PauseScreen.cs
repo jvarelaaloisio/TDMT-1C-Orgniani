@@ -1,11 +1,11 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.SceneManagement;
 
 public class PauseScreen : MonoBehaviour
 {
-    [SerializeField] private string mainMenu = "MainMenu";
+    [SerializeField] private GameManager gameManager;
     [SerializeField] private EventSystem eventSystem;
+
     [SerializeField] private GameObject tile;
     public void PauseGame()
     {
@@ -24,7 +24,7 @@ public class PauseScreen : MonoBehaviour
 
     public void BackToMenuButton()
     {
-        SceneManager.LoadScene(mainMenu);
+        gameManager.BackToMenu();
     }
 
     private void ResetSelected()

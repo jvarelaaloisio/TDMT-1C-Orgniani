@@ -24,7 +24,6 @@ public class BossSpriteReplacer : MonoBehaviour
 
     private void ReplaceSprite()
     {
-        //CHANGE TO GREEN
         if (bossFrogRedSprite.activeSelf && !bossEnemy.isTripleShooting && bossEnemy.attackNumber == 2)
         {
             bossFrogRedSprite.SetActive(false);
@@ -32,7 +31,6 @@ public class BossSpriteReplacer : MonoBehaviour
             spriteChanged.Play();
         }
 
-        //CHANGE TO RED
         else if (bossFrogGreenSprite.activeSelf && !bossEnemy.isExplodingShooting && bossEnemy.attackNumber == 1)
         {
             bossFrogGreenSprite.SetActive(false);

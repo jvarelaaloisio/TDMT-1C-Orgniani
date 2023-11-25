@@ -19,7 +19,6 @@ public class CharacterShooting : MonoBehaviour
     public VoidDelegateType onShoot;
     
     [ContextMenu(itemName: "Shoot")]
-
     public void Shoot(Vector2 bulletDirection)
     {
         if (!canShoot) return;
@@ -44,9 +43,7 @@ public class CharacterShooting : MonoBehaviour
         canShoot = false;
 
         if (onShoot != null)
-        {
             onShoot();
-        }
 
         yield return new WaitForSeconds(shootDelay);
 

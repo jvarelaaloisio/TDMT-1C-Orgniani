@@ -15,13 +15,11 @@ public class CharacterMovement : MonoBehaviour
 
     public SpeedHandler SpeedHandler
     {
-        //getter
         get
         {
             return speedHandler;
         }
 
-        //setter
         set
         {
             speedHandler = value;

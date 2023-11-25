@@ -156,13 +156,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3dda84158df34942b063713c288d878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  model: {fileID: 0}
   maxHP: 100
   HP: 1
   damageHandler: {fileID: 11400000, guid: 195a724c96dfeb34ebd2e9ba89477c23, type: 2}
   shouldDestroyOnDeath: 1
   isEnemy: 0
   hurtCooldown: 1
+  canHurt: 1
   deactivateDelay: 2
 --- !u!114 &-2447627438937191304
 MonoBehaviour:
@@ -251,6 +251,6 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.01, y: -0.004}
-  m_Size: {x: 0.11, y: 0.06}
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.09, y: 0.16}
   m_Direction: 1
