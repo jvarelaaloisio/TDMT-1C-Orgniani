@@ -3,7 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Health/Damage Handler Replacer", fileName = "HR_")]
 public class DamageHandlerReplacer : ScriptableObject
 {
-    [SerializeField] DamageHandler invincibleHandler;
+    [SerializeField] private DamageHandler invincibleHandler;
     [SerializeField] private string tagToSearch = "Player";
 
     private DamageHandler replacement;

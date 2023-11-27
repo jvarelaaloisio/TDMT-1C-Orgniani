@@ -38,6 +38,7 @@ public class EnemiesManager : MonoBehaviour
         {
             if (enemies[i].HP <= 0)
             {
+                enemies[i].onDead -= KillCounter;
                 enemies.Remove(enemies[i]);
             }
         }

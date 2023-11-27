@@ -11,6 +11,11 @@ public class ScreenController : MonoBehaviour
         characterHP.onDead += GameOverScreenSetup;
     }
 
+    private void OnDisable()
+    {
+        characterHP.onDead -= GameOverScreenSetup;
+    }
+
     private void GameOverScreenSetup()
     {
         screen.Setup();

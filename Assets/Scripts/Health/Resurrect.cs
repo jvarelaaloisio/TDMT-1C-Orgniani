@@ -3,6 +3,9 @@ using UnityEngine;
 public class Resurrect : MonoBehaviour
 {
     [SerializeField] private HealthController HP;
+    [SerializeField] private Collider2D characterCollider;
+    [SerializeField] private CharacterMovement characterMovement;
+    [SerializeField] private CharacterShooting attack;
     [SerializeField] private GameObject respawnPoint;
 
     private void OnEnable()
@@ -22,13 +25,9 @@ public class Resurrect : MonoBehaviour
         HP.HP = HP.maxHP;
         HP.canHurt = true;
 
-        if (TryGetComponent(out Collider2D collider))
-            collider.enabled = true;
+        characterCollider.enabled = true;
+        characterMovement.enabled = true;
+        attack.enabled = true;
 
-        if (TryGetComponent(out CharacterMovement movement))
-            movement.enabled = true;
-
-        if (TryGetComponent(out CharacterShooting attack))
-            attack.enabled = true;
     }
 }

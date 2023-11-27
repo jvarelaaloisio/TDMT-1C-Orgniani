@@ -3,7 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Character Movement/Speed Handler Replacer", fileName = "SR_")]
 public class SpeedHandlerReplacer : ScriptableObject
 {
-    [SerializeField] SpeedHandler speedMultiplier;
+    [SerializeField] private SpeedHandler speedMultiplier;
     [SerializeField] private string tagToSearch = "Player";
 
     private SpeedHandler replacement;

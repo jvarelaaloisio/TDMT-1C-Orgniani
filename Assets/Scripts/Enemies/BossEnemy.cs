@@ -21,7 +21,6 @@ public class BossEnemy : MonoBehaviour
     public bool isTripleShooting = true;
     public bool isExplodingShooting = false;
     public bool isSpawning = false;
-
     public int attackNumber = 1;
 
     private GameObject normalBulletPrefab;

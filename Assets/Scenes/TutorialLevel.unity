@@ -479,15 +479,15 @@ RectTransform:
   m_GameObject: {fileID: 802674723}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 1.5, z: 2}
+  m_LocalScale: {x: 2, y: 0.8, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1697470224}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 110.28}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0, y: 125}
+  m_SizeDelta: {x: 199.44, y: 199.44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &802674725
 MonoBehaviour:
@@ -509,7 +509,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bb5b88052d34cc24f862b45760bc108b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 48c98e805dcc0ae4e8a644a4fdf95f0f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -561,7 +561,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -14}
   m_SizeDelta: {x: 900.7751, y: 235.3754}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &988366526
@@ -584,9 +584,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'CLICK TO SHOOT
+  m_text: 'CLICK  OR  RIGHT  TRIGGER  TO  SHOOT
 
-    KILL ALL ENEMIES TO GET TO THE NEXT LEVEL'
+    KILL ALL ENEMIES TO GET TO THE
+    NEXT LEVEL'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4dac20efa99a2a1479da4c0127035c86, type: 2}
   m_sharedMaterial: {fileID: 6648098227559191148, guid: 4dac20efa99a2a1479da4c0127035c86, type: 2}
@@ -764,7 +765,7 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 7, y: -4, z: 0}
+  - first: {x: -4, y: -4, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 1
@@ -774,7 +775,7 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: -4, y: -3, z: 0}
+  - first: {x: 7, y: -4, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 1
@@ -2897,6 +2898,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1248193629}
     - target: {fileID: 5374128683179825908, guid: 44a1f8282be3f79429721e3bd6110d88, type: 3}
+      propertyPath: m_Volume
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5374128683179825908, guid: 44a1f8282be3f79429721e3bd6110d88, type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 6cb634c979f67bb459f7b9c502e39511, type: 3}
@@ -3270,7 +3275,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: d91d90654a97c1f46b6acb947a67aae3, type: 3}
     - target: {fileID: 5088241470233011989, guid: b223e08b901ce4a45a3369fb607c7644, type: 3}
       propertyPath: hurtCooldown
-      value: 0
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6278701980351504811, guid: b223e08b901ce4a45a3369fb607c7644, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3391,7 +3396,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5088241470233011989, guid: b223e08b901ce4a45a3369fb607c7644, type: 3}
       propertyPath: hurtCooldown
-      value: 0
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6278701980351504811, guid: b223e08b901ce4a45a3369fb607c7644, type: 3}
       propertyPath: m_LocalPosition.x
