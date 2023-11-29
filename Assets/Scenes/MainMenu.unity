@@ -2296,6 +2296,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1351723982}
+    - target: {fileID: 7492775858034480361, guid: f5059a49e3bfdd44b83dfcf0016d3f49, type: 3}
+      propertyPath: m_text
+      value: "CATALINA  ORGNIANI\nSEGUNDO  TP \nPROGRAMACION  CON  MOTORES  \nDE 
+        VIDEOJUEGOS  I"
+      objectReference: {fileID: 0}
     - target: {fileID: 7805835076158103258, guid: f5059a49e3bfdd44b83dfcf0016d3f49, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

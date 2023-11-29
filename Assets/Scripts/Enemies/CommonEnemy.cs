@@ -7,7 +7,7 @@ public class CommonEnemy : MonoBehaviour
 
     [SerializeField] private HealthController enemyHP;
 
-    private float distance;
+    private float targetDistance;
     private bool shouldFollowTarget = false;
     [SerializeField] private float startFollowingDistance = 4f;
 
@@ -23,18 +23,13 @@ public class CommonEnemy : MonoBehaviour
 
     private void Update()
     {
-        FollowTarget();
-    }
-
-    public void FollowTarget()
-    {
-        distance = Vector2.Distance(transform.position, targetPosition.transform.position);
-
         if (targetPosition == null)
             Debug.LogError($"{name}: Target is null!");
 
         else
         {
+            targetDistance = Vector2.Distance(transform.position, targetPosition.transform.position);
+
             Vector2 currentPosition = transform.position;
             Vector2 nextPosition = targetPosition.currentPosition;
 
@@ -42,7 +37,7 @@ public class CommonEnemy : MonoBehaviour
             directionToNextPos.Normalize();
 
             //TODO: TP2 - Unclear logic --> DONE
-            if (distance < startFollowingDistance || enemyHP.HP < enemyHP.maxHP)
+            if (targetDistance < startFollowingDistance || enemyHP.HP < enemyHP.maxHP)
                 shouldFollowTarget = true;
 
             if (shouldFollowTarget)

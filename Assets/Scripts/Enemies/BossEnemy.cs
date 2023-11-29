@@ -12,6 +12,8 @@ public class BossEnemy : MonoBehaviour
     [SerializeField] private CharacterMovement targetPosition;
     [SerializeField] private HealthController targetHP;
 
+    [SerializeField] private BossSpriteReplacer spriteReplacer;
+
     [SerializeField] private List<HealthController> frogs;
     [SerializeField] private float spawnDelay = 1f;
 
@@ -30,25 +32,22 @@ public class BossEnemy : MonoBehaviour
 
     private void OnEnable()
     {
+        //TODO: TP2 - Optimization - Should be event based --> DONE
         enemyHP.onDead += HandleDeath;
+        targetHP.onDead += HandleDeath;
         enemiesManager.onDamageAll += KillAllActiveFrogs;
-        normalBulletPrefab = attack.bulletPrefab;
+        normalBulletPrefab = attack.BulletPrefab;
     }
 
     private void OnDisable()
     {
         enemyHP.onDead -= HandleDeath;
+        targetHP.onDead -= HandleDeath;
         enemiesManager.onDamageAll -= KillAllActiveFrogs;
     }
 
     private void Update()
     {
-        //TODO: TP2 - Optimization - Should be event based --> ???
-        if (targetHP.HP <= 0)
-            return;
-
-        if (!enabled) return;
-
         if (attack == null)
         {
             Debug.LogError($"{name}: CharacterShooting is null!");
@@ -128,7 +127,7 @@ public class BossEnemy : MonoBehaviour
 
         attackNumber = 2;
         if (onAttackChange != null) onAttackChange();
-        attack.bulletPrefab = explodingBulletPrefab;
+        attack.BulletPrefab = explodingBulletPrefab;
         isExplodingShooting = true;
 
         yield return new WaitForSeconds(attackCooldown);
@@ -149,7 +148,7 @@ public class BossEnemy : MonoBehaviour
 
         attackNumber = 1;
         if (onAttackChange != null) onAttackChange();
-        attack.bulletPrefab = normalBulletPrefab;
+        attack.BulletPrefab = normalBulletPrefab;
         isTripleShooting = true;
     }
 
@@ -158,10 +157,14 @@ public class BossEnemy : MonoBehaviour
         if (TryGetComponent(out Collider2D collider))
             collider.enabled = false;
 
+        if(enemyHP.HP <= 0)
+        {
+            KillAllActiveFrogs();
+            targetHP.HP = targetHP.maxHP;
+        }
+
         attack.enabled = false;
-
-        KillAllActiveFrogs();
-
+        spriteReplacer.enabled = false;
         enabled = false;
     }
 

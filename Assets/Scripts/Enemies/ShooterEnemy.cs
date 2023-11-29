@@ -12,27 +12,24 @@ public class ShooterEnemy : MonoBehaviour
     private bool isShooting = true;
     [SerializeField] private float attackCooldown = 5f;
 
-    private float distance;
+    private float targetDistance;
     [SerializeField] private float startShootingDistance = 4f;
 
     private void OnEnable()
     {
         enemyHP.onDead += HandleDeath;
+        targetHP.onDead += HandleDeath;
     }
 
     private void OnDisable()
     {
         enemyHP.onDead -= HandleDeath;
+        targetHP.onDead -= HandleDeath;
     }
 
     private void Update()
     {
         if (!isShooting) return;
-
-        if (targetHP.HP <= 0)
-            return;
-
-        distance = Vector2.Distance(transform.position, targetPosition.transform.position);
 
         if (attack == null)
         {
@@ -45,12 +42,14 @@ public class ShooterEnemy : MonoBehaviour
 
         else
         {
+            targetDistance = Vector2.Distance(transform.position, targetPosition.transform.position);
+
             Vector2 currentPosition = transform.position;
             Vector2 nextPosition = targetPosition.currentPosition;
 
             Vector2 directionToNextPos = nextPosition - currentPosition;
 
-            if (distance < startShootingDistance)
+            if (targetDistance < startShootingDistance)
                 attack.Shoot(directionToNextPos);
 
             StartCoroutine(AttackCooldown());
@@ -72,7 +71,5 @@ public class ShooterEnemy : MonoBehaviour
             collider.enabled = false;
 
         attack.enabled = false;
-
-        enabled = false;
     }
 }

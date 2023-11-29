@@ -5,7 +5,7 @@ public delegate void VoidDelegateType();
 
 public class CharacterShooting : MonoBehaviour
 {
-    public GameObject bulletPrefab;
+    [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform spawnPoint;
 
     [SerializeField] private float shootCooldown = 1f;
@@ -18,6 +18,18 @@ public class CharacterShooting : MonoBehaviour
 
     public VoidDelegateType onShoot;
     
+    public GameObject BulletPrefab
+    {
+        get
+        {
+            return bulletPrefab;
+        }
+        set
+        {
+            bulletPrefab = value;
+        }
+    }
+
     [ContextMenu(itemName: "Shoot")]
     public void Shoot(Vector2 bulletDirection)
     {
