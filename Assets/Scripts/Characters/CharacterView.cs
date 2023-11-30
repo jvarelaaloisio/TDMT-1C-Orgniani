@@ -25,14 +25,18 @@ public class CharacterView : MonoBehaviour
 
     private void OnEnable()
     {
-        attack.onShoot += HandleShoot;
+        if(attack != null)
+            attack.onShoot += HandleShoot;
+
         hurtAndDead.onHurt += HandleHurt;
         hurtAndDead.onDead += HandleDead;
     }
 
     private void OnDisable()
     {
-        attack.onShoot -= HandleShoot;
+        if (attack != null)
+            attack.onShoot -= HandleShoot;
+
         hurtAndDead.onHurt -= HandleHurt;
         hurtAndDead.onDead -= HandleDead;
     }

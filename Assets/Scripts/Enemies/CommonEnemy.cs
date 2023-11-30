@@ -11,16 +11,6 @@ public class CommonEnemy : MonoBehaviour
     private bool shouldFollowTarget = false;
     [SerializeField] private float startFollowingDistance = 4f;
 
-    private void OnEnable()
-    {
-        enemyHP.onDead += HandleDeath;
-    }
-
-    private void OnDisable()
-    {
-        enemyHP.onDead -= HandleDeath;
-    }
-
     private void Update()
     {
         if (targetPosition == null)
@@ -43,13 +33,5 @@ public class CommonEnemy : MonoBehaviour
             if (shouldFollowTarget)
                 characterMovement.SetDirection(directionToNextPos);
         }
-    }
-
-    private void HandleDeath()
-    {
-        if (TryGetComponent(out Collider2D collider))
-            collider.enabled = false;
-
-        characterMovement.enabled = false;
     }
 }

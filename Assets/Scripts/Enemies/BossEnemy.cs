@@ -154,16 +154,12 @@ public class BossEnemy : MonoBehaviour
 
     private void HandleDeath()
     {
-        if (TryGetComponent(out Collider2D collider))
-            collider.enabled = false;
-
         if(enemyHP.HP <= 0)
         {
             KillAllActiveFrogs();
             targetHP.HP = targetHP.maxHP;
         }
 
-        attack.enabled = false;
         spriteReplacer.enabled = false;
         enabled = false;
     }

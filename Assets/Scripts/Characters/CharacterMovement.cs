@@ -35,14 +35,11 @@ public class CharacterMovement : MonoBehaviour
 
     private void Update()
     {
-        if (attack == null)
-            Debug.LogError($"{name}: CharacterShooting in CharacterMovement is null.");
+        if (attack != null)
+            if (!attack.canShoot) return;
 
-        if (attack.canShoot)
-        {
-            transform.position = transform.position + speed * Time.deltaTime * new Vector3(direction.x, direction.y);
-            currentPosition = transform.position;
-        }
+        transform.position = transform.position + speed * Time.deltaTime * new Vector3(direction.x, direction.y);
+        currentPosition = transform.position;
 
     }
 

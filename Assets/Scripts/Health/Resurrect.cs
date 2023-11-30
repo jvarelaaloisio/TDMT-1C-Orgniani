@@ -27,7 +27,9 @@ public class Resurrect : MonoBehaviour
 
         characterCollider.enabled = true;
         characterMovement.enabled = true;
-        attack.enabled = true;
+
+        if(attack != null )
+            attack.enabled = true;
 
     }
 }

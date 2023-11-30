@@ -144,6 +144,7 @@ GameObject:
   - component: {fileID: 2728723146716378809}
   - component: {fileID: 672349787724419784}
   - component: {fileID: 7287990208401450972}
+  - component: {fileID: 8227798205944986089}
   - component: {fileID: 3480363291545098720}
   - component: {fileID: 9032650367913202968}
   m_Layer: 7
@@ -221,13 +222,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3dda84158df34942b063713c288d878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  model: {fileID: 0}
   maxHP: 6
   HP: 6
   damageHandler: {fileID: 11400000, guid: 195a724c96dfeb34ebd2e9ba89477c23, type: 2}
   shouldDestroyOnDeath: 0
   isEnemy: 1
   hurtCooldown: 0.5
+  canHurt: 1
   deactivateDelay: 1
 --- !u!114 &2728723146716378809
 MonoBehaviour:
@@ -255,9 +256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: {fileID: 7058244634649062594}
-  enemyHP: {fileID: 6099257096883031374}
   targetPosition: {fileID: 0}
-  targetHP: {fileID: 0}
   attackCooldown: 5
   startShootingDistance: 4
 --- !u!114 &7287990208401450972
@@ -276,6 +275,22 @@ MonoBehaviour:
   targetPosition: {fileID: 0}
   enemyHP: {fileID: 6099257096883031374}
   startFollowingDistance: 4
+--- !u!114 &8227798205944986089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6814966608332953572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 756952c109bd2ec4cb6a3bf3cbc5e874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: {fileID: 6099257096883031374}
+  col: {fileID: 9032650367913202968}
+  characterMovement: {fileID: 3693272513374255347}
+  attack: {fileID: 7058244634649062594}
 --- !u!50 &3480363291545098720
 Rigidbody2D:
   serializedVersion: 4

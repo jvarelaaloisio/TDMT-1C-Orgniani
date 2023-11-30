@@ -514,6 +514,7 @@ GameObject:
   - component: {fileID: 6149567213819325555}
   - component: {fileID: 6555825157712399147}
   - component: {fileID: 8362704045239712338}
+  - component: {fileID: 8568880215262521799}
   - component: {fileID: 8023332327521035857}
   - component: {fileID: 8379348307367787148}
   m_Layer: 6
@@ -591,13 +592,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3dda84158df34942b063713c288d878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  model: {fileID: 11400000, guid: f6a07646aec933e4386972e1b760a2a1, type: 2}
   maxHP: 3
   HP: 3
   damageHandler: {fileID: 11400000, guid: 195a724c96dfeb34ebd2e9ba89477c23, type: 2}
   shouldDestroyOnDeath: 0
   isEnemy: 0
   hurtCooldown: 1
+  canHurt: 1
   deactivateDelay: 2
 --- !u!114 &6555825157712399147
 MonoBehaviour:
@@ -624,7 +625,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95a676d9e39959e4581aeceffc27dca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHP: {fileID: 6149567213819325555}
+--- !u!114 &8568880215262521799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9093090905388126332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 756952c109bd2ec4cb6a3bf3cbc5e874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: {fileID: 6149567213819325555}
+  targetHP: {fileID: 6149567213819325555}
+  col: {fileID: 8379348307367787148}
+  characterMovement: {fileID: 1116090878914013790}
+  attack: {fileID: 8137019513120073274}
 --- !u!50 &8023332327521035857
 Rigidbody2D:
   serializedVersion: 4

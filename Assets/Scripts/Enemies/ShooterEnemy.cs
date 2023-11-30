@@ -4,9 +4,8 @@ using UnityEngine;
 public class ShooterEnemy : MonoBehaviour
 {
     [SerializeField] private CharacterShooting attack;
-    [SerializeField] private HealthController enemyHP;
-
     [SerializeField] private CharacterMovement targetPosition;
+
     [SerializeField] private HealthController targetHP;
 
     private bool isShooting = true;
@@ -17,14 +16,12 @@ public class ShooterEnemy : MonoBehaviour
 
     private void OnEnable()
     {
-        enemyHP.onDead += HandleDeath;
-        targetHP.onDead += HandleDeath;
+        targetHP.onDead += StopShootingTarget;
     }
 
     private void OnDisable()
     {
-        enemyHP.onDead -= HandleDeath;
-        targetHP.onDead -= HandleDeath;
+        targetHP.onDead -= StopShootingTarget;
     }
 
     private void Update()
@@ -65,11 +62,8 @@ public class ShooterEnemy : MonoBehaviour
         isShooting = true;
     }
 
-    private void HandleDeath()
+    private void StopShootingTarget()
     {
-        if (TryGetComponent(out Collider2D collider))
-            collider.enabled = false;
-
-        attack.enabled = false;
+        enabled = false;
     }
 }
